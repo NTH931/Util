@@ -1,0 +1,321 @@
+/*--------------------------------------Global Variables----------------------------------------*/
+
+:root {
+  --normal-border: 2px solid white;
+  --dark-aquamarine: rgb(0, 112, 112);
+  --light-red: rgb(255, 43, 43);
+  --light-green: rgb(105, 212, 23);
+  --darker-cyan: rgb(0r style="margin-top: 100vh;">, 109, 109);
+  --drop-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  --red-drop-shadow: 0 2px 16px 0 rgba(148, 0, 0, 0.426), 0 17px 50px 0 rgba(127, 0, 0, 0.423);
+}
+
+/*-----------------------------------Tag Attribute Vaiables-------------------------------------*/
+
+* {
+  font-family: serif;
+}
+
+object {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-left: 6px;
+    top: 94vh;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    width: 98%;
+    background-repeat: no-repeat;
+    background-size: 100%, 100%;
+    background-color: darkcyan;
+}
+
+textarea {
+  border: 2px solid black;
+  width: 225vh;
+  height: 98vh;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.1em;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+textarea:focus {
+  border: 2px solid black;
+  outline: none;
+}
+
+a, span {
+    text-decoration: none;
+    font-size: 16px;
+    color: blue;
+    width: fit-content;
+}
+
+h1 {
+  color: white;
+  display: inline-block;
+  line-height: 10px;
+  cursor: default;
+}
+
+h4 {
+  color: black;
+}
+
+h2, h3, h5, h6 {
+  color: white;
+}
+
+aside {
+    float: left;
+    width: 50%;
+    padding-left: 5px;
+    text-align: left;
+}
+
+section {
+    size: 50%;
+    margin-left: 50%;
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table > th, td {
+    font-weight: 700;
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+    height: 65px;
+}
+
+input:hover {
+  transform: none;
+  box-shadow: var(--drop-shadow);
+}
+
+button, .buttonStyle, input {
+  height: 25px;
+  font-size: 15px;
+  margin-top: -10px;
+  border: 2px;
+  padding: -1px;
+  border-radius: 69000px;
+  display: inline-block;
+  transition-duration: 0.2s;
+  color: blue;
+  background-color: white;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 2px;
+}
+
+button:hover, .buttonStyle:hover, input:hover {
+box-shadow: #151515 0 0 1px;
+transform: scale(1.05);
+}
+
+/*------------------------------------------User-Made variables-------------------------------------*/
+
+.left {
+    text-align: end;
+}
+
+.newF {
+  height: 25px;
+  margin-top: -10px;
+  border: 2px;
+  border-radius: 69000px;
+  display: inline-block;
+  transition-duration: 0.2s;
+  color: blue;
+  background-color: rgb(255, 85, 85);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.newF:hover {
+  box-shadow: var(--red-drop-shadow);
+  transform: scale(1.05);
+}
+
+.unavaliable {
+    height: 25px;
+    margin-top: -10px;
+    border: 2px;
+    border-radius: 7.5px;
+    display: inline-block;
+    transition-duration: 0.2s;
+    color: white;
+    background-color: blue;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.unavaliable:hover {
+    box-shadow: var(--drop-shadow);
+    background-color: blue;
+}
+
+.txtBox {
+    height: 25px;
+    margin-top: -10px;
+    border: 2px;
+    border-radius: 7.5px;
+    display: inline-block;
+    background-color: white;
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+
+.txtBox:focus, .txtBox:hover {
+  box-shadow: var(--drop-shadow);
+  background-color: lightgrey;
+}
+
+.txtBox:valid {
+  background-color: rgb(54, 191, 0);
+}
+
+.whitebg, span {
+    height: fit-content + 20px;
+    margin-top: -5px;
+    border: 2px;
+    text-align: center;
+    border-radius: 7.5px;
+    background-color: white;
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.greybg {
+  height: fit-content + 20px;
+  margin-top: -5px;
+  border: 2px;
+  text-align: center;
+  border-radius: 7.5px;
+  background-color: rgba(255, 255, 255, 0.500);
+  text-decoration: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.main {
+    width: 100%;
+    text-align: left;
+    align-self: auto;
+}
+
+.vl {
+    border-left: 1px solid white;
+    height: 83%;
+    position: absolute;
+    left: 50%;
+    margin-left: -20px;
+    top: 15%;
+}
+
+.indent {
+    text-indent: 10px;
+}
+
+.link {
+  color: blue;
+}
+
+button.plus {
+  height: 25px;
+  width: 25px;
+  margin-top: -10px;
+  text-align: center;
+  border: 2px solid;
+  border-radius: 7.5px;
+  display: inline-block;
+  transition-duration: 0.2s;
+  color: white;
+  text-align: center;
+  text-overflow: initial;
+  background-color: rgba(255, 255, 255, 0);
+  border-color: white;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+button.plus:hover {
+  box-shadow: 4px 6px 10px 0 rgba(0, 0, 0, 0.5), 0 17px 50px 0 rgba(0, 0, 0, 0.5);
+  transform: none;
+  background-color: var(--darker-cyan);
+}
+
+.header {
+  padding-top: 10px;
+  border-bottom: var(--normal-border);
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 7px;
+  background-color: rgb(127, 127, 127);
+}
+
+.spanCancel {
+  color: red;
+  background-color: rgb(255, 85, 85);
+  height: fit-content + 20px;
+  margin-top: 0px;
+  border: 0px;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.buttonWithLink {
+  background-color: green; /* Change to the desired color */
+  transition-duration: 0.3s; /* Add transition duration */
+}
+
+.hidden-text {
+  display: none;
+}
+
+.visible {
+  display: inline; /* or any other appropriate display property */
+}
+
+.disabled-button{
+  cursor: not-allowed;
+}
+
+.spanA {
+  height: fit-content + 20px;
+  margin-top: -5px;
+  border: 2px;
+  text-align: center;
+  border-radius: 7.5px;
+  background-color: white;
+  text-decoration: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/*----------------------------------------Id Variables------------------------------------------*/
+
+#resetButton {
+  margin: 12px;
+  margin-left: 200px;
+}
