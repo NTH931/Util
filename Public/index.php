@@ -2,7 +2,7 @@
  <html lang="en">
    <head>
      <title style="color:white; text-align: center;">Util</title>
-     <?php require 'Includes/header.php'; ?>
+     <?php include 'Includes/header.php'; ?>
      <style>
       object {
         position: absolute;
