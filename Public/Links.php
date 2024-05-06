@@ -85,6 +85,6 @@
 
     <script src="../Private/JS/Functions.js">
     </script>
-<?php include "Includes/footer.php"; ?>
-</body>
+    <?php include "Includes/footer.php"; ?>
+  </body>
 </html>
