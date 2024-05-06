@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title style="color:white; text-align: center;">Util</title>
-  <link rel="icon" type="image/x-icon" href="Favicons/favicon.png">
-  <link rel="stylesheet" type="text/css" href="CSS/Laptop.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="../../Private/JS/Functions.js"></script>
-     <script src="../../Private/JS/code.js"></script>
-  <script src="/Util/Private/Functions/Functions.py">
-   $(document).ready(function() {
-     logData();
-   });
-  </script>
-</head>
-
-
-
+  <?php require "Includes/header.php"; ?>
     <body onload="timeout(15000)">
     <div>
         <h1 style="color:white; display: inline-block; line-height: 10px;">My Library</h1>
@@ -34,6 +18,6 @@
     <a href="https://maoridictionary.co.nz/" target="_blank"><button>Maori dictionary</button></a>
 
 
-    <object type="text/html" data="Includes/footer.html"></object>
+    <?php include "Includes/footer.php"; ?>
     </body>
 </html>

@@ -17,8 +17,8 @@ Before you can use Util, you must install it.
 Installation is very simple, but there are 2 ways, depending on what you want to do. If you want to run it from inside a zip file, follow these instructions:
 
 1. Install Util from your source.
-2. Navigate to `Util/Public/index.html`
-3. Open `index.html`
+2. Navigate to `Util/Public/index.php`
+3. Open `index.php`
 
 And thats it! You can now navigate and use Util to it's fullest
 

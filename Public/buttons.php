@@ -1,17 +1,6 @@
 <!DOCTYPE html>
  <html lang="en">
-  <head>
-    <title style="color:white; text-align: center;">Util</title>
-    <link rel="icon" type="image/x-icon" href="Favicons/warning.png">
-    <link rel="stylesheet" type="text/css" href="CSS/Laptop.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="../../Private/JS/Functions.js"></script>
-     <script src="../../Private/JS/code.js"></script>
-    <script src="/Util/Private/Functions/Functions.py">
-     $(document).ready(function() {
-       logData();
-     });
-    </script>
+  <?php require "Includes/header.php"; ?>
      <style>
       h4 {
         margin-top: 0;
@@ -78,8 +67,7 @@
         border: 0px;
       }
      </style>
-   </head>
-
+   
    <body>
       <div class="notDiv cancel">
         <h1 style="color:white; display: inline-block; line-height: 10px; cursor: default;"><em>Buttons</em></h1>
