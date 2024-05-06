@@ -14,20 +14,20 @@
       - sql.php
     - Extras.md
   | Public
-    - Index.html
-    - Buttons.html
-    - Links.html
-    - quickwrite.html
-    - Subject-1.html
-    - Subject-2.html
-    - Subject-3.html
-    - Subject-4.html
-    - Subject-5.html
-    - Subject-6.html
-    - Subject-7.html
-    - Subject-8.html
-    - Subject-9.html
-    - Subject-10.html
+    - Index.php
+    - Buttons.php
+    - Links.php
+    - quickwrite.php
+    - Subject-1.php
+    - Subject-2.php
+    - Subject-3.php
+    - Subject-4.php
+    - Subject-5.php
+    - Subject-6.php
+    - Subject-7.php
+    - Subject-8.php
+    - Subject-9.php
+    - Subject-10.php
     | CSS
       - Laptop.css
       - Tablet.css
