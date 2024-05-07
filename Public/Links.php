@@ -36,7 +36,7 @@
     <!--HuiAko-->
     <div>
         <label style="margin-left: 40px; margin-right: 39px;" for="linkInput1"><b>HuiAko: </b></label>
-        <input style="cursor: text;" type="text" id="linkInput1" class="linkInput1 buttonStyle">
+        <input pattern="https://classroom\.google\.com/.*" style="cursor: text;" type="text" id="linkInput1" class="linkInput1 buttonStyle">
         <button class="storeButton1">Store Link</button>
         <a target="_blank" id="storedLinkButton1" class="spanA storedLinkButton">No Link Stored</a>
     </div>
@@ -44,7 +44,7 @@
     <!--Intergrated Studies-->
     <div>
         <label for="linkInput2"><b>Intergrated Studies: </b></label>
-        <input style="cursor: text;" type="text" id="linkInput2" class="linkInput2 buttonStyle">
+        <input pattern="https://classroom\.google\.com/.*" style="cursor: text;" type="text" id="linkInput2" class="linkInput2 buttonStyle">
         <button class="storeButton2">Store Link</button>
         <a target="_blank" id="storedLinkButton2" class="spanA storedLinkButton">No Link Stored</a>
     </div>
@@ -52,7 +52,7 @@
     <!--Aotearoa Histories-->
     <div>
         <label style="margin-left: 5px; margin-right: 5px;" for="linkInput3"><b>Aotearoa histories: </b></label>
-        <input style="cursor: text;" type="text" id="linkInput3" class="linkInput3 buttonStyle">
+        <input pattern="https://classroom\.google\.com/.*" style="cursor: text;" type="text" id="linkInput3" class="linkInput3 buttonStyle">
         <button class="storeButton3">Store Link</button>
         <a target="_blank" id="storedLinkButton3" class="spanA storedLinkButton">No Link Stored</a>
     </div>
@@ -60,7 +60,7 @@
     <!--Science-->
     <div>
         <label style="margin-left: 41px; margin-right: 42px;" for="linkInput4"><b>Science: </b></label>
-        <input style="cursor: text;" type="text" id="linkInput4" class="linkInput4 buttonStyle">
+        <input pattern="https://classroom\.google\.com/.*" style="cursor: text;" type="text" id="linkInput4" class="linkInput4 buttonStyle">
         <button class="storeButton4">Store Link</button>
         <a target="_blank" id="storedLinkButton4" class="spanA storedLinkButton">No Link Stored</a>
     </div>
@@ -68,7 +68,7 @@
     <!--Maths-->
     <div>
         <label style="margin-left: 45px; margin-right: 45px;" for="linkInput5"><b>Maths: </b></label>
-        <input style="cursor: text;" type="text" id="linkInput5" class="linkInput5 buttonStyle">
+        <input pattern="https://classroom\.google\.com/.*" pattern="https://classroom\.google\.com/.*" style="cursor: text;" type="text" id="linkInput5" class="linkInput5 buttonStyle">
         <button class="storeButton5">Store Link</button>
         <a target="_blank" id="storedLinkButton5" class="spanA storedLinkButton">No Link Stored</a>
     </div>
@@ -76,7 +76,7 @@
     <!--Health and PE-->
     <div>
         <label style="margin-left: 16px; margin-right: 16px;" for="linkInput6"><b>Health and PE: </b></label>
-        <input style="cursor: text;" type="text" id="linkInput6" class="linkInput6 buttonStyle">
+        <input pattern="https://classroom\.google\.com/.*" style="cursor: text;" type="text" id="linkInput6" class="linkInput6 buttonStyle">
         <button class="storeButton6">Store Link</button>
         <a target="_blank" id="storedLinkButton6" class="spanA storedLinkButton">No Link Stored</a>
     </div>
