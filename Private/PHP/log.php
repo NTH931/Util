@@ -13,4 +13,3 @@ file_put_contents($logFile, json_encode($data) . PHP_EOL, FILE_APPEND);
 
 // Send a response
 echo 'Logged successfully';
-?>

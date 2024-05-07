@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Adds the Event handlers for the function
   function setupLinkStorage(inputClass, storeButtonClass, storedLinkButtonId, storageKey, innerText) {
       var input = document.getElementById(inputClass);
-      var storeButton = document.querySelector('.' + storeButtonClass);
+      var storeButton = document.getElementsByClassName(storeButtonClass);
       var storedLinkButton = document.getElementById(storedLinkButtonId);
 
       // Function to store the link

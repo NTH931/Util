@@ -78,7 +78,7 @@
         <label style="margin-left: 16px; margin-right: 16px;" for="linkInput6"><b>Health and PE: </b></label>
         <input style="cursor: text;" type="text" id="linkInput6" class="linkInput6 buttonStyle">
         <button class="storeButton6">Store Link</button>
-        <a target="_blank" id="storedLinkButton6" class="spanA storedLinkButton">Health and PE</a>
+        <a target="_blank" id="storedLinkButton6" class="spanA storedLinkButton">No Link Stored</a>
     </div>
 
     <button id="resetButton">Reset All Links</button>
