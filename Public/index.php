@@ -1,6 +1,12 @@
 <!DOCTYPE html>
  <html lang="en">
   <?php require "Includes/header.php"; ?>
+  <style>
+    div.vl {
+      border-left: 1px solid white;
+      top: 16vh;
+    }
+  </style>
   <body>
     <h1 id="wiggle" style="color:white; display: inline-block; line-height: 10px; cursor: default;"><em>Util</em></h1>
     <br>
@@ -43,7 +49,7 @@
             <hr style="width: 97%; margin-left: -10px;">
             <button id="showButton">Show custom buttons</button>
             <span class="hidden-text" id="hiddenText">
-              <br>
+      
 
             </span>
           -->

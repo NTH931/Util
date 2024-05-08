@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
   <title style="color:white; text-align: center;">Util</title>
   <link rel="icon" type="image/x-icon" href="Favicons/favicon.png">
   <link rel="stylesheet" type="text/css" href="CSS/Laptop.css">

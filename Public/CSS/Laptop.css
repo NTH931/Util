@@ -109,7 +109,7 @@ input:hover {
   box-shadow: var(--drop-shadow);
 }
 
-button, .buttonStyle, input {
+button, .buttonStyle, input, input.button {
   height: 25px;
   font-size: 15px;
   margin-top: -10px;
@@ -125,7 +125,7 @@ button, .buttonStyle, input {
   margin-right: 2px;
 }
 
-button:hover, .buttonStyle:hover, input:hover {
+button:hover, .buttonStyle:hover, input:hover, input.button:hover {
 box-shadow: #151515 0 0 1px;
 transform: scale(1.05);
 }
@@ -220,15 +220,6 @@ transform: scale(1.05);
     width: 100%;
     text-align: left;
     align-self: auto;
-}
-
-.vl {
-    border-left: 1px solid white;
-    height: 83%;
-    position: absolute;
-    left: 50%;
-    margin-left: -20px;
-    top: 15%;
 }
 
 .indent {
