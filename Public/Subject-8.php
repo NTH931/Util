@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <?php require "Includes/header.php"; ?>
-  <body onload="timeout(15000)">
-    <div>
-        <h1 style="color:white; display: inline-block; line-height: 10px;">Util</h1>
-
-        <hr style="width:110%;">
-    </div>
-
-    <a style="font-size: larger;" class="spanA" href="" target="_blank">Chosen subject 2</a>
-    <br>
-    <br>
-
-    <a href="https://musicecademyapp.com/my/" target="_blank"><button>Music ecademy</button></a>
-
-    <?php include "Includes/footer.php"; ?>
-
-    </body>
-</html>
+<?php
+require "Includes/process.php"; 
+$classLink = $class8 ?? "No Class Selected";
+$subLink = $sub8 ?? "No Class Selected";
+include "Includes/template.php";

@@ -1,14 +1,22 @@
 <!DOCTYPE html>
  <html lang="en">
-  <?php require "Includes/header.php"; ?>
+  <?php
+  require "./Includes/header.php";
+  require "../Public/Includes/process.php";
+  ?>
   <style>
     div.vl {
-      border-left: 1px solid white;
+      border-left: 1px solid white !important;
       top: 16vh;
+      height: 20vh;
+    }
+
+    button {
+      margin-top: 1px;
     }
   </style>
   <body>
-    <h1 id="wiggle" style="color:white; display: inline-block; line-height: 10px; cursor: default;"><em>Util</em></h1>
+    <h1 style="color:white; display: inline-block; line-height: 10px; cursor: default;"><em>Util</em></h1>
     <br>
     <!--Header Buttons-->
     <nav>
@@ -25,25 +33,21 @@
           <!--Classes & Links to Google Classroom-->
           <h4 class="whitebg" style="max-width: 40px;"><a href="https://classroom.google.com/a/not-turned-in/all" target="_blank">To-do</a></h4>
 
-          <h4><a class="whitebg" style="max-width: 60px;" href="Subject-1.php">HuiAko</a>
+          <h4><a id="classbutton1" class="whitebg" style="max-width: 60px;" href="Subject-1.php">HuiAko</a>
 
-          <h4><a class="whitebg" style="max-width: 60px;" href="Subject-2.php">Intergrated studies</a></h4>
+          <h4><a id="classbutton2" class="whitebg" style="max-width: 60px;" href="Subject-2.php"><?php echo $sub2; ?></a></h4>
 
-          <h4><a class="whitebg" style="max-width: 60px;" href="Subject-3.php">Aotearoa histories</a></h4>
+          <h4><a id="classbutton3" class="whitebg" style="max-width: 60px;" href="Subject-3.php"><?php echo $sub3; ?></a></h4>
 
-          <h4><a class="whitebg" style="max-width: 60px;" href="Subject-4.php">Science</a></h4>
+          <h4><a id="classbutton4" class="whitebg" style="max-width: 60px;" href="Subject-4.php"><?php echo $sub4; ?></a></h4>
 
-          <h4><a class="whitebg" style="max-width: 60px;" href="Subject-5.php">Maths</a></h4>
+          <h4><a id="classbutton5" class="whitebg" style="max-width: 60px;" href="Subject-5.php"><?php echo $sub5; ?></a></h4>
 
-          <h4><a class="whitebg" style="max-width: 60px;" href="Subject-6.php">Health and PE</a></h4>
+          <h4><a id="classbutton6" class="whitebg" style="max-width: 60px;" href="Subject-6.php"><?php echo $sub6; ?></a></h4>
 
-          <h4><a class="greybg" style="max-width: 60px; color: rgb(89, 89, 89);" href="Subject-7.php">(Chosen class name 1)</a></h4>
+          <h4><a id="classbutton7" class="whitebg" style="max-width: 60px;" href="Subject-7.php"><?php echo $sub7; ?></a></h4>
 
-          <h4><a class="greybg" style="max-width: 60px; color: rgb(89, 89, 89)" href="Subject-8.php">(Chosen class name 2)</a></h4>
-
-          <h4><a class="greybg" style="max-width: 60px; color: rgb(89, 89, 89)" href="Subject-9.php">(Chosen class name 3)</a></h4>
-
-          <h4><a class="greybg" style="max-width: 60px; color: rgb(89, 89, 89)" href="Subject-10.php">(Chosen class name 4)</a></h4>
+          <h4><a id="classbutton8" class="whitebg" style="max-width: 60px;" href="Subject-8.php"><?php echo $sub8; ?></a></h4>
 
           <!--
             <hr style="width: 97%; margin-left: -10px;">
@@ -58,26 +62,28 @@
       <?php include "Includes/footer.php"; ?>
 
       </aside>
-      <div class="vl"></div>
       <section class="main">
+      <div style=" width: 49vw; border-left: 1px solid white; padding-left: 10px;">
        <h2 style="color: black;"><u>Website Links</u></h2>
        <!--Links to different useful websites-->
        <h4>Aotea</h4>
 
+       <a href="https://www.aotea.school.nz/" target="_blank"><button>Aotea Homepage</button></a>
+
        <a href="https://nz.accessit.online/ATC00/#!dashboard" target="_blank"><button>Aotea Library</button></a>
 
-       <a href="buttons.php"><button id="addNewAotea" class="plus"><b>+</b></button></a>
+       <!--<a href="buttons.php"><button id="addNewAotea" class="plus"><b>+</b></button></a>-->
 
        <!--Exam Sites-->
        <h4>Exam Sites</h4>
 
-       <a href="https://taku.nzqa.govt.nz/learner-home/" target="_blank"><button>NZQA Home - New Website</button></a>
+       <a href="https://taku.nzqa.govt.nz/learner-home/" target="_blank"><button>NZQA - New Website</button></a>
 
-       <a href="https://secure.nzqa.govt.nz/for-learners/records/index.do" target="_blank"></a><button>NZQA Home - Old Website</button></a>
+       <a href="https://secure.nzqa.govt.nz/for-learners/records/index.do" target="_blank"></a><button>NZQA - Old Website</button></a>
 
        <a href="https://www.nzceronline.org.nz/" target="_blank"><button>NZCER Online</button></a>
 
-       <a href="buttons.php"><button id="addNewExamSites" class="plus"><b>+</b></button></a>
+       <!--<a href="buttons.php"><button id="addNewExamSites" class="plus"><b>+</b></button></a>-->
 
        <!--Editors-->
        <h4>Editors</h4>
@@ -86,7 +92,7 @@
 
        <a href="https://app.luminpdf.com"target="_blank"><button>Lumin pdf reader</button></a>
 
-       <a href="buttons.php"><button id="addNewEditors" class="plus"><b>+</b></button></a>
+       <!--<a href="buttons.php"><button id="addNewEditors" class="plus"><b>+</b></button></a>-->
 
        <!--Drive-->
        <h4>Drive</h4>
@@ -105,9 +111,7 @@
 
        <a href="https://sites.google.com/u/0/?tgif=d" target=”_blank”><button>Sites</button></a>
 
-       <a href="https://drive.google.com/drive/u/0/folders/1k5h4372NBRoAeIgWfAm4vBQO5SkyVgYF" target=”_blank”><button>Game downloads</button></a>
-
-       <a href="buttons.php"><button id="addNewDrive" class="plus"><b>+</b></button></a>
+       <!--<a href="buttons.php"><button id="addNewDrive" class="plus"><b>+</b></button></a>-->
 
 
 
@@ -126,13 +130,21 @@
 
        <a href="https://convertio.co/" target="_blank"><button>Convertio</button></a>
 
-       <a href="https://monkeytype.com/" target="_blank"><button>Monkeytype</button></a>
 
-       <a href="buttons.php"><button id="addNewOther" class="plus"><b>+</b></button></a>
+       <!--<a href="buttons.php"><button id="addNewOther" class="plus"><b>+</b></button></a>-->
 
+      </div>
       </section>
     </div>
     <script>
+      $('document').ready( () => {
+        for (let i = 1; i < 9; i++) {
+          const element = document.querySelector("#classbutton" + i);
+          if (element.innerHTML === "HIDE_NULL") {
+            $(element).css("display", "none");
+          };
+        };
+      });
     </script>
   </body>
  </html>

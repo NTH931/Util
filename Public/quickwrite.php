@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php require "Includes/header.php"; ?>
-    <style>
-      body {
-        overflow-y: hidden;
-      }
-    </style>
+    <?php
+  require "Includes/header.php";
+  //require_once "Includes/process.php"; 
+  ?>
   <body>
     <textarea id="textarea">
     </textarea>

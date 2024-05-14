@@ -1,6 +1,9 @@
 <!DOCTYPE html>
  <html lang="en">
-  <?php require "Includes/header.php"; ?>
+  <?php
+  require "Includes/header.php";
+  require_once "Includes/process.php"; 
+  ?>
      <style>
       h4 {
         margin-top: 0;

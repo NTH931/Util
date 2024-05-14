@@ -1,3 +1,30 @@
 {
-  
+    "class1": {
+        "subject": "HuiAko",
+        "link": "https://classroom.google.com/c/NTgxNTMwMzYxNjYy"
+    },
+    "class2": {
+        "subject": "Intergrated Studies",
+        "link": "https://classroom.google.com/c/NjU3MjY2MjA3MTAy"
+    },
+    "class3": {
+        "subject": "Maths",
+        "link": "https://classroom.google.com/c/NjYxNjAzMjg1MTUz"
+    },
+    "class4": {
+        "subject": "Science",
+        "link": "https://classroom.google.com/c/NjYxNTQyNDg2MjA4"
+    },
+    "class5": {
+        "subject": "Coding For Gaming",
+        "link": "https://classroom.google.com/c/NjYxNjAxMzQ5NTg1"
+    },
+    "class6": {
+        "subject": "Music Jazz",
+        "link": "https://classroom.google.com/c/NjYxODgyOTc5Mjk5"
+    },
+    "class7": {
+        "subject": "Music",
+        "link": "https://classroom.google.com/c/NjI4Nzc3MjE2MTA0"
+    }
 }
