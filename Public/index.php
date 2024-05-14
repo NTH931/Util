@@ -85,15 +85,6 @@
 
        <!--<a href="buttons.php"><button id="addNewExamSites" class="plus"><b>+</b></button></a>-->
 
-       <!--Editors-->
-       <h4>Editors</h4>
-
-       <a href="https://www.canva.com/" target=”_blank”><button>Canva</button></a>
-
-       <a href="https://app.luminpdf.com"target="_blank"><button>Lumin pdf reader</button></a>
-
-       <!--<a href="buttons.php"><button id="addNewEditors" class="plus"><b>+</b></button></a>-->
-
        <!--Drive-->
        <h4>Drive</h4>
 
