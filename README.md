@@ -88,6 +88,6 @@ You can Contribute to Util! All you have to do is send an email to noah.haran@ao
 
 ## License
 
-Version 3.0.0
+Version 4.0.0
 
 &copy; 2022 - 2024 Noah Haran. All rights reserved.
