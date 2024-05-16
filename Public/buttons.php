@@ -2,7 +2,7 @@
  <html lang="en">
   <?php
   require "Includes/header.php";
-  require_once "Includes/process.php"; 
+  require_once "Includes/process.php";
   ?>
      <style>
       h4 {
@@ -16,17 +16,17 @@
       }
 
       div {
-        border: var(--normal-border);
+        border: 2px solid white;
         padding: 5px;
         padding-top: 0px;
       }
 
       div > div {
-        background-color: var(--dark-aquamarine);
+        background-color: rgb(0, 112, 112);
       }
 
       b {
-        color: var(--light-green);
+        color: rgb(105, 212, 23);
       }
 
       div > a {
@@ -39,13 +39,13 @@
       }
 
       button {
-        background-color: var(--light-green);
+        background-color: rgb(105, 212, 23);
         margin-top: 0px;
         width: 100px;
       }
 
       button.red {
-        background-color: var(--light-red);
+        background-color: rgb(255, 43, 43);
         margin-top: 0px;
       }
 
@@ -55,7 +55,7 @@
       }
 
       .notDiv {
-        border-bottom: var(--normal-border);
+        border-bottom: 2px solid white;
         padding: 5px;
         margin-left: -10px;
         margin-right: -10px;
@@ -70,7 +70,7 @@
         border: 0px;
       }
      </style>
-   
+
    <body>
       <div class="notDiv cancel">
         <h1 style="color:white; display: inline-block; line-height: 10px; cursor: default;"><em>Buttons</em></h1>
