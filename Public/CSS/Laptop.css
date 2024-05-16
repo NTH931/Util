@@ -2,19 +2,19 @@
 /* DARK Mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color: white !important; /* color of link backgrounds */
-    --text-color: white !important; /* color of text */
-    --background-color: darkcyan !important; /* color of background */
-    --hr-color: white !important; /* color of dividers */
-    --a-color: blue !important; /* color of a tags */
+    --color: #1d1e2f !important; /* color of link backgrounds */
+    --text-color: #cccccc !important; /* color of text */
+    --background-color: #121212 !important; /* color of background */
+    --hr-color: #0099ff !important; /* color of dividers */
+    --a-color: #0099ff !important; /* color of a tags */
   }
 }
 
 /* LIGHT Mode */
 @media (prefers-color-scheme: light) {
   :root {
-    --color: white !important; /* color of link backgrounds */
-    --text-color: white !important; /* color of text */
+    --color: #eeeeee !important; /* color of link backgrounds */
+    --text-color: #dddeee !important; /* color of text */
     --background-color: darkcyan !important; /* color of background */
     --hr-color: white !important; /* color of dividers */
     --a-color: blue !important; /* color of a tags */
