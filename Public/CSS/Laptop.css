@@ -28,7 +28,7 @@
 }
 
 body {
-    overflow-y: hidden;
+    overflow: hidden;
     width: 98%;
     background-repeat: no-repeat;
     background-size: 100%, 100%;
