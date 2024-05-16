@@ -1,13 +1,24 @@
 /*--------------------------------------Global Variables----------------------------------------*/
+/* DARK Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: white !important; /* color of link backgrounds */
+    --text-color: white !important; /* color of text */
+    --background-color: darkcyan !important; /* color of background */
+    --hr-color: white !important; /* color of dividers */
+    --a-color: blue !important; /* color of a tags */
+  }
+}
 
-:root {
-  --normal-border: 2px solid white;
-  --dark-aquamarine: rgb(0, 112, 112);
-  --light-red: rgb(255, 43, 43);
-  --light-green: rgb(105, 212, 23);
-  --darker-cyan: rgb(0r style="margin-top: 100vh;">, 109, 109);
-  --drop-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  --red-drop-shadow: 0 2px 16px 0 rgba(148, 0, 0, 0.426), 0 17px 50px 0 rgba(127, 0, 0, 0.423);
+/* LIGHT Mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color: white !important; /* color of link backgrounds */
+    --text-color: white !important; /* color of text */
+    --background-color: darkcyan !important; /* color of background */
+    --hr-color: white !important; /* color of dividers */
+    --a-color: blue !important; /* color of a tags */
+  }
 }
 
 /*-----------------------------------Tag Attribute Vaiables-------------------------------------*/
@@ -16,21 +27,12 @@
   font-family: serif;
 }
 
-object {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding-left: 6px;
-    top: 94vh;
-    width: 100%;
-}
-
 body {
     overflow-y: hidden;
     width: 98%;
     background-repeat: no-repeat;
     background-size: 100%, 100%;
-    background-color: darkcyan;
+    background-color: var(--background-color);
 }
 
 textarea {
@@ -51,23 +53,24 @@ textarea:focus {
 a, span {
     text-decoration: none;
     font-size: 16px;
-    color: blue;
+    color: var(--a-color);
     width: fit-content;
 }
 
 h1 {
-  color: white;
+  color: var(--text-color);
   display: inline-block;
   line-height: 10px;
   cursor: default;
 }
 
-h4 {
-  color: black;
+h2, h3, h4, h5, h6 {
+  color: var(--text-color);
 }
 
-h2, h3, h5, h6 {
-  color: white;
+nav {
+  border-bottom: 2px solid var(--hr-color);
+  padding-bottom: 10px;
 }
 
 aside {
@@ -87,29 +90,12 @@ footer {
     bottom: 10px;
 }
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-table > th, td {
-    font-weight: 700;
-}
-
-td, th {
-    border: 1px solid black;
-    text-align: left;
-    padding: 8px;
-    height: 65px;
-}
-
 input:hover {
   transform: none;
-  box-shadow: var(--drop-shadow);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-button, input, input.button, select, option {
+button, input[type="button"], input.button, select, option {
   height: 25px;
   font-size: 15px;
   margin-top: -10px;
@@ -117,82 +103,22 @@ button, input, input.button, select, option {
   border-radius: 69000px;
   display: inline-block;
   transition-duration: 0.2s;
-  color: blue;
-  background-color: white;
+  color: var(--a-color);
+  background-color: var(--color);
   cursor: pointer;
   text-decoration: none;
   margin-right: 2px;
 }
-input.button {
+input.button, input[type="button"] {
   width: 2500px !important;
 }
 
-button:hover, input:hover, input.button:hover, select:hover {
+button:hover, input[type="button"]:hover, input.button:hover, select:hover {
 box-shadow: #151515 0 0 1px;
 transform: scale(1.05);
 }
 
 /*------------------------------------------User-Made variables-------------------------------------*/
-
-.left {
-    text-align: end;
-}
-
-.newF {
-  height: 25px;
-  margin-top: -10px;
-  border: 2px;
-  border-radius: 69000px;
-  display: inline-block;
-  transition-duration: 0.2s;
-  color: blue;
-  background-color: rgb(255, 85, 85);
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.newF:hover {
-  box-shadow: var(--red-drop-shadow);
-  transform: scale(1.05);
-}
-
-.unavaliable {
-    height: 25px;
-    margin-top: -10px;
-    border: 2px;
-    border-radius: 7.5px;
-    display: inline-block;
-    transition-duration: 0.2s;
-    color: white;
-    background-color: blue;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.unavaliable:hover {
-    box-shadow: var(--drop-shadow);
-    background-color: blue;
-}
-
-.txtBox {
-    height: 25px;
-    margin-top: -10px;
-    border: 2px;
-    border-radius: 7.5px;
-    display: inline-block;
-    background-color: white;
-    text-decoration: none;
-    transition-duration: 0.5s;
-}
-
-.txtBox:focus, .txtBox:hover {
-  box-shadow: var(--drop-shadow);
-  background-color: lightgrey;
-}
-
-.txtBox:valid {
-  background-color: rgb(54, 191, 0);
-}
 
 .whitebg, span {
     height: fit-content + 20px;
@@ -200,36 +126,16 @@ transform: scale(1.05);
     border: 2px;
     text-align: center;
     border-radius: 7.5px;
-    background-color: white;
+    background-color: var(--color);
     text-decoration: none;
     padding-left: 5px;
     padding-right: 5px;
-}
-
-.greybg {
-  height: fit-content + 20px;
-  margin-top: -5px;
-  border: 2px;
-  text-align: center;
-  border-radius: 7.5px;
-  background-color: rgba(255, 255, 255, 0.500);
-  text-decoration: none;
-  padding-left: 5px;
-  padding-right: 5px;
 }
 
 .main {
     width: 100%;
     text-align: left;
     align-self: auto;
-}
-
-.indent {
-    text-indent: 10px;
-}
-
-.link {
-  color: blue;
 }
 
 button.plus {
@@ -241,11 +147,11 @@ button.plus {
   border-radius: 7.5px;
   display: inline-block;
   transition-duration: 0.2s;
-  color: white;
+  color: var(--text-color);
   text-align: center;
   text-overflow: initial;
   background-color: rgba(255, 255, 255, 0);
-  border-color: white;
+  border-color: var(--text-color);
   cursor: pointer;
   text-decoration: none;
   font-size: 15px;
@@ -254,44 +160,6 @@ button.plus {
 button.plus:hover {
   box-shadow: 4px 6px 10px 0 rgba(0, 0, 0, 0.5), 0 17px 50px 0 rgba(0, 0, 0, 0.5);
   transform: none;
-  background-color: var(--darker-cyan);
-}
-
-.header {
-  padding-top: 10px;
-  border-bottom: var(--normal-border);
-  margin-left: -10px;
-  margin-right: -10px;
-  padding: 7px;
-  background-color: rgb(127, 127, 127);
-}
-
-.spanCancel {
-  color: red;
-  background-color: rgb(255, 85, 85);
-  height: fit-content + 20px;
-  margin-top: 0px;
-  border: 0px;
-  text-align: center;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.buttonWithLink {
-  background-color: green; /* Change to the desired color */
-  transition-duration: 0.3s; /* Add transition duration */
-}
-
-.hidden-text {
-  display: none;
-}
-
-.visible {
-  display: inline; /* or any other appropriate display property */
-}
-
-.disabled-button{
-  cursor: not-allowed;
 }
 
 .spanA {
@@ -300,7 +168,7 @@ button.plus:hover {
   border: 2px;
   text-align: center;
   border-radius: 7.5px;
-  background-color: white;
+  background-color: var(--color);
   text-decoration: none;
   padding-left: 5px;
   padding-right: 5px;

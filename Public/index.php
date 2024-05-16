@@ -5,12 +5,6 @@
   require "../Public/Includes/process.php";
   ?>
   <style>
-    div.vl {
-      border-left: 1px solid white !important;
-      top: 16vh;
-      height: 20vh;
-    }
-
     button {
       margin-top: 1px;
     }
@@ -24,7 +18,6 @@
       <a href="quickwrite.php"><button>QuickType</button></a>
       <a href="https://whanau.aotea.school.nz" target="_blank"><button>Whanau Portal</button></a>
       <a href="Links.php"><button>Edit Classes</button></a>
-      <hr>
     </nav>
 
     <div>
@@ -53,7 +46,7 @@
             <hr style="width: 97%; margin-left: -10px;">
             <button id="showButton">Show custom buttons</button>
             <span class="hidden-text" id="hiddenText">
-      
+
 
             </span>
           -->
@@ -63,8 +56,8 @@
 
       </aside>
       <section class="main">
-      <div style=" width: 49vw; border-left: 1px solid white; padding-left: 10px;">
-       <h2 style="color: black;"><u>Website Links</u></h2>
+      <div style="width: 49vw; border-left: 2px solid var(--hr-color); padding-left: 10px;">
+       <h2><u>Website Links</u></h2>
        <!--Links to different useful websites-->
        <h4>Aotea</h4>
 
