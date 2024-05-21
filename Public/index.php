@@ -40,11 +40,11 @@
         </div>
       </aside>
 
-      <h5 style="position: absolute; bottom: 20px; left: 25%;">Right-click on the class to go straight to the classroom, or left click to go to the 3 most used links in the class.</h5>
+      <h6 style="position: absolute; bottom: 20px; left: 6px;">Right-click on the class to go straight to the classroom, or left click to go to the 3 most used links in the class.</h6>
       <?php require_once "Includes/footer.php"; ?>
 
       <section class="main">
-        <div style="width: 49vw; border-left: 2px solid var(--hr-color); padding-left: 10px;">
+        <div style="width: 49vw; border-left: 2px solid var(--hr-color); padding-bottom: 9vh ; padding-left: 10px;">
           <h2><u>Website Links</u></h2>
 
           <!--Links to different useful websites-->
@@ -102,6 +102,8 @@
           <a href="https://www.unscreen.com/"target="_blank"><button>Unscreen</button></a>
 
           <a href="https://convertio.co/" target="_blank"><button>Convertio</button></a>
+
+          <a href="https://www.arealme.com/category/ability-tests/en" target="_blank"><button>Arealme - Ability Tests</button>
 
 
           <!--<a href="buttons.php"><button id="addNewOther" class="plus"><b>+</b></button></a>-->

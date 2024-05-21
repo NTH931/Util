@@ -78,7 +78,7 @@
     <h4 style="margin-left: 10px;">The link MUST start with 'https://classroom.google.com/', then your class ID (Found in the addres bar after https://classroom.google.com/)</h4>
     <!--HuiAko-->
     <div>
-    <form method="post" action="./../Private/PHP/class.php">
+    <form method="post" action="../Private/PHP/class.php">
         <label for="class1" style="white-space: nowrap;">HuiAko</label>
         <input pattern="https?://classroom\.google\.com/.*|" style="cursor: text;" type="text" size="30px" id="class1" name="class1" class="button" autocomplete="off">
 
