@@ -1,4 +1,4 @@
 <footer>
   <div></div>
-  <h6>Version_4.2.0 | <em>Util</em></h6>
+  <h6>Version 4.2.1 | <em>Util</em></h6>
 </footer>
