@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 /*--------------------------------------Global Variables----------------------------------------*/
 /* DARK Mode */
 @media (prefers-color-scheme: dark) {
@@ -24,11 +26,11 @@
 /*-----------------------------------Tag Attribute Vaiables-------------------------------------*/
 
 * {
-  font-family: serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
-    overflow: hidden;
+    overflow-x: hidden;
     width: 98%;
     background-repeat: no-repeat;
     background-size: 100%, 100%;
@@ -85,11 +87,6 @@ section {
     margin-left: 50%;
 }
 
-footer {
-    position: absolute;
-    bottom: 10px;
-}
-
 input:hover {
   transform: none;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
@@ -118,7 +115,17 @@ box-shadow: #151515 0 0 1px;
 transform: scale(1.05);
 }
 
+div {
+  color: var(--text-color);
+}
+
 /*------------------------------------------User-Made variables-------------------------------------*/
+
+.title {
+  color: var(--text-color);
+  display: inline-block;
+  line-height: 10px;
+}
 
 .whitebg, span {
     height: fit-content + 20px;
@@ -136,6 +143,10 @@ transform: scale(1.05);
     width: 100%;
     text-align: left;
     align-self: auto;
+}
+
+section.main {
+  padding-bottom: 100px;
 }
 
 button.plus {
@@ -174,4 +185,23 @@ button.plus:hover {
   padding-right: 5px;
 }
 
+.hrcolor {
+  border-bottom: 2px solid var(--hr-color);
+  padding-bottom: 8px;
+  width: 99vw;
+}
+
 /*----------------------------------------Id Variables------------------------------------------*/
+
+footer > h6 {
+  position: absolute;
+  border-top: 2px solid var(--hr-color);
+  left: -150px;
+  bottom: -18px;
+  width: 120%;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  padding-top: .5rem;
+  padding-left: .5rem;
+  text-align: center;
+}
