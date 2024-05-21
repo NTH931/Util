@@ -45,12 +45,12 @@ if (!function_exists('detect_int')) {
 
 if (!function_exists('getUrl')) {
   function getUrl($jsonFile, $classid) {
-      $jsonString = file_get_contents($jsonFile) ?? exit("ERROR: File does not exist.");
+      $jsonString = file_get_contents($jsonFile) ?? die("ERROR: File does not exist.");
       $data = json_decode($jsonString, true);
       if (isset($data[$classid])) {
           return [
-              'link' => $data[$classid]['link'] ?? "#",
-              'subject' => $data[$classid]['subject'] ?? "No Class Specified"
+              'link' => $data[$classid]['link'] ?? null,
+              'subject' => $data[$classid]['subject'] ?? null
           ];
       }
       return null;
