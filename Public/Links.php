@@ -2,7 +2,7 @@
  </html>
     <?php
   require "Includes/header.php";
-  require_once "Includes/process.php"; 
+  require_once "Includes/process.php";
   ?>
     <style>
         /* Your CSS styles here */
@@ -37,14 +37,14 @@
           margin-left: 5px;
           transform: none;
         }
-        
+
         select:focus {
             border: none;
         }
         select:hover {
             transform: none;
         }
-        
+
         label {
             top: 4px;
             padding-left: 10px;
@@ -54,7 +54,7 @@
             border-radius: 10px;
             margin-left: 5px;
             margin-right: 18px;
-            background-color: white;
+            background-color: var(--color);
             color: blue;
         }
         label:hover {

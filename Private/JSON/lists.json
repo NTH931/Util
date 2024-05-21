@@ -1,0 +1,507 @@
+{
+  "classbuttons": {
+    "HuiAko": [
+      "<a href='https://app.careercentral.school.nz/sso' target='_blank'><button>Career Central</button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "INT": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "INS": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ENG": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "MAT": [
+      "<a href='https://www.transum.org/' target='_blank'>Transum<button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "SCI": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "AHI": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "HPE": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "HEA": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "PEO": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "PED": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "PES": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "TGC": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "TDE": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "DTE": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "TPD": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "TBT": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "TDV": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "TFD": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "TTX": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "JDT": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "CAR": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "HOS": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "PHT": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ARP": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ARD": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ART": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "MUS": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "MUJ": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "DAN": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "DRA": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "MPA": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "FSI": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "SFC": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "SSU": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "SNS": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "SCB": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "SPS": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "BIO": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "CHE": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "PHY": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ELS": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "FRE": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "FRA": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "JPN": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "JPA": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "MDR": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "MDA": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "MAO": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "MAA": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "SAM": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "EPS": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "PWR": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "BUS": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "COM": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "COT": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "GEO": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "HIS": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "CLS": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ECC": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "FIN": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "MED": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "PSY": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "TOU": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ENGA": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ENGB": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ENGC": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ENGD": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ENGF": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ENGG": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ENGH": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ENGJ": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ENGK": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ENGL": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ENGM": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ENGN": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "ENGQ": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "MAC": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "MAS": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "GAT": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "PAT": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "WTA": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "SPEC": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+    ],
+
+    "LST": [
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>",
+      "<a href='' target='_blank'><button></button></a>"
+]
+  }
+}
