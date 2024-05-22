@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*--------------------------------------Global Variables----------------------------------------*/
+/* DARK Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: #1d1e2f !important; /* color of link backgrounds */
+    --text-color: #cccccc !important; /* color of text */
+    --background-color: #121212 !important; /* color of background */
+    --hr-color: #0099ff !important; /* color of dividers */
+    --a-color: #0099ff !important; /* color of a tags */
+  }
+}
+
+/* LIGHT Mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color: #eeeeee !important; /* color of link backgrounds */
+    --text-color: #dddeee !important; /* color of text */
+    --background-color: darkcyan !important; /* color of background */
+    --hr-color: white !important; /* color of dividers */
+    --a-color: blue !important; /* color of a tags */
+  }
+}
+
+/*-----------------------------------Tag Attribute Vaiables-------------------------------------*/
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    width: 98%;
+    background-repeat: no-repeat;
+    background-size: 100%, 100%;
+    background-color: var(--background-color);
+}
+
+textarea {
+  border: 2px solid black;
+  width: 225vh;
+  height: 98vh;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.1em;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+textarea:focus {
+  border: 2px solid black;
+  outline: none;
+}
+
+a, span {
+    text-decoration: none;
+    font-size: 16px;
+    color: var(--a-color);
+    width: fit-content;
+}
+
+h1 {
+  color: var(--text-color);
+  display: inline-block;
+  line-height: 10px;
+  cursor: default;
+}
+
+h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+}
+
+nav {
+  border-bottom: 2px solid var(--hr-color);
+  padding-bottom: 10px;
+}
+
+aside {
+    float: left;
+    width: 50%;
+    padding-left: 5px;
+    text-align: left;
+}
+
+section {
+    size: 50%;
+    margin-left: 50%;
+}
+
+input:hover {
+  transform: none;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+button, input[type="button"], input.button, select, option {
+  height: 25px;
+  font-size: 15px;
+  margin-top: -10px;
+  border: 2px;
+  border-radius: 69000px;
+  display: inline-block;
+  transition-duration: 0.2s;
+  color: var(--a-color);
+  background-color: var(--color);
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 2px;
+}
+input.button, input[type="button"] {
+  width: 2500px !important;
+}
+
+button:hover, input[type="button"]:hover, input.button:hover, select:hover {
+box-shadow: #151515 0 0 1px;
+transform: scale(1.05);
+}
+
+div {
+  color: var(--text-color);
+}
+
+/*------------------------------------------User-Made variables-------------------------------------*/
+
+.title {
+  color: var(--text-color);
+  display: inline-block;
+  line-height: 10px;
+}
+
+.whitebg, span {
+    height: fit-content + 20px;
+    margin-top: -5px;
+    border: 2px;
+    text-align: center;
+    border-radius: 7.5px;
+    background-color: var(--color);
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.main {
+    width: 100%;
+    text-align: left;
+    align-self: auto;
+}
+
+section.main {
+  padding-bottom: 100px;
+}
+
+button.plus {
+  height: 25px;
+  width: 25px !important;
+  margin-top: -10px;
+  text-align: center;
+  border: 2px solid;
+  border-radius: 7.5px;
+  display: inline-block;
+  transition-duration: 0.2s;
+  color: var(--text-color);
+  text-align: center;
+  text-overflow: initial;
+  background-color: rgba(255, 255, 255, 0);
+  border-color: var(--text-color);
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+button.plus:hover {
+  box-shadow: 4px 6px 10px 0 rgba(0, 0, 0, 0.5), 0 17px 50px 0 rgba(0, 0, 0, 0.5);
+  transform: none;
+}
+
+.spanA {
+  height: fit-content + 20px;
+  margin-top: -5px;
+  border: 2px;
+  text-align: center;
+  border-radius: 7.5px;
+  background-color: var(--color);
+  text-decoration: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.hrcolor {
+  border-bottom: 2px solid var(--hr-color);
+  padding-bottom: 8px;
+  width: 99vw;
+}
+
+/*----------------------------------------Id Variables------------------------------------------*/
+
+footer > h6 {
+  position: absolute;
+  border-top: 2px solid var(--hr-color);
+  left: -150px;
+  bottom: -18px;
+  width: 120%;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  padding-top: .5rem;
+  padding-left: .5rem;
+  text-align: center;
+}
