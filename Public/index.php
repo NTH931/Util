@@ -34,7 +34,6 @@
             if (${"class$i"} && ${"sub$i"}) : ?>
               <h4><a id="classbutton<?= $i ?>" class="whitebg" style="max-width: 60px;" href="Subject-<?= $i ?>.php" classhref="<?= ${"class$i"} ?>"><?= ${"sub$i"} ?></a></h4>
           <?php
-            echo PHP_EOL;
             endif;
           endfor;
           ?>
