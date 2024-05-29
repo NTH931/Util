@@ -1,0 +1,58 @@
+@import url("Laptop.css");
+
+/* Style the tab container */
+.ui-tabs {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: none !important;
+  border-left: 2px solid var(--hr-color) !important;
+  border-radius: none !important;
+  height: calc(79vh + 2px);
+  padding: 0;
+}
+
+/* Style the tab titles */
+.ui-tabs .ui-tabs-nav {
+  background-color: var(--background-color);
+  border: none;
+  border-radius: none;
+}
+
+.ui-tabs .ui-tabs-nav li {
+  display: inline-block;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: none;
+  transition-duration: 500ms;
+}
+
+.ui-tabs:hover .ui-tabs-nav:hover li:hover {
+  background-color: var(--hr-color);
+}
+
+.ui-tabs .ui-tabs-nav a {
+  display: block;
+  border: none;
+  padding: 0 0;
+  text-decoration: none;
+  color: var(--color);
+  border-radius: none;
+}
+
+.ui-tabs .ui-tabs-nav .ui-state-active a {
+  background-color: var(--hr-color);
+  color: var(--text-color);
+  border: none;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Style the tab content */
+.ui-tabs .ui-tabs-panel {
+  background-color: var(--background-color);
+  border: none;
+  border-radius: none;
+  padding: 10px;
+}

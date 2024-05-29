@@ -1,5 +1,5 @@
 <?php
-require "Includes/process.php";
+require_once "Includes/header.php";
 $subject = 5;
 $classLink = $class5 ?? "No Class Selected";
 global $subLink;
