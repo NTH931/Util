@@ -1,7 +1,17 @@
+<<<<<<< HEAD
 <?php
 require "Includes/header.php";
 ?>
   <style>
+=======
+<!DOCTYPE html>
+ <html lang="en">
+  <?php
+  require "Includes/header.php";
+  require_once "Includes/process.php";
+  ?>
+     <style>
+>>>>>>> 21276100a7496e93e1737a23934a634c49fac588
       h4 {
         margin-top: 0;
         margin-bottom: 0;
@@ -66,7 +76,13 @@ require "Includes/header.php";
         padding: 2px;
         border: 0px;
       }
+<<<<<<< HEAD
   </style>
+=======
+     </style>
+
+   <body>
+>>>>>>> 21276100a7496e93e1737a23934a634c49fac588
       <div class="notDiv cancel">
         <h1 style="color:white; display: inline-block; line-height: 10px; cursor: default;"><em>Buttons</em></h1>
 
