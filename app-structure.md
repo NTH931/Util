@@ -12,8 +12,7 @@ Util
 │   │   └── phplog.log
 │   └── PHP
 │       ├── class.php
-│       ├── log.php
-│       └── sql.php
+│       └── log.php
 ├── Public
 |   ├── buttons.php
 |   ├── CSS
@@ -26,9 +25,11 @@ Util
 |   │   ├── classes.php
 |   │   ├── footer.php
 |   │   ├── header.php
-|   │   └── process.php
+|   │   ├── process.php
+|   |   └── template.php
 |   ├── index.php
 |   ├── Links.php
+|   ├── buttons.php
 |   ├── quickwrite.php
 |   ├── Subject-10.php
 |   ├── Subject-1.php
@@ -38,7 +39,6 @@ Util
 |   ├── Subject-5.php
 |   ├── Subject-6.php
 |   ├── Subject-7.php
-|   ├── Subject-8.php
-|   └── Subject-9.php
+|   └── Subject-8.php
 ├── app-structure.md
-└── README.md 
+└── README.md

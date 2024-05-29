@@ -1,74 +1,56 @@
 <?php
+// php.ini settings
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL | E_STRICT);
 
-global $_EXEC;
+// Constants
+@define("current_dir", basename(__DIR__));
+@define("realpath_dir", realpath(__DIR__));
+@define("STORAGE_FILE", "Private/JSON/storage.json");
 
-/** @var array */
-$_EXEC = array(
-  "SymLinkFile" => $_SERVER['SCRIPT_FILENAME'],
-  "request" => $_SERVER['REQUEST_METHOD'],
-  "ip" => $_SERVER['REMOTE_ADDR'],
-  "user_agent" => $_SERVER['HTTP_USER_AGENT'],
-  "uri" => $_SERVER['REQUEST_URI'],
-  "SymLinkDirectory" => $_SERVER['DOCUMENT_ROOT'],
-  "file" => basename(__DIR__),
-  "directory" => realpath(__DIR__)
-);
-
-@define("STORAGE_FILE", "Private/JSON/storage.json"); //For other positions
-
-if (!function_exists("list_directory")) {
-  function listDirectory($dir) {
-    $files = scandir($dir);
-    foreach($files as $file) {
-        if ($file == '.' || $file == '..') continue;
-        echo $dir . '/' . $file . PHP_EOL;
-        if (is_dir($dir . '/' . $file)) {
-            listDirectory($dir . '/' . $file);
-        }
+// Functions
+function listDirectory($dir) {
+  $files = scandir($dir);
+  foreach($files as $file) {
+    if ($file == '.' || $file == '..') continue;
+      echo $dir . '/' . $file . PHP_EOL;
+    if (is_dir($dir . '/' . $file)) {
+      listDirectory($dir . '/' . $file);
     }
   }
 }
 
-if (!function_exists('detect_int')) {
-  function detect_int($string) {
-    if (preg_match('/\d+/', $string, $matches)) {
-      $number = $matches[0];
-      return $number;
-    } else {
-      return null;
-    }
+function detect_int($string) {
+  if (preg_match('/\d+/', $string, $matches)) {
+    $number = $matches[0];
+    return $number;
+  } else {
+    return null;
   }
 }
 
-if (!function_exists('getUrl')) {
-  function getUrl($jsonFile, $classid) {
-      $jsonString = file_get_contents($jsonFile) ?? die("ERROR: File does not exist.");
-      $data = json_decode($jsonString, true);
-      if (isset($data[$classid])) {
-          return [
-              'link' => $data[$classid]['link'] ?? null,
-              'subject' => $data[$classid]['subject'] ?? null
-          ];
-      }
-      return null;
+function getUrl($jsonFile, $classid) {
+  $jsonString = file_get_contents($jsonFile) ?? die("ERROR: File does not exist.");
+  $data = json_decode($jsonString, true);
+  if (isset($data[$classid])) {
+    return [
+      'link' => $data[$classid]['link'] ?? null,
+      'subject' => $data[$classid]['subject'] ?? null
+    ];
   }
 }
 
-
-if (!function_exists('echo_buttons'))    {
-  function echo_buttons($jsonFile, $class) {
-    $file = file_get_contents($jsonFile);
-        $data = json_decode($file, true);
-        for ($i = 0; $i <= 2; $i++) {
-          echo $data["classbuttons"][$class][$i];
-          echo "<br><br>";
-        }
+function echo_buttons($jsonFile, $class) {
+  $file = file_get_contents($jsonFile);
+  $data = json_decode($file, true);
+  for ($i = 0; $i <= 2; $i++) {
+    echo $data["classbuttons"][$class][$i];
+    echo "<br><br>";
   }
 }
 
+// Global Array
 global $subjects;
 $subjects = array(
   "INVALID" => null,
@@ -157,8 +139,10 @@ $subjects = array(
   "LST" => "Learning Support Transition"
 );
 
+// JSON File Path - Needs to be changed
 $jsonData = "/home/noahharan/Util/Private/JSON/storage.json";
 
+// Setting Class Names and Links
 for ($i = 1; $i < 9; $i++) {
   try {
   $classData = getUrl($jsonData, "class$i");

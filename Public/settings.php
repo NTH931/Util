@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <?php
-    include "Includes/header.php";
-    include "Includes/process.php";
-  ?>
+<?php
+include "Includes/header.php";
+?>
   <style>
     :root {
       --txt-color: --text-color;
@@ -14,7 +11,6 @@
     }
 
   </style>
-  <body>
     <h1 style="text-decoration: underline;">Settings</h1>
     <form action="Includes/setprocess.php" method="post">
 

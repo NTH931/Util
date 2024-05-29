@@ -1,13 +1,3 @@
-
-
-//--------------------------------------Const Variables---------------------------------------//
-
-/*
-const (variables) = function () {
-  Code snippet
-}
-*/
-
 // Go backwards Once
 export const historyBack = function() {
   history.back()
@@ -17,9 +7,7 @@ export const historyBack = function() {
 export const historyFwd = function() {
   history.forward()
 };
-//------------------------------------------While Loops---------------------------------------//
 
-//--------------------------------------Normal Variables--------------------------------------//
 export function logData() {
   var data = {
       timestamp: new Date().toISOString(),
@@ -39,16 +27,6 @@ export function logData() {
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.error('Error logging data:', error));
-}
-
-
-export function goBack() {
-  historyBack()
-}
-
-// Timeout
-export function timeout(_time) {
-  setTimeout(goBack, _time);
 }
 
 export function URL_build(...arrays) {

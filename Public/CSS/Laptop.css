@@ -1,37 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
 /*--------------------------------------Global Variables----------------------------------------*/
 /* DARK Mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color: #1d1e2f !important; /* color of link backgrounds */
-    --text-color: #cccccc !important; /* color of text */
-    --background-color: #121212 !important; /* color of background */
-    --hr-color: #0099ff !important; /* color of dividers */
-    --a-color: #0099ff !important; /* color of a tags */
+    --color: #1d1e2f; /* color of link backgrounds */
+    --text-color: #cccccc; /* color of text */
+    --background-color: #121212; /* color of background */
+    --hr-color: #0077ff; /* color of dividers */
+    --a-color: #0077ff; /* color of a tags */
   }
 }
 
 /* LIGHT Mode */
 @media (prefers-color-scheme: light) {
   :root {
-    --color: #eeeeee !important; /* color of link backgrounds */
-    --text-color: #dddeee !important; /* color of text */
-    --background-color: darkcyan !important; /* color of background */
-    --hr-color: white !important; /* color of dividers */
-    --a-color: blue !important; /* color of a tags */
+    --color: #dddddd; /* color of link backgrounds */
+    --text-color: #dddeee; /* color of text */
+    --background-color: #007878; /* color of background */
+    --hr-color: #ffffff; /* color of dividers */
+    --a-color: #0000ff; /* color of a tags */
   }
 }
 
 /*-----------------------------------Tag Attribute Vaiables-------------------------------------*/
 
-* {
-  font-family: "Roboto", sans-serif;
-}
-
 body {
-    overflow-x: hidden;
-    width: 98%;
+    /*overflow: hidden;*/
+    display: block;
     background-repeat: no-repeat;
     background-size: 100%, 100%;
     background-color: var(--background-color);
@@ -44,7 +38,7 @@ textarea {
   margin: 0;
   box-sizing: border-box;
   font-size: 1.1em;
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 textarea:focus {
@@ -66,8 +60,9 @@ h1 {
   cursor: default;
 }
 
-h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6, text {
   color: var(--text-color);
+  display: block;
 }
 
 nav {
@@ -83,8 +78,10 @@ aside {
 }
 
 section {
-    size: 50%;
-    margin-left: 50%;
+    size: 25%;
+    left: calc(50% + 9px);
+    float: right;
+    position: absolute;
 }
 
 input:hover {
@@ -107,7 +104,7 @@ button, input[type="button"], input.button, select, option {
   margin-right: 2px;
 }
 input.button, input[type="button"] {
-  width: 2500px !important;
+  width: 2500px;
 }
 
 button:hover, input[type="button"]:hover, input.button:hover, select:hover {
@@ -151,7 +148,7 @@ section.main {
 
 button.plus {
   height: 25px;
-  width: 25px !important;
+  width: 25px ;
   margin-top: -10px;
   text-align: center;
   border: 2px solid;
@@ -204,4 +201,14 @@ footer > h6 {
   padding-top: .5rem;
   padding-left: .5rem;
   text-align: center;
+}
+
+.clearfix::after {
+  content: "";
+  display: inline-block;
+  clear: both;
+}
+
+#tabs {
+  width: fit-content;
 }
