@@ -12,12 +12,7 @@ Util
 │   │   └── phplog.log
 │   └── PHP
 │       ├── class.php
-<<<<<<< HEAD
 │       └── log.php
-=======
-│       ├── log.php
-│       └── sql.php
->>>>>>> 21276100a7496e93e1737a23934a634c49fac588
 ├── Public
 |   ├── buttons.php
 |   ├── CSS
@@ -30,17 +25,11 @@ Util
 |   │   ├── classes.php
 |   │   ├── footer.php
 |   │   ├── header.php
-<<<<<<< HEAD
 |   │   ├── process.php
 |   |   └── template.php
 |   ├── index.php
 |   ├── Links.php
 |   ├── buttons.php
-=======
-|   │   └── process.php
-|   ├── index.php
-|   ├── Links.php
->>>>>>> 21276100a7496e93e1737a23934a634c49fac588
 |   ├── quickwrite.php
 |   ├── Subject-10.php
 |   ├── Subject-1.php
@@ -50,13 +39,6 @@ Util
 |   ├── Subject-5.php
 |   ├── Subject-6.php
 |   ├── Subject-7.php
-<<<<<<< HEAD
 |   └── Subject-8.php
 ├── app-structure.md
 └── README.md
-=======
-|   ├── Subject-8.php
-|   └── Subject-9.php
-├── app-structure.md
-└── README.md 
->>>>>>> 21276100a7496e93e1737a23934a634c49fac588

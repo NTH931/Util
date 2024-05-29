@@ -1,62 +1,31 @@
-<<<<<<< HEAD
-=======
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
->>>>>>> 21276100a7496e93e1737a23934a634c49fac588
 /*--------------------------------------Global Variables----------------------------------------*/
 /* DARK Mode */
 @media (prefers-color-scheme: dark) {
   :root {
-<<<<<<< HEAD
     --color: #1d1e2f; /* color of link backgrounds */
     --text-color: #cccccc; /* color of text */
     --background-color: #121212; /* color of background */
     --hr-color: #0077ff; /* color of dividers */
     --a-color: #0077ff; /* color of a tags */
-=======
-    --color: #1d1e2f !important; /* color of link backgrounds */
-    --text-color: #cccccc !important; /* color of text */
-    --background-color: #121212 !important; /* color of background */
-    --hr-color: #0099ff !important; /* color of dividers */
-    --a-color: #0099ff !important; /* color of a tags */
->>>>>>> 21276100a7496e93e1737a23934a634c49fac588
   }
 }
 
 /* LIGHT Mode */
 @media (prefers-color-scheme: light) {
   :root {
-<<<<<<< HEAD
     --color: #dddddd; /* color of link backgrounds */
     --text-color: #dddeee; /* color of text */
     --background-color: #007878; /* color of background */
     --hr-color: #ffffff; /* color of dividers */
     --a-color: #0000ff; /* color of a tags */
-=======
-    --color: #eeeeee !important; /* color of link backgrounds */
-    --text-color: #dddeee !important; /* color of text */
-    --background-color: darkcyan !important; /* color of background */
-    --hr-color: white !important; /* color of dividers */
-    --a-color: blue !important; /* color of a tags */
->>>>>>> 21276100a7496e93e1737a23934a634c49fac588
   }
 }
 
 /*-----------------------------------Tag Attribute Vaiables-------------------------------------*/
 
-<<<<<<< HEAD
 body {
     /*overflow: hidden;*/
     display: block;
-=======
-* {
-  font-family: "Roboto", sans-serif;
-}
-
-body {
-    overflow-x: hidden;
-    width: 98%;
->>>>>>> 21276100a7496e93e1737a23934a634c49fac588
     background-repeat: no-repeat;
     background-size: 100%, 100%;
     background-color: var(--background-color);
@@ -69,11 +38,7 @@ textarea {
   margin: 0;
   box-sizing: border-box;
   font-size: 1.1em;
-<<<<<<< HEAD
   font-family: Arial, Helvetica, sans-serif;
-=======
-  font-family: Arial, Helvetica, sans-serif !important;
->>>>>>> 21276100a7496e93e1737a23934a634c49fac588
 }
 
 textarea:focus {
@@ -95,14 +60,9 @@ h1 {
   cursor: default;
 }
 
-<<<<<<< HEAD
 h2, h3, h4, h5, h6, text {
   color: var(--text-color);
   display: block;
-=======
-h2, h3, h4, h5, h6 {
-  color: var(--text-color);
->>>>>>> 21276100a7496e93e1737a23934a634c49fac588
 }
 
 nav {
@@ -118,15 +78,10 @@ aside {
 }
 
 section {
-<<<<<<< HEAD
     size: 25%;
     left: calc(50% + 9px);
     float: right;
     position: absolute;
-=======
-    size: 50%;
-    margin-left: 50%;
->>>>>>> 21276100a7496e93e1737a23934a634c49fac588
 }
 
 input:hover {
@@ -149,11 +104,7 @@ button, input[type="button"], input.button, select, option {
   margin-right: 2px;
 }
 input.button, input[type="button"] {
-<<<<<<< HEAD
   width: 2500px;
-=======
-  width: 2500px !important;
->>>>>>> 21276100a7496e93e1737a23934a634c49fac588
 }
 
 button:hover, input[type="button"]:hover, input.button:hover, select:hover {
@@ -197,11 +148,7 @@ section.main {
 
 button.plus {
   height: 25px;
-<<<<<<< HEAD
   width: 25px ;
-=======
-  width: 25px !important;
->>>>>>> 21276100a7496e93e1737a23934a634c49fac588
   margin-top: -10px;
   text-align: center;
   border: 2px solid;
@@ -254,7 +201,6 @@ footer > h6 {
   padding-top: .5rem;
   padding-left: .5rem;
   text-align: center;
-<<<<<<< HEAD
 }
 
 .clearfix::after {
@@ -265,6 +211,4 @@ footer > h6 {
 
 #tabs {
   width: fit-content;
-=======
->>>>>>> 21276100a7496e93e1737a23934a634c49fac588
 }
