@@ -28,8 +28,14 @@
   transition-duration: 500ms;
 }
 
+.tab-container .ui-tabs .ui-tabs-nav .ui-state-default {
+  border-radius: 0;
+}
+
 .ui-tabs:hover .ui-tabs-nav:hover li:hover {
   background-color: var(--hr-color);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .ui-tabs .ui-tabs-nav a {
