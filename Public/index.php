@@ -64,17 +64,17 @@
           </ul>
           <div id="tab-1">
             <?=
-              "<h2>Aotea</h2>" .
+              "<h4>Aotea</h4>" .
               links("https://www.aotea.school.nz/", "Aotea College") .
               links("https://nz.accessit.online/ATC00/#!dashboard", "Aotea Library") .
               plus("addNewAotea") .
 
-              "<h2>Exam Sites</h2>" .
+              "<h4>Exam Sites</h4>" .
               links("https://taku.nzqa.govt.nz/learner-home/", "NZQA") .
               links("https://www.nzceronline.org.nz/", "NZCER Online") .
               plus("addNewExamSite") .
 
-              "<h2>Google Services</h2>" .
+              "<h4>Google Services</h4>" .
               links("https://drive.google.com/", "Drive") .
               links("https://classroom.google.com/", "Classroom") .
               links("https://docs.google.com/document/", "Docs") .
