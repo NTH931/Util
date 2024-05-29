@@ -92,16 +92,15 @@ input:hover {
 button, input[type="button"], input.button, select, option {
   height: 25px;
   font-size: 15px;
-  margin-top: -10px;
   border: 2px;
-  border-radius: 69000px;
+  border-radius: 100px;
   display: inline-block;
   transition-duration: 0.2s;
   color: var(--a-color);
   background-color: var(--color);
   cursor: pointer;
   text-decoration: none;
-  margin-right: 2px;
+  margin-right: 5px;
 }
 input.button, input[type="button"] {
   width: 2500px;
