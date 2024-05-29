@@ -1,16 +1,6 @@
-<<<<<<< HEAD
 <?php
 require "Includes/header.php";
 ?>
-=======
-<!DOCTYPE html>
-<html lang="en">
-    <?php
-  require "Includes/header.php";
-  //require_once "Includes/process.php"; 
-  ?>
-  <body>
->>>>>>> 21276100a7496e93e1737a23934a634c49fac588
     <textarea id="textarea">
     </textarea>
     <script>
