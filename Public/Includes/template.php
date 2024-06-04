@@ -5,7 +5,6 @@ require "Includes/header.php";
 
   $buttonfound = false;
   $file_path = "../Private/JSON/lists.json";
-  $currentfile = $_EXEC["file"];
 
   if (file_exists($file_path)) {
     $jsonFile = file_get_contents($file_path);
@@ -13,27 +12,34 @@ require "Includes/header.php";
     die("<b>Fatal Error:</b> File '$file_path' does not exists");
   }
   $file = json_decode($jsonFile, true);
-  $subjects = $file['classbuttons'];
-  $jsonpath = $subjects[$subLink]
+  $file['classbuttons'];
+  $subs = array_flip($subjects);
+
+  $jsonpath = $file["classbuttons"][$subs[$sublink]];
+  echo $jsonpath;
   ?>
 
 
     <body onload="timeout(15000)">
-    <div>
-      <h1 id="title"><em>Util</em></h1>
-    </div>
-      <h3 class="hrcolor"><a href="<?php echo $classLink; ?>" style="font-size: larger;" target="_blank" id="storedLinkButton1" class="spanA storedLinkButton"><?php echo $subLink; ?></a></h3>
+      <h3 class="hrcolor" style="padding-bottom: 25px; padding-top: 10px;">
+        <a href="<?php echo $classLink; ?>" style="font-size: larger;" target="_blank" class="spanA">
+          <?php echo $subLink; ?>
+        </a>
+      </h3>
+
       <?php
+        //Buttons from links.json
         if (isset($jsonpath)) {
           for ($i = 0; $i < 3; $i++) {
             $int = $i + 1;
             $buttonfound = false;
-            if ($jsonpath[$i] !== "<a href='' target='_blank'><button></button></a>"){
+            $buttonsnotfound = 1;
+            if ($jsonpath[$i] !== "<button onclick=\"window.location.href=''\"></button>"){
               echo $jsonpath[$i];
               $buttonfound = true;
             }
             if (!$buttonfound){
-              echo "<h4>No button found for Button $int.</h4>";
+              echo "<h4>Button $int not found for $subLink.</h4>";
             }
           }
         } else {

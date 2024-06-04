@@ -5,9 +5,11 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL | E_STRICT);
 
 // Constants
-@define("current_dir", basename(__DIR__));
-@define("realpath_dir", realpath(__DIR__));
+@define("BASE_DIR", basename(__DIR__));
+@define("FILE", basename($_SERVER["SCRIPT_FILENAME"]));
+@define("REAL_FILE", pathinfo(FILE, PATHINFO_FILENAME));
 @define("STORAGE_FILE", "Private/JSON/storage.json");
+
 
 // Functions
 function listDirectory($dir) {
@@ -19,6 +21,21 @@ function listDirectory($dir) {
       listDirectory($dir . '/' . $file);
     }
   }
+}
+
+function Camel(string $string, bool $concat = false) {
+  $lower = strtolower($string);
+  $words = preg_split('/[^a-z0-9]+/', $lower);
+  $CamelCase = ucfirst($words[0]);
+
+  for ($i = 1; $i < count($words); $i++) {
+      $CamelCase .= ucfirst($words[$i]);
+      if (!$concat) {
+          $CamelCase .= " ";
+      }
+  }
+
+  return $CamelCase;
 }
 
 function detect_int($string) {
@@ -53,7 +70,8 @@ function echo_buttons($jsonFile, $class) {
 // Global Array
 global $subjects;
 $subjects = array(
-  "INVALID" => null,
+  "INVALID" => "null",
+  "HuiAko" => "HuiAko",
   "INT" => "Intergrated Studies",
   "INS" => "Intergrated Studies Neuro-Diverse",
   "ENG" => "English",

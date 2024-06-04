@@ -1,64 +1,107 @@
 @import url("Laptop.css");
 
-/* Style the tab container */
+:root {
+  --min-shrink: 30px;
+  --max-shrink: 38px;
+}
+
+/* Entire UI */
 .ui-tabs {
   background-color: var(--background-color);
   color: var(--text-color);
   border: none !important;
+  height: 76vh;
   border-left: 2px solid var(--hr-color) !important;
-  border-radius: none !important;
-  height: calc(79vh + 2px);
+  border-radius: 0 !important;
   padding: 0;
+  cursor: default;
 }
 
-/* Style the tab titles */
+/* Tab Container */
 .ui-tabs .ui-tabs-nav {
   background-color: var(--background-color);
+  width: 49vw;
+  vertical-align: middle;
+  display: flex;
   border: none;
-  border-radius: none;
-}
-
-.ui-tabs .ui-tabs-nav li {
-  display: inline-block;
-  background-color: var(--background-color);
-  margin: 0;
-  padding: 0;
-  border: none;
-  border-radius: none;
-  transition-duration: 500ms;
-}
-
-.tab-container .ui-tabs .ui-tabs-nav .ui-state-default {
   border-radius: 0;
 }
 
-.ui-tabs:hover .ui-tabs-nav:hover li:hover {
-  background-color: var(--hr-color);
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-.ui-tabs .ui-tabs-nav a {
-  display: block;
-  border: none;
-  padding: 0 0;
-  text-decoration: none;
-  color: var(--color);
-  border-radius: none;
-}
-
-.ui-tabs .ui-tabs-nav .ui-state-active a {
-  background-color: var(--hr-color);
-  color: var(--text-color);
-  border: none;
-  transform: none !important;
-  transition: none !important;
-}
-
-/* Style the tab content */
-.ui-tabs .ui-tabs-panel {
+/* Individual Tabs Outside */
+.ui-tabs .ui-tabs-nav li, .ui-tabs .ui-tabs-nav a {
+  display: flex;
   background-color: var(--background-color);
+  cursor: pointer !important;
+  margin: 0;
+  height: fit-content;
+  padding: 0;
+  flex: 1;
   border: none;
-  border-radius: none;
+  border-radius: 0;
+  margin-left: auto;
+  text-align: center;
+  overflow: hidden;
+  transition: height 0.4s ease, background-color 0.5s ease, border 0.5s ease;
+}
+
+/* Both tabs :hover */
+li#child-1 a:hover, li#child-2 a:hover {
+  background-color: var(--a-color);
+  height: 38px;
+  font-size: 1rem !important;
+  color: var(--text-color);
+  cursor: default;
+}
+
+/* Active Button */
+.ui-tabs .ui-tabs-nav .ui-state-active a {
+  background-color: var(--a-color);
+  color: var(--text-color);
+  border: 1px solid var(--text-color) !important;
+  height: 38px;
+  text-align: center;
+}
+
+/* Active Button :hover */
+.ui-tabs .ui-tabs-nav .ui-state-active a {
+  background-color: var(--a-color);
+  color: var(--text-color);
+  height: 38px !important;
+  text-align: center;
+  transition: height 0.4s ease, background-color 0.5s ease, border 0.5s ease;
+}
+
+/* Inactive Button */
+.ui-tabs .ui-tabs-nav :not(.ui-state-active) a {
+  background-color: var(--background-color-l);
+  color: var(--text-color);
+  border: 1px solid var(--text-color) !important;
+  outline-offset: 2px;
+  height: 30px;
+  transition: height 0.4s ease, background-color 0.5s ease, border 0.5s ease;
+}
+
+/* Inactive Button :hover */
+.ui-tabs .ui-tabs-active :not(.ui-state-active) a:hover {
+  background-color: var(--background-color-l);
+  transition: height 0.4s ease, background-color 0.5s ease, border 0.5s ease;
+}
+
+/* Active Tab Contents */
+.ui-tabs .ui-tabs-panel {
+  background-color: inherit;
+  border: none;
+  border-radius: 0;
   padding: 10px;
+  cursor: default !important;
+}
+
+/* Tab 1 */
+li#child-1, li#child-1 a {
+  border-right: none !important;
+}
+
+/* Tab 2 */
+li#child-2, li#child-2 a {
+  --placeholder: null;
 }

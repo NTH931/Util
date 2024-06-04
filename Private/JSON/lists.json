@@ -2,506 +2,506 @@
   "classbuttons": {
     "HuiAko": [
       "<a href='https://app.careercentral.school.nz/sso' target='_blank'><button>Career Central</button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "INT": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "INS": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ENG": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "MAT": [
       "<a href='https://www.transum.org/' target='_blank'>Transum<button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "SCI": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "AHI": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "HPE": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "HEA": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "PEO": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "PED": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "PES": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "TGC": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "TDE": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "DTE": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "TPD": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "TBT": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "TDV": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "TFD": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "TTX": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "JDT": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "CAR": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "HOS": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "PHT": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ARP": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ARD": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ART": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "MUS": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href='https://musicecademyapp.com/login/index.php'\">Music Ecademy</button></a>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "MUJ": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "DAN": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "DRA": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "MPA": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "FSI": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "SFC": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "SSU": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "SNS": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "SCB": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "SPS": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "BIO": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "CHE": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "PHY": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ELS": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "FRE": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "FRA": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "JPN": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "JPA": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "MDR": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "MDA": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "MAO": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "MAA": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "SAM": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "EPS": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "PWR": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "BUS": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "COM": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "COT": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "GEO": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "HIS": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "CLS": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ECC": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "FIN": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "MED": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "PSY": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "TOU": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ENGA": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ENGB": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ENGC": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ENGD": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ENGF": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ENGG": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ENGH": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ENGJ": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ENGK": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ENGL": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ENGM": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ENGN": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "ENGQ": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "MAC": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "MAS": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "GAT": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "PAT": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "WTA": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "SPEC": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
     ],
 
     "LST": [
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>",
-      "<a href='' target='_blank'><button></button></a>"
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>",
+      "<button onclick=\"window.location.href=''\"></button>"
 ]
   }
 }

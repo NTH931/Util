@@ -5,6 +5,7 @@
     --color: #1d1e2f; /* color of link backgrounds */
     --text-color: #cccccc; /* color of text */
     --background-color: #121212; /* color of background */
+    --background-color-l: #222222; /* color of light background */
     --hr-color: #0077ff; /* color of dividers */
     --a-color: #0077ff; /* color of a tags */
   }
@@ -16,6 +17,7 @@
     --color: #dddddd; /* color of link backgrounds */
     --text-color: #dddeee; /* color of text */
     --background-color: #007878; /* color of background */
+    --background-color-l: #005656; /* color of light background */
     --hr-color: #ffffff; /* color of dividers */
     --a-color: #0000ff; /* color of a tags */
   }
@@ -24,7 +26,7 @@
 /*-----------------------------------Tag Attribute Vaiables-------------------------------------*/
 
 body {
-    /*overflow: hidden;*/
+    overflow: hidden;
     display: block;
     background-repeat: no-repeat;
     background-size: 100%, 100%;
@@ -38,7 +40,6 @@ textarea {
   margin: 0;
   box-sizing: border-box;
   font-size: 1.1em;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 textarea:focus {
@@ -67,6 +68,10 @@ h2, h3, h4, h5, h6, text {
 
 nav {
   border-bottom: 2px solid var(--hr-color);
+  margin-left: -8px;
+  margin-right: -8px;
+  text-indent: 5px;
+  height: fit-content;
   padding-bottom: 10px;
 }
 
@@ -78,9 +83,9 @@ aside {
 }
 
 section {
-    size: 25%;
-    left: calc(50% + 9px);
+    size: 50%;
     float: right;
+    left: 50%;
     position: absolute;
 }
 
@@ -115,7 +120,7 @@ div {
   color: var(--text-color);
 }
 
-/*------------------------------------------User-Made variables-------------------------------------*/
+/*----------------------------------------User-Made variables-------------------------------------*/
 
 .title {
   color: var(--text-color);

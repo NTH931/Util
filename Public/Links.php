@@ -70,7 +70,6 @@ require "Includes/header.php";
 
   </style>
     <!-- Your HTML content here -->
-    <h1>Links</h1>
     <hr>
     <h4 style="margin-left: 10px;">The link MUST start with 'https://classroom.google.com/', then your class ID (Found in the addres bar after https://classroom.google.com/)</h4>
     <!--HuiAko-->
