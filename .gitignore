@@ -1,10 +1,16 @@
 .vscode/
+.gitignore
 test.*
+extras.*
+Extras.*
 .env
 *.log
-log
+Log/
+log/
 *.min.js
 *.min.css
 .cache/
 .sessions/
 .idea/
+app-structure.md
+404notfound.php
