@@ -1,0 +1,10 @@
+.vscode/
+test.*
+.env
+*.log
+log
+*.min.js
+*.min.css
+.cache/
+.sessions/
+.idea/
