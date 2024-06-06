@@ -1,4 +1,11 @@
 <?php
+#############
+# IMPORTANT #
+#############
+# Need to replace the JSON file storage with the localStorage($key, $value) variable in javascript.
+
+
+
 # php.ini settings
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -8,7 +15,7 @@ error_reporting(E_ALL | E_STRICT);
 # Current Folder for __FILE__
 @define("BASE_DIR", basename(__DIR__));
 # The path before /Util
-@define("SYS_DIR", "/" . systemPath(__DIR__) . "/Util/");
+@define("SYS_DIR", systemPath(__DIR__) . "/Util/");
 # The full path of the Directory
 @define("FULL_DIR", realpath(__DIR__));
 # The exact location of the current file
@@ -80,15 +87,16 @@ function echo_buttons($jsonFile, $class) {
 }
 
 function systemPath($path) {
-  $path = trim($path, '/');
-  $directories = explode('/', $path);
+  $path = trim($path, '\\/');
+  $directories = explode(DIRECTORY_SEPARATOR, $path);
   $utilPosition = array_search('Util', $directories);
   if ($utilPosition === false) {
       return null; # Or handle the error as needed
   }
 
   $directoriesBeforeUtil = array_slice($directories, 0, $utilPosition);
-  return implode('/', $directoriesBeforeUtil);
+  $result = implode(DIRECTORY_SEPARATOR, $directoriesBeforeUtil);
+  return $result ? $result : '.'; // Return '.' if result is empty (no directories before 'Util')
 }
 
 # Global Array
@@ -181,16 +189,13 @@ $subjects = array(
   "LST" => "Learning Support Transition"
 );
 
-# JSON File Path - Needs to be changed
-$jsonData = SYS_DIR . "Private/JSON/storage.json";
-
 # Setting Class Names and Links
 for ($i = 1; $i < 9; $i++) {
   try {
-  $classData = getUrl($jsonData, "class$i");
-  ${"class$i"} = isset($classData["link"]) ? htmlspecialchars($classData['link']) : "#";
-  if ($i == 1) continue;
-  ${"sub$i"} = isset($classData["subject"]) ? htmlspecialchars($classData["subject"]) : "";
+    $classData = getUrl(SYS_DIR . "Private/JSON/storage.json", "class$i");
+    ${"class$i"} = isset($classData["link"]) ? htmlspecialchars($classData['link']) : "#";
+    if ($i == 1) continue;
+    ${"sub$i"} = isset($classData["subject"]) ? htmlspecialchars($classData["subject"]) : "";
   } catch (Exception $e) {
     exit("Error on iteration $i: $e");
   }
