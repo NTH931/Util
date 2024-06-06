@@ -20,7 +20,7 @@
           ";
         }
       }
-      //The header on every page
+      #The header on every page
       $pos = strpos(REAL_FILE, "Subject-");
       switch (REAL_FILE) {
         case "index" :
@@ -35,7 +35,7 @@
         case "Subject-6" :
         case "Subject-7" :
         case "Subject-8" :
-          //echofile("Util - $subLink");
+          #echofile("Util - $subLink");
           break;
 
         case "quickwrite" :

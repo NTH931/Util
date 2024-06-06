@@ -1,17 +1,29 @@
 <?php
-// php.ini settings
+# php.ini settings
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL | E_STRICT);
 
-// Constants
+# Constants
+# Current Folder for __FILE__
 @define("BASE_DIR", basename(__DIR__));
-@define("FILE", basename($_SERVER["SCRIPT_FILENAME"]));
-@define("REAL_FILE", pathinfo(FILE, PATHINFO_FILENAME));
+# The path before /Util
+@define("SYS_DIR", "/" . systemPath(__DIR__) . "/Util/");
+# The full path of the Directory
+@define("FULL_DIR", realpath(__DIR__));
+# The exact location of the current file
+@define("FULL_PATH", realpath(__DIR__) . "/" . basename(__FILE__));
+# Current file exact
+@define("CURR_FILE", basename(__FILE__));
+# Current file executing
+@define("EXT_FILE", basename($_SERVER["SCRIPT_FILENAME"]));
+# Current file executing (without extension)
+@define("REAL_FILE", pathinfo(EXT_FILE, PATHINFO_FILENAME));
+# JSON storage file
 @define("STORAGE_FILE", "Private/JSON/storage.json");
 
 
-// Functions
+# Functions
 function listDirectory($dir) {
   $files = scandir($dir);
   foreach($files as $file) {
@@ -67,7 +79,19 @@ function echo_buttons($jsonFile, $class) {
   }
 }
 
-// Global Array
+function systemPath($path) {
+  $path = trim($path, '/');
+  $directories = explode('/', $path);
+  $utilPosition = array_search('Util', $directories);
+  if ($utilPosition === false) {
+      return null; # Or handle the error as needed
+  }
+
+  $directoriesBeforeUtil = array_slice($directories, 0, $utilPosition);
+  return implode('/', $directoriesBeforeUtil);
+}
+
+# Global Array
 global $subjects;
 $subjects = array(
   "INVALID" => "null",
@@ -157,10 +181,10 @@ $subjects = array(
   "LST" => "Learning Support Transition"
 );
 
-// JSON File Path - Needs to be changed
-$jsonData = "/home/noahharan/Util/Private/JSON/storage.json";
+# JSON File Path - Needs to be changed
+$jsonData = SYS_DIR . "Private/JSON/storage.json";
 
-// Setting Class Names and Links
+# Setting Class Names and Links
 for ($i = 1; $i < 9; $i++) {
   try {
   $classData = getUrl($jsonData, "class$i");

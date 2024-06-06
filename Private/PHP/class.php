@@ -1,9 +1,9 @@
 <?php
 
 
-// Ensure that the data is being sent via POST
+# Ensure that the data is being sent via POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Define the subjects array
+    # Define the subjects array
     $subjects = array(
         "INVALID" => null,
         "INT" => "Intergrated Studies",
@@ -112,46 +112,46 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $jsonFilePath = '../../Private/JSON/storage.json';
 
-    // Load existing data from storage.json
+    # Load existing data from storage.json
     $existingData = json_decode(file_get_contents($jsonFilePath), true);
     if ($existingData === null) {
         $existingData = [];
     }
 
-    // Update existing data with new values
+    # Update existing data with new values
     foreach ($data as $classKey => $classValue) {
         if ($classValue !== null) {
-            // Check if the class key exists in the existing data
+            # Check if the class key exists in the existing data
             if (isset($existingData[$classKey])) {
-                // Update only the non-null values
+                # Update only the non-null values
                 foreach ($classValue as $key => $value) {
                     if ($value !== null) {
                         $existingData[$classKey][$key] = $value;
                     }
                 }
             } else {
-                // Add the new class key-value pair
+                # Add the new class key-value pair
                 $existingData[$classKey] = $classValue;
             }
         }
     }
 
-    // Write the updated data back to storage.json
+    # Write the updated data back to storage.json
     try {
         $jsonData = json_encode($existingData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         file_put_contents($jsonFilePath, $jsonData);
 
-        // Display success alert
+        # Display success alert
         echo "<script>alert('File updated successfully.');</script>";
 
-        // Redirect to the specified page
+        # Redirect to the specified page
         header("Location: ../../Public/index.php");
         exit();
   } catch (Exception $e) {
-    // Display error alert
+    # Display error alert
     echo "<script>alert('Error writing to file: " . $e->getMessage() . "');</script>";
 
-    // Redirect to the error page
+    # Redirect to the error page
     header("Location: ../../Public/Links.php");
     exit();
   }

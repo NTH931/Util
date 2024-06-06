@@ -28,7 +28,7 @@ require "Includes/header.php";
       </h3>
 
       <?php
-        //Buttons from links.json
+        # Buttons from links.json
         if (isset($jsonpath)) {
           for ($i = 0; $i < 3; $i++) {
             $int = $i + 1;

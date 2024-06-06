@@ -1,6 +1,8 @@
 .vscode/
 .gitignore
 test.*
+extras/
+Extras/
 extras.*
 Extras.*
 .env

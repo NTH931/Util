@@ -60,6 +60,7 @@
             <li id="child-2"><a href="#tab-2">Timetable</a></li>
           </ul>
           <div id="tab-1">
+            <div style='position: relative; border-top: 2px solid var(--hr-color); margin-top: -6px; margin-right: -10px; margin-left: -10px'></div>
             <?=
               "<h4>Aotea</h4>" .
               links("https://www.aotea.school.nz/", "Aotea College") .
