@@ -6,6 +6,7 @@ Extras/
 extras.*
 Extras.*
 .env
+.ht*
 *.log
 Log/
 log/

@@ -25,6 +25,10 @@
 
 /*-----------------------------------Tag Attribute Vaiables-------------------------------------*/
 
+* {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
 body {
     overflow: hidden;
     display: block;
@@ -63,6 +67,7 @@ h1 {
 
 h2, h3, h4, h5, h6, text {
   color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
   display: block;
 }
 
@@ -129,7 +134,9 @@ div {
 }
 
 .whitebg, span {
-    height: fit-content + 20px;
+    display: block;
+    height: fit-content;
+    width: fit-content;
     margin-top: -5px;
     border: 2px;
     text-align: center;
@@ -215,4 +222,30 @@ footer > h6 {
 
 #tabs {
   width: fit-content;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.popout-wrapper {
+  position: relative;
+  margin-right: 20px; /* Space between pop-out elements */
+}
+
+.popout {
+  display: inline-block;
+  padding: 10px;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  position: absolute;
+  left: -100%; /* Position it to the left of the parent initially */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.popout-wrapper:hover .popout {
+  transform: translateX(0);
 }

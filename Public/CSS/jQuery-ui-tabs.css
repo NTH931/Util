@@ -1,10 +1,5 @@
 @import url("Laptop.css");
 
-:root {
-  --min-shrink: 30px;
-  --max-shrink: 38px;
-}
-
 /* Entire UI */
 .ui-tabs {
   background-color: var(--background-color);

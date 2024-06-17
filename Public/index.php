@@ -5,15 +5,18 @@
 
   function links(string $href, string $text, bool $_blank = true) {
     if ($_blank === true) {
-      return "<button onclick=\"window.open('$href', '_blank')\">$text</button>";
+      return "<button onclick=\"window.open('$href', '_blank')\">$text</button>\n";
     } else {
-      return "<button onclick=\"window.location.href = '$href'\">$text</button>";
+      return "<button onclick=\"window.location.href = '$href'\">$text</button>\n";
     }
   }
   function plus(string $id) {
-    return "<button id='$id' class='plus' onclick=\"window.location.href='buttons.php#$id'\"><b>+</b></button>";
+    return "<button id='$id' class='plus' onclick=\"window.location.href='buttons.php#$id'\"><b>+</b></button>\n";
   }
 
+  function classes($i, $text, $href) {
+    return "<h4><a id='classbuttons$i' class='whitebg' href='$href'>$text</a></h4>";
+  }
   ?>
   <style>
     button {
@@ -22,7 +25,6 @@
   </style>
   <body>
     <br>
-
     <nav>
       <?=
         links("https://www.google.com/", "Google") .
@@ -31,23 +33,13 @@
         links("Links.php", "Edit Classes", false)
       ?>
     </nav>
-
     <div>
       <aside>
         <div>
           <!--Classes & Links to Google Classroom-->
           <h4><a id="todo" class="whitebg" style="max-width: 45px;" href="https://classroom.google.com/a/not-turned-in/all" target="_blank">To-do</a></h4>
 
-          <h4><a id="classbutton1" class="whitebg" style="max-width: 60px;" href="Subject-1.php" classhref="<?= $class1 ?>">HuiAko</a></h4>
-
-          <?php
-          for ($i = 2; $i <= 8; $i++) :
-            if (${"class$i"} && ${"sub$i"}) : ?>
-              <h4><a id="classbutton<?= $i ?>" class="whitebg" style="max-width: 60px;" href="Subject-<?= $i ?>.php" classhref="<?= ${"class$i"} ?>"><?= ${"sub$i"} ?></a></h4>
-          <?php
-            endif;
-          endfor;
-          ?>
+          <script type="module", src="js/classbuilder.js"></script>
         </div>
       </aside>
 
@@ -62,18 +54,18 @@
           <div id="tab-1">
             <div style='position: relative; border-top: 2px solid var(--hr-color); margin-top: -6px; margin-right: -10px; margin-left: -10px'></div>
             <?=
-              "<h4>Aotea</h4>" .
+              "<h4>Aotea</h4>\n" .
               links("https://www.aotea.school.nz/", "Aotea College") .
               links("https://nz.accessit.online/ATC00/#!dashboard", "Aotea Library") .
               links("https://soraapp.com/home", "New Library") .
               plus("addNewAotea") .
 
-              "<h4>Exam Sites</h4>" .
+              "<h4>Exam Sites</h4>\n" .
               links("https://taku.nzqa.govt.nz/learner-home/", "NZQA") .
               links("https://www.nzceronline.org.nz/", "NZCER Online") .
               plus("addNewExamSite") .
 
-              "<h4>Google Services</h4>" .
+              "<h4>Google Services</h4>\n" .
               links("https://drive.google.com/", "Drive") .
               links("https://classroom.google.com/", "Classroom") .
               links("https://docs.google.com/document/", "Docs") .
@@ -83,7 +75,7 @@
               links("https://sites.google.com/", "Sites") .
               plus("addNewDrive") .
 
-              "<h4>Others</h4>" .
+              "<h4>Others</h4>\n" .
               links("https://kahoot.it", "Kahoot!") .
               links("https://dashboard.blooket.com/stats", "Blooket") .
               links("https://remove.bg", "Remove.bg") .
@@ -103,6 +95,7 @@
     <script>
       $(document).ready(function() {
         $('#tabs').tabs();
+        console.log("Tabs activated.")
       });
     </script>
   </body>

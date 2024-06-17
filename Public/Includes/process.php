@@ -4,8 +4,6 @@
 #############
 # Need to replace the JSON file storage with the localStorage($key, $value) variable in javascript.
 
-
-
 # php.ini settings
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -28,7 +26,8 @@ error_reporting(E_ALL | E_STRICT);
 @define("REAL_FILE", pathinfo(EXT_FILE, PATHINFO_FILENAME));
 # JSON storage file
 @define("STORAGE_FILE", "Private/JSON/storage.json");
-
+# Newline
+@define("nl", "\n");
 
 # Functions
 function listDirectory($dir) {
@@ -57,35 +56,6 @@ function Camel(string $string, bool $concat = false) {
   return $CamelCase;
 }
 
-function detect_int($string) {
-  if (preg_match('/\d+/', $string, $matches)) {
-    $number = $matches[0];
-    return $number;
-  } else {
-    return null;
-  }
-}
-
-function getUrl($jsonFile, $classid) {
-  $jsonString = file_get_contents($jsonFile) ?? die("ERROR: File does not exist.");
-  $data = json_decode($jsonString, true);
-  if (isset($data[$classid])) {
-    return [
-      'link' => $data[$classid]['link'] ?? null,
-      'subject' => $data[$classid]['subject'] ?? null
-    ];
-  }
-}
-
-function echo_buttons($jsonFile, $class) {
-  $file = file_get_contents($jsonFile);
-  $data = json_decode($file, true);
-  for ($i = 0; $i <= 2; $i++) {
-    echo $data["classbuttons"][$class][$i];
-    echo "<br><br>";
-  }
-}
-
 function systemPath($path) {
   $path = trim($path, '\\/');
   $directories = explode(DIRECTORY_SEPARATOR, $path);
@@ -99,10 +69,14 @@ function systemPath($path) {
   return $result ? $result : '.'; // Return '.' if result is empty (no directories before 'Util')
 }
 
+function fromJs() {
+  $inputJSON = file_get_contents('php://input');
+  return json_decode($inputJSON, true); // Decode JSON into associative array
+}
+
 # Global Array
 global $subjects;
 $subjects = array(
-  "INVALID" => "null",
   "HuiAko" => "HuiAko",
   "INT" => "Intergrated Studies",
   "INS" => "Intergrated Studies Neuro-Diverse",
@@ -188,15 +162,3 @@ $subjects = array(
   "SPEC" => "Learning Support - SPEC",
   "LST" => "Learning Support Transition"
 );
-
-# Setting Class Names and Links
-for ($i = 1; $i < 9; $i++) {
-  try {
-    $classData = getUrl(SYS_DIR . "Private/JSON/storage.json", "class$i");
-    ${"class$i"} = isset($classData["link"]) ? htmlspecialchars($classData['link']) : "#";
-    if ($i == 1) continue;
-    ${"sub$i"} = isset($classData["subject"]) ? htmlspecialchars($classData["subject"]) : "";
-  } catch (Exception $e) {
-    exit("Error on iteration $i: $e");
-  }
-}

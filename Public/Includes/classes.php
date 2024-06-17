@@ -1,3 +1,4 @@
+  <?= nl ?>
   <option value="INVALID" selected hidden>Pick a Subject</option>
   <option value="INT">Intergrated Studies</option>
   <option value="INS">Intergrated Studies - Neuro-Diverse</option>
@@ -93,3 +94,4 @@
 
   <option value="SPEC">Learning Support - SPEC</option>
   <option value="LST">Learning Support - Transition</option>
+  <?= nl ?>

@@ -1,507 +1,1229 @@
 {
-  "classbuttons": {
-    "HuiAko": [
-      "<a href='https://app.careercentral.school.nz/sso' target='_blank'><button>Career Central</button></a>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "INT": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "INS": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ENG": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "MAT": [
-      "<a href='https://www.transum.org/' target='_blank'>Transum<button></button></a>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "SCI": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "AHI": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "HPE": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "HEA": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "PEO": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "PED": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "PES": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "TGC": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "TDE": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "DTE": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "TPD": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "TBT": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "TDV": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "TFD": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "TTX": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "JDT": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "CAR": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "HOS": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "PHT": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ARP": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ARD": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ART": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "MUS": [
-      "<button onclick=\"window.location.href='https://musicecademyapp.com/login/index.php'\">Music Ecademy</button></a>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "MUJ": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "DAN": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "DRA": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "MPA": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "FSI": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "SFC": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "SSU": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "SNS": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "SCB": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "SPS": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "BIO": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "CHE": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "PHY": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ELS": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "FRE": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "FRA": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "JPN": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "JPA": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "MDR": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "MDA": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "MAO": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "MAA": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "SAM": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "EPS": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "PWR": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "BUS": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "COM": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "COT": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "GEO": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "HIS": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "CLS": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ECC": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "FIN": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "MED": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "PSY": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "TOU": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ENGA": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ENGB": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ENGC": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ENGD": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ENGF": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ENGG": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ENGH": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ENGJ": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ENGK": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ENGL": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ENGM": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ENGN": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "ENGQ": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "MAC": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "MAS": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "GAT": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "PAT": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "WTA": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "SPEC": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-    ],
-
-    "LST": [
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>",
-      "<button onclick=\"window.location.href=''\"></button>"
-]
-  }
+  "HuiAko": [
+    {
+      "location": "https://app.careercentral.school.nz/sso",
+      "text": "Career Central"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "INT": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "INS": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "ENG": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "MAT": [
+    {
+      "location": "https://www.transum.org/",
+      "text": "Transum"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "SCI": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "AHI": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "HPE": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "HEA": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "PEO": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "PED": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "PES": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "TGC": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "TDE": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "DTE": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "TPD": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "TBT": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "TDV": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "TFD": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "TTX": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "JDT": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "CAR": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "HOS": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "PHT": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "ARP": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "ARD": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "ART": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "MUS": [
+    {
+      "location": "https://musicecademyapp.com/login/index.php",
+      "text": "Music Ecademy"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "MUJ": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "DAN": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "DRA": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "MPA": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+  "FSI": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "SFC": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "SSU": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "SNS": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "SCB": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "SPS": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "BIO": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "CHE": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "PHY": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "ELS": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "FRE": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "FRA": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "JPN": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "JPA": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "MDR": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "MDA": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "MAO": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "MAA": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "SAM": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "EPS": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "PWR": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "BUS": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "COM": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "COT": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "GEO": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "HIS": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "CLS": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "ECC": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "FIN": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "MED": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "PSY": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "TOU": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "ENGA": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "ENGB": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "ENGC": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "ENGD": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "ENGF": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "ENGG": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "ENGH": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "ENGJ": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "ENGK": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "ENGL": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "ENGM": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "ENGN": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "ENGQ": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "MAC": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "MAS": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+    ],
+
+  "GAT": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "PAT": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "WTA": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "SPEC": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ],
+
+  "LST": [
+    {
+      "location": "",
+      "text": "Button 1"
+    },
+    {
+      "location": "",
+      "text": "Button 2"
+    },
+    {
+      "location": "",
+      "text": "Button 3"
+    }
+  ]
 }

@@ -1,13 +1,67 @@
-/*import * as imp from './utilities.js';
+import { classes } from "./utilities.js";
 
-const form = document.forms['classes'] ?? null;
-const submit = form.querySelectorAll('input[type="submit"]') ?? null;
-const menus = form.querySelectorAll('option') ?? null;
+$(document).ready(() => {
+  const reset = document.getElementById("reset")
+  const form = document.getElementById("classes");
+  const inputs = document.querySelectorAll("input[type='text']");
+  const localData = localStorage.length;
 
-if (form === null) {
-  console.log("Submit not on this page.")
-} else {
+  reset.addEventListener("click", (e) => {
+    e.preventDefault();
+    const choice = window.confirm("Are you sure you want to delete all of your classroom data?");
+    if (choice) {
+      localStorage.clear();
 
-alert(submit);
-alert(menus);
-}*/
+      console.warn(`User Data deleted! ${localData} classes removed from storage.`);
+      alert("User Data deleted!");
+    } else {
+      console.log("User Data not deleted.")
+    }
+  });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const classNames = document.querySelectorAll("select, input[type='hidden']");
+    const classData = [];
+
+    for (let i = 0; i < 8; ++i) {
+      let subject = classNames[i].value?.trim() || "";
+      let classSubject = classes[subject] || "";
+
+      if ( i === 0 && subject === "" ) { classSubject = "HuiAko"; }
+
+      const link = inputs[i].value?.trim() || "";
+
+      if ((subject === "HuiAko" || subject !== "INVALID") && link !== "") {
+        let item = {subject: classSubject, link: link};
+
+        console.log(`Variable class${i} set. Values: ` + JSON.stringify(item) + "(classes.js:18:21)");
+        classData.push(item);
+      } else {
+        console.warn(`
+          Iteration ${i} returned no values (subject: ${subject !== "INVALID" ? subject : "null"}, link: ${link !== "" ? link : "null"}) 
+              at JSON.<Object> (classes.js:22:21)
+        `);
+      }
+    }
+
+    // Store each JSON object in localStorage with a unique key
+    if (classData.length > 0) {
+      classData.forEach((item, index) => {
+        localStorage.setItem(`class${index + 1}`, JSON.stringify(item));
+        console.log("Item set.")
+      });
+      console.log(JSON.stringify(classData));
+    } else {
+      console.error(`
+        ClassData returned an empty array ([])
+            at (classes.js:53:14)
+      `);
+    }
+    try {
+      window.location = "index.php";
+    } catch (e) {
+      throw new Error(e);
+    }
+  });
+});

@@ -1,5 +1,9 @@
 <?php
 require "Includes/header.php";
+
+function input($name, $autocomplete = false) {
+    return "<input pattern='https?://classroom\.google\.com/.*||Reset' style='cursor: text;' type='text' size='30px' id='$name' name='$name' class='button' autocomplete='" . ($autocomplete ? "on" : "off") . "'>";
+}
 ?>
   <style>
         /* Your CSS styles here */
@@ -69,52 +73,58 @@ require "Includes/header.php";
         }
 
   </style>
-    <!-- Your HTML content here -->
     <hr>
     <h4 style="margin-left: 10px;">The link MUST start with 'https://classroom.google.com/', then your class ID (Found in the addres bar after https://classroom.google.com/)</h4>
     <!--HuiAko-->
     <div>
-    <form name="classes" method="post" action="../Private/PHP/class.php">
+    <form id="classes" name="classes" method="post" action="js/classes.js">
         <label id="huiakolabel" for="class1" style="white-space: nowrap;">HuiAko</label>
-        <input pattern="https?://classroom\.google\.com/.*||Reset" style="cursor: text;" type="text" size="30px" id="class1" name="class1" class="button" autocomplete="off">
-
+        <input type="hidden" name="HuiAko" value="HuiAko">
+        <?= input("class1", false) ?>
         <br><br>
 
         <select name="selection2"><?php include "Includes/classes.php" ?></select>
-        <input pattern="https?://classroom\.google\.com/.*||Reset" style="cursor: text;" type="text" size="30px" id="class2"name="class2" class="button" autocomplete="off">
+        <?= input("class2", false) ?>
 
         <br><br>
 
         <select name="selection3"><?php include "Includes/classes.php" ?></select>
-        <input pattern="https?://classroom\.google\.com/.*||Reset" style="cursor: text;" type="text" size="30px" id="class3" name="class3" class="button" autocomplete="off">
+        <?= input("class3", false) ?>
 
         <br><br>
 
         <select name="selection4"><?php include "Includes/classes.php" ?></select>
-        <input pattern="https?://classroom\.google\.com/.*||Reset" style="cursor: text;" type="text" size="30px" id="class4" name="class4" class="button" autocomplete="off">
+        <?= input("class4", false) ?>
 
         <br><br>
 
         <select name="selection5"><?php include "Includes/classes.php" ?></select>
-        <input pattern="https?://classroom\.google\.com/.*||Reset" style="cursor: text;" type="text" size="30px" id="class5" name="class5" class="button" autocomplete="off">
+        <?= input("class5", false) ?>
 
         <br><br>
 
         <select name="selection6"><?php include "Includes/classes.php" ?></select>
-        <input pattern="https?://classroom\.google\.com/.*||Reset" style="cursor: text;" type="text" size="30px" id="class6" name="class6" class="button" autocomplete="off">
+        <?= input("class6", false) ?>
+
         <br><br>
 
         <select name="selection7"><?php include "Includes/classes.php" ?></select>
-        <input pattern="https?://classroom\.google\.com/.*||Reset" style="cursor: text;" type="text" size="30px" id="class7" name="class7" class="button" autocomplete="off">
+        <?= input("class7", false) ?>
+
         <br><br>
 
         <select name="selection8"><?php include "Includes/classes.php" ?></select>
-        <input pattern="https?://classroom\.google\.com/.*||Reset" style="cursor: text;" type="text" size="30px" id="class8" name="class8" class="button" autocomplete="off">
+        <?= input("class1", false) ?>
+
         <br>
 
-        <button style="margin-top: 14px; margin-left: 5px; border-radius: 8px;" id="submit" type="submit" class="button" autocomplete="off">Submit</button>
+        <button style="margin-top: 14px; margin-left: 5px; border-radius: 8px;" id="submit" type="submit" class="button">Submit</button>
+
+        <button style="margin-top: 14px; margin-left: 5px; border-radius: 8px;" id="reset" class="button">Reset</button>
+
     </form>
     </div>
     <?php include "Includes/footer.php"; ?>
+    <script type="module" src="js/classes.js"></script>
   </body>
 </html>
