@@ -43,7 +43,7 @@
         </div>
       </aside>
 
-      <h6 style="position: absolute; bottom: 20px; left: 6px;">Right-click on the class to go straight to the classroom, or left click to go to the 3 most used links in the class.</h6>
+      <h6 style="position: absolute; bottom: 20px; left: 6px;">left-click on the class to go straight to the classroom, or hover to find the 3 most used links in the class.</h6>
 
       <section class="main" tabindex="-1">
         <div id="tabs">
