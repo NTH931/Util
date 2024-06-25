@@ -5,7 +5,8 @@
     --color: #1d1e2f; /* color of link backgrounds */
     --text-color: #cccccc; /* color of text */
     --background-color: #121212; /* color of background */
-    --background-color-l: #222222; /* color of light background */
+    --background-color-d: #222222; /* color of light background */
+    --background-color-dd: #323232;
     --hr-color: #0077ff; /* color of dividers */
     --a-color: #0077ff; /* color of a tags */
   }
@@ -17,7 +18,8 @@
     --color: #dddddd; /* color of link backgrounds */
     --text-color: #dddeee; /* color of text */
     --background-color: #007878; /* color of background */
-    --background-color-l: #005656; /* color of light background */
+    --background-color-d: #005656; /* color of light background */
+    --background-color-dd: #004545;
     --hr-color: #ffffff; /* color of dividers */
     --a-color: #0000ff; /* color of a tags */
   }
@@ -88,7 +90,6 @@ aside {
 }
 
 section {
-    size: 50%;
     float: right;
     left: 50%;
     position: absolute;
@@ -136,7 +137,7 @@ div {
 .whitebg, span {
     display: block;
     height: fit-content;
-    width: fit-content;
+    width: calc(fit-content + 50px);
     margin-top: -5px;
     border: 2px;
     text-align: center;
@@ -225,27 +226,44 @@ footer > h6 {
 }
 
 #container {
-  display: flex;
+  display: flex !important;
+  flex-direction: row !important;
   flex-wrap: wrap;
 }
 
 .popout-wrapper {
   position: relative;
-  margin-right: 20px; /* Space between pop-out elements */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  opacity: 0;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.3s ease;
+  transform: translateX(-28px);
 }
 
-.popout {
-  display: inline-block;
-  padding: 10px;
-  background-color: white;
+.popout-wrapper .popout {
+  display: flex;
+  padding-top: 4px;
+  background-color: var(--color);
   text-decoration: none;
-  color: black;
+  color: var(--a-color);
+  opacity: 1;
   position: absolute;
-  left: -100%; /* Position it to the left of the parent initially */
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
+  left: 0;
+  transition: transform 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Hover state of the parent element containing h4 and buttons */
+.popout-wrapper:hover {
+  opacity: 1;
+  transform: translateX(40px);
 }
 
 .popout-wrapper:hover .popout {
-  transform: translateX(0);
+  position: static;
+  opacity: 1;
+  transform: translateX(40px);
 }

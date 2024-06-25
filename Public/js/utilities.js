@@ -16,6 +16,44 @@ export default function toPhp(url, data, callback) {
   });
 }
 
+export class Cookie {
+  // Method to set a cookie
+  static set(name, value, daysToExpire, path = "/") {
+      let expirationDate = "";
+      if (daysToExpire) {
+          const date = new Date();
+          date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+          expirationDate = "; expires=" + date.toUTCString();
+      }
+      document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expirationDate}; path=${path}`;
+  }
+
+  // Method to get a cookie's value
+  static get(name) {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+          let cookie = cookies[i].trim();
+          if (cookie.startsWith(name + '=')) {
+              return decodeURIComponent(cookie.substring(name.length + 1));
+          }
+      }
+      return null;
+  }
+
+  // Method to delete a cookie
+  static delete(name) {
+      document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }
+
+  static clear() {
+    const cookies = document.cookie.split("; ");
+    cookies.forEach(cookie => {
+        const name = cookie.split("=")[0];
+        cookie.delete(name);
+    });
+}
+}
+
 //// Build PHP Urls ////
 export function queryString(...objects) {
   let url_construct = '';
@@ -197,3 +235,22 @@ export const classes = {
   "SPEC": "Learning Support - SPEC",
   "LST": "Learning Support Transition"
 };
+
+export function protoMethod(Class, methodName, methodFunction, options = {enumerable: false}) {
+  if (typeof Class !== 'function') {
+    throw new TypeError('First argument must be a class or constructor function');
+  }
+
+  if (typeof methodName !== 'string') {
+    throw new TypeError('Second argument must be a string');
+  }
+
+  if (typeof methodFunction !== 'function') {
+    throw new TypeError('Third argument must be a function');
+  }
+
+  Object.defineProperty(Class.prototype, methodName, {
+    value: methodFunction,
+    ...options
+  });
+}

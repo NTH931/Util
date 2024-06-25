@@ -1,16 +1,23 @@
-import { classes } from "./utilities.js";
+import { classes, Cookie, protoMethod } from "./utilities.js";
 
 $(document).ready(() => {
   const reset = document.getElementById("reset")
   const form = document.getElementById("classes");
   const inputs = document.querySelectorAll("input[type='text']");
-  const localData = localStorage.length;
+  const localData = Cookie.length;
+  const allCookies = document.cookie;
+
+  protoMethod(Object, "isEmpty", function() {
+    return Object.keys(this).length === 0 && this.constructor === Object;
+  });
 
   reset.addEventListener("click", (e) => {
     e.preventDefault();
     const choice = window.confirm("Are you sure you want to delete all of your classroom data?");
     if (choice) {
-      localStorage.clear();
+      for (let i = 1; i <= 8; i++) {
+        Cookie.delete(`class${i}`);
+      }
 
       console.warn(`User Data deleted! ${localData} classes removed from storage.`);
       alert("User Data deleted!");
@@ -25,19 +32,20 @@ $(document).ready(() => {
     const classData = [];
 
     for (let i = 0; i < 8; ++i) {
-      let subject = classNames[i].value?.trim() || "";
-      let classSubject = classes[subject] || "";
+      const subject = classNames[i].value?.trim() || "";
+      const classSubject = classes[subject] || "";
+      const link = inputs[i].value?.trim() || "";
 
       if ( i === 0 && subject === "" ) { classSubject = "HuiAko"; }
 
-      const link = inputs[i].value?.trim() || "";
 
-      if ((subject === "HuiAko" || subject !== "INVALID") && link !== "") {
-        let item = {subject: classSubject, link: link};
+      if (subject !== "INVALID" && link !== "") {
+        let item = {code: subject, subject: classSubject, link: link};
 
         console.log(`Variable class${i} set. Values: ` + JSON.stringify(item) + "(classes.js:18:21)");
         classData.push(item);
       } else {
+        classData.push({});
         console.warn(`
           Iteration ${i} returned no values (subject: ${subject !== "INVALID" ? subject : "null"}, link: ${link !== "" ? link : "null"}) 
               at JSON.<Object> (classes.js:22:21)
@@ -45,11 +53,13 @@ $(document).ready(() => {
       }
     }
 
-    // Store each JSON object in localStorage with a unique key
+    const date = new Date();
+
     if (classData.length > 0) {
       classData.forEach((item, index) => {
-        localStorage.setItem(`class${index + 1}`, JSON.stringify(item));
-        console.log("Item set.")
+        if (!item.isEmpty()) {
+          Cookie.set(`class${index + 1}`, JSON.stringify(item), date.getFullYear() + 1);
+        }
       });
       console.log(JSON.stringify(classData));
     } else {
@@ -58,8 +68,9 @@ $(document).ready(() => {
             at (classes.js:53:14)
       `);
     }
+
     try {
-      window.location = "index.php";
+      //window.location = "index.php";
     } catch (e) {
       throw new Error(e);
     }

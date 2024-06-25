@@ -13,7 +13,7 @@ error_reporting(E_ALL | E_STRICT);
 # Current Folder for __FILE__
 @define("BASE_DIR", basename(__DIR__));
 # The path before /Util
-@define("SYS_DIR", systemPath(__DIR__) . "/Util/");
+@define("SYS_DIR", systemPath(__DIR__) . DIRECTORY_SEPARATOR . "Util" . DIRECTORY_SEPARATOR);
 # The full path of the Directory
 @define("FULL_DIR", realpath(__DIR__));
 # The exact location of the current file
@@ -39,6 +39,11 @@ function listDirectory($dir) {
       listDirectory($dir . '/' . $file);
     }
   }
+}
+
+function console_log($message) {
+  echo `<script>console.log("$message");</script>`;
+
 }
 
 function Camel(string $string, bool $concat = false) {
