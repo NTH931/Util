@@ -5,6 +5,10 @@ extras/
 Extras/
 extras.*
 Extras.*
+Backups/
+backups/
+*.map
+*.bak
 .env
 .ht*
 *.log

@@ -1,0 +1,36 @@
+/* DARK Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #cccccc; /* color of text */
+    --background-color: #121212; /* color of background */
+    --background-color-d: #222222; /* color of light background */
+    --background-color-dd: #323232;
+    --hr-color: #0077ff; /* color of dividers */
+    --a-color: #0077ff; /* color of a tags */
+  }
+}
+
+/* LIGHT Mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: #dddeee; /* color of text */
+    --background-color: #007878; /* color of background */
+    --background-color-d: #005656; /* color of light background */
+    --background-color-dd: #004545;
+    --hr-color: #ffffff; /* color of dividers */
+    --a-color: #0000ff; /* color of a tags */
+  }
+}
+/* Static Variables */
+$color: #1d1d2d;
+$color-l: #232334;
+$color-ll: #29293b;
+$color-lll: #2f2f42;
+
+/* Dynamic Variables (Requires use of the var() function) */
+$text-color: var(--text-color);
+$background-color: var(--background-color);
+$background-color-d: var(--background-color-d);
+$background-color-dd: var(--background-color-dd);
+$hr-color: var(--hr-color);
+$a-color: var(--a-color);

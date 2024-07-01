@@ -1,17 +1,10 @@
-<!DOCTYPE html>
- <html lang="en">
-  <?php
-  require_once "./Includes/header.php";
-
+<?php
+require_once "./Includes/header.php";
   function links(string $href, string $text, bool $_blank = true, bool $avaliable = true) {
     if ($avaliable) {
-      if ($_blank === true) {
-        return "<button onclick=\"window.open('$href', '_blank')\">$text</button>\n";
-      } else {
-        return "<button onclick=\"window.location.href = '$href'\">$text</button>\n";
-      }
+        return "<button onclick=\"window.open('$href', '" . ($_blank ? '_blank' : '_self') . "')\">$text</button>\n";
     } else {
-      return "<button style='cursor: not-allowed'>$text - <b>Unavaliable</b></button>\n";
+        return "<button style='cursor: not-allowed'>$text - <b>Unavailable</b></button>\n";
     }
   }
   function plus(string $id, bool $avaliable = true) {
@@ -45,13 +38,8 @@
     </nav>
     <div>
       <aside>
-        <div>
-          <!--Classes & Links to Google Classroom-->
-          <h4><a id="todo" class="whitebg" style="max-width: 45px;" href="https://classroom.google.com/a/not-turned-in/all" target="_blank">To-do</a></h4>
+        <h4><a id="todo" class="whitebg" style="max-width: 45px;" href="https://classroom.google.com/a/not-turned-in/all" target="_blank">To-do</a></h4>
 
-          <!-- Elements inserted here from classbuilder.js -->
-
-        </div>
       </aside>
 
       <h6 style="position: absolute; bottom: 20px; left: 6px;">left-click on the class to go straight to the classroom, or hover to find the 3 most used links in the class.</h6>

@@ -70,7 +70,7 @@ $(document).ready(() => {
     }
 
     try {
-      //window.location = "index.php";
+      window.location = "index.php";
     } catch (e) {
       throw new Error(e);
     }

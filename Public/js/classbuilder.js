@@ -1,71 +1,137 @@
-document.addEventListener("DOMContentLoaded", function() {
+import { Cookie, protoMethod } from "./utilities.js";
+
+$(document).ready(function() {
   // Function to create and add pop-out elements from structured data
-  function addPopoutElements(parentDiv, elements, type = "button") {
-    elements.forEach(element => {
-      const wrapper = document.createElement('div');
-      const buttonElement = document.createElement(type);
-
-      wrapper.classList.add('popout-wrapper');
-      buttonElement.style.visibility = "hidden"
-      buttonElement.textContent = element.text;
-      buttonElement.setAttribute('onclick', `window.location.href='${element.location}'`);
-
-      wrapper.appendChild(buttonElement);
-      parentDiv.appendChild(wrapper);
-      
-      $(wrapper).hover(
-        function () {
-          $(this).find(parentDiv).css("visibility", "visible");
-        },
-        function () {
-          $(this).find(parentDiv).css("visibility", "hidden");
-        }
-      );
+  function addPopoutElements(parentDivId, jsonObject) {
+    const $parentDiv = $("#" + parentDivId);
+  
+    $parentDiv.css({
+      display: "flex",
+      flexDirection: "row",
+      flexWrap: "wrap",
+      alignItems: "center",
+      margin: "0",
+      padding: "0",
+      maxHeight: "calc(1rem + 15px)",
+      width: "fit-content"
     });
+  
+    try {
+      // Iterate over jsonObject to create buttons
+      $.each(jsonObject, function(index, button) {
+        let realText = button.text.toLowerCase();
+
+        //if (realText === "button 1" || realText === "button 2" || realText === "button 3") { return; }
+
+        const $wrapper = $('<div>', { class: 'popout-wrapper' });
+        const $buttonElement = $('<a>', {
+          class:   'popout whitebg',
+          id:      `button${index}`,
+          text:     button.text
+        });
+        $buttonElement.click(function() { window.open(button.location, '_blank') || "#"; });
+        $parentDiv.hover(
+          async function() {
+            setTimeout(function() {
+              $buttonElement.css({
+                left: "30px",
+                visibility: "visible",
+                opacity: 1,
+                transition: "opacity 0.3s ease visibility 0.3s ease"
+              });
+            }, 100);
+          },
+          async function() {
+            setTimeout(function() {
+              $buttonElement.css({
+                left: "calc(initial + 30px)",
+                visibility: "hidden",
+                opacity: 0,
+                transition: "opacity 0.3s ease visibility 0.3s ease"
+              });
+            }, 100);
+          }
+        );
+      
+        // Append button to wrapper and wrapper to parentDiv
+        $wrapper.append($buttonElement);
+        $parentDiv.children('h4').first().after($wrapper);
+      });
+    } catch (error) {
+      console.error(error);
+    }
   }
+  
+
+  //// PROTOTYPE ////
+  protoMethod(Object, 'swap', function() {
+    const swapped = {};
+    for (let key in this) {
+      if (this.hasOwnProperty(key)) {
+        swapped[this[key]] = key;
+      }
+    }
+    return swapped;
+  });
+  
+  //// PROTOTYPE ////
+  protoMethod(Array, 'swap', function() {
+    return this.map(obj => {
+      const swapped = {};
+      for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          swapped[obj[key]] = key;
+        }
+      }
+      return swapped;
+    });
+  });
 
   // Function to fetch JSON data
   async function fetchData(url) {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return await response.json();
-  }
-
-  // Loop through localStorage to retrieve and add elements
-  for (let i = 1; i < 9; i++) {
-    const classHref = JSON.parse(localStorage.getItem(`class${i}`));
-    if (classHref) {
-      const h4Element = document.createElement('h4');
-      const aElement = document.createElement('a');
-
-      console.log(`Elements <h4>, <a>, <div> Created for ${classHref.subject}.`);
-
-      aElement.id = `classbutton${i}`;
-      aElement.classList.add('whitebg');
-      aElement.setAttribute("target", "_blank"); // Assuming all links open in new tab
-      aElement.href = classHref.link;
-      aElement.textContent = classHref.subject;
-
-      h4Element.appendChild(aElement);
-      document.querySelector('aside').appendChild(h4Element);
-
-      // Adding pop-out elements
-      fetchData("../Private/JSON/lists.json").then(data => {
-        console.log('Available keys in JSON:', Object.keys(data));
-        console.log('ClassHref Subject:', classHref.subject);
-
-        const classData = data[classHref.subject];
-        if (!classData) {
-          console.error(`No data found for ${classHref.subject}`);
-          return;
-        }
-
-        addPopoutElements(h4Element, classData, "a");
-      }).catch(error => {
-        console.error("Error fetching data:", error);
-      });
+    console.log(`Fetching data from ${url}`);
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      return undefined || null;
     }
   }
+  
+  fetchData("../Private/JSON/lists.json")
+  .then((data) => {
+    for (let i = 1; i <= 9; i++) {
+      const jsonItems = JSON.parse(Cookie.get(`class${i}`)) ?? undefined;
+        
+      try {
+        const divElement = document.createElement('div');
+        const aElement = document.createElement('a');
+        const h4Element = document.createElement("h4");
+          
+        // Attributes
+        aElement.id = `classbutton${i}`;
+        aElement.classList.add('whitebg');
+        aElement.setAttribute("target", "_blank");
+        aElement.href = jsonItems.link;
+        aElement.textContent = jsonItems.subject;
+        divElement.id = `class${i}`;
+        h4Element.classList.add('popout-parent');
+
+        divElement.appendChild(h4Element);
+        h4Element.appendChild(aElement);
+        document.querySelector('aside').appendChild(divElement);
+
+        // Adding pop-out elements
+        addPopoutElements(`class${i}`, data[jsonItems.code]);
+      } catch {
+        console.warn(`No class is defined for iteration ${i}.`);
+      }
+    }
+  })
+  .catch(error => alert(error));
 });

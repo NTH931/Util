@@ -79,6 +79,32 @@ function fromJs() {
   return json_decode($inputJSON, true); // Decode JSON into associative array
 }
 
+function insertIntoHeader($filePath, $insertLine, $insertPosition) {
+  // Start output buffering
+  ob_start();
+
+  // Include the header file
+  require_once $filePath;
+
+  // Get the content of the included file
+  $content = ob_get_contents();
+
+  // End output buffering and clean it
+  ob_end_clean();
+
+  // Insert new lines at a specific position
+  $lines = explode("\n", $content);
+
+  // Insert the new line into the array
+  array_splice($lines, $insertPosition, 0, $insertLine);
+
+  // Convert the array back to a string
+  $newContent = implode("\n", $lines);
+
+  // Output the modified content
+  echo $newContent;
+}
+
 # Global Array
 global $subjects;
 $subjects = array(

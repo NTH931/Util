@@ -1,8 +1,6 @@
-/*--------------------------------------Global Variables----------------------------------------*/
 /* DARK Mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color: #1d1e2f; /* color of link backgrounds */
     --text-color: #cccccc; /* color of text */
     --background-color: #121212; /* color of background */
     --background-color-d: #222222; /* color of light background */
@@ -11,11 +9,9 @@
     --a-color: #0077ff; /* color of a tags */
   }
 }
-
 /* LIGHT Mode */
 @media (prefers-color-scheme: light) {
   :root {
-    --color: #dddddd; /* color of link backgrounds */
     --text-color: #dddeee; /* color of text */
     --background-color: #007878; /* color of background */
     --background-color-d: #005656; /* color of light background */
@@ -24,19 +20,19 @@
     --a-color: #0000ff; /* color of a tags */
   }
 }
-
+/* Static Variables */
+/* Dynamic Variables (Requires use of the var() function) */
 /*-----------------------------------Tag Attribute Vaiables-------------------------------------*/
-
 * {
   font-family: Arial, Helvetica, sans-serif !important;
 }
 
 body {
-    overflow: hidden;
-    display: block;
-    background-repeat: no-repeat;
-    background-size: 100%, 100%;
-    background-color: var(--background-color);
+  overflow: hidden;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 100%, 100%;
+  background-color: var(--background-color);
 }
 
 textarea {
@@ -54,10 +50,10 @@ textarea:focus {
 }
 
 a, span {
-    text-decoration: none;
-    font-size: 16px;
-    color: var(--a-color);
-    width: fit-content;
+  text-decoration: none;
+  font-size: 16px;
+  color: var(--a-color);
+  width: fit-content;
 }
 
 h1 {
@@ -83,16 +79,16 @@ nav {
 }
 
 aside {
-    float: left;
-    width: 50%;
-    padding-left: 5px;
-    text-align: left;
+  float: left;
+  width: 50%;
+  padding-left: 5px;
+  text-align: left;
 }
 
 section {
-    float: right;
-    left: 50%;
-    position: absolute;
+  float: right;
+  left: 50%;
+  position: absolute;
 }
 
 input:hover {
@@ -100,7 +96,7 @@ input:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-button, input[type="button"], input.button, select, option {
+button, input[type=button], input.button, select, option {
   height: 25px;
   font-size: 15px;
   border: 2px;
@@ -108,18 +104,19 @@ button, input[type="button"], input.button, select, option {
   display: inline-block;
   transition-duration: 0.2s;
   color: var(--a-color);
-  background-color: var(--color);
+  background-color: #1d1d2d;
   cursor: pointer;
   text-decoration: none;
   margin-right: 5px;
 }
-input.button, input[type="button"] {
+
+input.button, input[type=button] {
   width: 2500px;
 }
 
-button:hover, input[type="button"]:hover, input.button:hover, select:hover {
-box-shadow: #151515 0 0 1px;
-transform: scale(1.05);
+button:hover, input[type=button]:hover, input.button:hover, select:hover {
+  box-shadow: #151515 0 0 1px;
+  transform: scale(1.05);
 }
 
 div {
@@ -127,7 +124,6 @@ div {
 }
 
 /*----------------------------------------User-Made variables-------------------------------------*/
-
 .title {
   color: var(--text-color);
   display: inline-block;
@@ -135,23 +131,24 @@ div {
 }
 
 .whitebg, span {
-    display: block;
-    height: fit-content;
-    width: calc(fit-content + 50px);
-    margin-top: -5px;
-    border: 2px;
-    text-align: center;
-    border-radius: 7.5px;
-    background-color: var(--color);
-    text-decoration: none;
-    padding-left: 5px;
-    padding-right: 5px;
+  display: block;
+  height: fit-content;
+  width: calc(fit-content + 50px);
+  margin-top: -5px;
+  border: 2px;
+  text-align: center;
+  border-radius: 7px;
+  background-color: #1d1d2d;
+  text-decoration: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  z-index: 10;
 }
 
 .main {
-    width: 100%;
-    text-align: left;
-    align-self: auto;
+  width: 100%;
+  text-align: left;
+  align-self: auto;
 }
 
 section.main {
@@ -160,7 +157,7 @@ section.main {
 
 button.plus {
   height: 25px;
-  width: 25px ;
+  width: 25px;
   margin-top: -10px;
   text-align: center;
   border: 2px solid;
@@ -183,12 +180,12 @@ button.plus:hover {
 }
 
 .spanA {
-  height: fit-content + 20px;
+  height: fit-content20px;
   margin-top: -5px;
   border: 2px;
   text-align: center;
   border-radius: 7.5px;
-  background-color: var(--color);
+  background-color: #1d1d2d;
   text-decoration: none;
   padding-left: 5px;
   padding-right: 5px;
@@ -201,7 +198,6 @@ button.plus:hover {
 }
 
 /*----------------------------------------Id Variables------------------------------------------*/
-
 footer > h6 {
   position: absolute;
   border-top: 2px solid var(--hr-color);
@@ -210,8 +206,8 @@ footer > h6 {
   width: 120%;
   color: var(--text-color);
   background-color: var(--background-color);
-  padding-top: .5rem;
-  padding-left: .5rem;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
   text-align: center;
 }
 
@@ -231,39 +227,52 @@ footer > h6 {
   flex-wrap: wrap;
 }
 
+.popout-parent {
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+}
+
 .popout-wrapper {
   position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+}
+
+.popout {
+  position: relative;
+  cursor: pointer !important;
   opacity: 0;
-  justify-content: space-around;
-  margin-bottom: 30px;
-  transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.3s ease;
-  transform: translateX(-28px);
+  margin-left: -5px;
+  padding: 0 5px 1px 10px;
+  font-size: 0.95rem;
+  border-radius: 0 5px 5px 0;
+  z-index: 2;
+  transform: translateX(-30px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  left: 100%;
 }
 
-.popout-wrapper .popout {
-  display: flex;
-  padding-top: 4px;
-  background-color: var(--color);
-  text-decoration: none;
-  color: var(--a-color);
-  opacity: 1;
-  position: absolute;
-  left: 0;
-  transition: transform 0.3s ease;
-  white-space: nowrap;
+div div.popout-wrapper:nth-child(2) {
+  z-index: 5 !important;
 }
 
-/* Hover state of the parent element containing h4 and buttons */
-.popout-wrapper:hover {
-  opacity: 1;
-  transform: translateX(40px);
+w div div.popout-wrapper:nth-child(2) > .popout {
+  z-index: 3;
+  background-color: #232334;
 }
 
-.popout-wrapper:hover .popout {
-  position: static;
+div div.popout-wrapper:nth-child(3) > .popout {
+  z-index: 2;
+  background-color: #29293b;
+}
+
+div div.popout-wrapper:nth-child(4) > .popout {
+  z-index: 1;
+  background-color: #2f2f42;
+}
+
+/* This will apply the hover effect to .popout and h4 siblings */
+div.popout-parent h4:hover ~ .popout {
+  transform: translateX(100%);
   opacity: 1;
-  transform: translateX(40px);
+  margin-bottom: 10px;
 }
