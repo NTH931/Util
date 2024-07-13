@@ -2,7 +2,7 @@
 require "Includes/header.php";
 
 function input($name, $autocomplete = false) {
-    return "<input pattern='https?://classroom\.google\.com/.*||Reset' style='cursor: text;' type='text' size='30px' id='$name' name='$name' class='button' autocomplete='" . ($autocomplete ? "on" : "off") . "'>";
+    return "<input pattern='https?://classroom\.google\.com/.*||Reset' type='text' size='30px' id='$name' name='$name' class='button' autocomplete='" . ($autocomplete ? "on" : "off") . "'>";
 }
 ?>
   <style>
@@ -16,16 +16,6 @@ function input($name, $autocomplete = false) {
         div > label, div > input, div > button, div > span {
             display: inline-block;
             width: 100px;
-        }
-
-        input[type="text"] {
-            width: calc(70vw + 2px);
-            border-radius: 10px;
-            padding: 3px;
-        }
-
-        input[type="text"]:hover {
-            transform: scale(1.02);
         }
 
         select {
@@ -55,7 +45,6 @@ function input($name, $autocomplete = false) {
             border-radius: 10px;
             margin-left: 5px;
             margin-right: 18px;
-            background-color: var(--color);
             color: var(--a-color);
             font-size: .97rem;
         }
@@ -77,7 +66,7 @@ function input($name, $autocomplete = false) {
     <h4 style="margin-left: 10px;">The link MUST start with 'https://classroom.google.com/', then your class ID (Found in the addres bar after https://classroom.google.com/)</h4>
     <!--HuiAko-->
     <div>
-    <form id="classes" name="classes" method="post" action="js/classes.js">
+    <form id="classes" name="classes" method="post" action="js/links.js">
         <label id="huiakolabel" for="class1" style="white-space: nowrap;">HuiAko</label>
         <input type="hidden" name="HuiAko" value="HuiAko">
         <?= input("class1", false) ?>
@@ -125,6 +114,5 @@ function input($name, $autocomplete = false) {
     </form>
     </div>
     <?php include "Includes/footer.php"; ?>
-    <script type="module" src="js/classes.js"></script>
   </body>
 </html>

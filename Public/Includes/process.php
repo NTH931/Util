@@ -24,8 +24,6 @@ error_reporting(E_ALL | E_STRICT);
 @define("EXT_FILE", basename($_SERVER["SCRIPT_FILENAME"]));
 # Current file executing (without extension)
 @define("REAL_FILE", pathinfo(EXT_FILE, PATHINFO_FILENAME));
-# JSON storage file
-@define("STORAGE_FILE", "Private/JSON/storage.json");
 # Newline
 @define("nl", "\n");
 

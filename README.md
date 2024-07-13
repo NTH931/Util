@@ -47,12 +47,12 @@ You can...
 
 #### Website Links
 
+ - Aotea College Home page
  - Aotea Library
- - NZQA Home - Old Website
- - NZQA Home - New Website
+ - New Library
+ - NZQA
  - NZCER Online
- - Canva
- - Lumin PDF Reader
+ - Gmail
  - Drive
  - Classroom
  - Docs
@@ -62,13 +62,13 @@ You can...
  - Sites
  - Kahoot
  - Blooket
- - Adobe Background Remover (Bg Remover)
+ - remove.bg
  - Unscreen (Bg Remover for Videos)
  - Convertio (File Conversion)
 
 ## Classrooms
  - HuiAko
- - 9 Customisable Classroom names/links
+ - 8 Customisable Classroom names/links
 
 ## Configuration
 
@@ -88,6 +88,6 @@ You can Contribute to Util! All you have to do is send an email to noah.haran@ao
 
 ## License
 
-Version 1.0.0 (Funky Fish)
+Version 1.1.0 (Funky Fish)
 
 &copy; 2022 - 2024 Noah Haran. All rights reserved.

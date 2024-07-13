@@ -20,11 +20,53 @@
     --a-color: #0000ff; /* color of a tags */
   }
 }
-/* Static Variables */
-/* Dynamic Variables (Requires use of the var() function) */
-/*-----------------------------------Tag Attribute Vaiables-------------------------------------*/
+button.plus, input[type=text], button.no, button:not(.no), input[type=button], select, option {
+  margin: 2px;
+  color: var(--a-color);
+  font-size: 16px;
+  padding: 3px 4px 2px 4px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 1px solid #29293b;
+  background-color: #1d1d2d;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.popout {
+  position: relative;
+  cursor: pointer !important;
+  opacity: 0;
+  left: 100%;
+  margin-left: -5px;
+  padding: 0 5px 1px 10px !important;
+  font-size: 0.95rem;
+  border-radius: 0 5px 5px 0 !important;
+  z-index: 2;
+  transform: translateX(-30px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.whitebg, span {
+  display: block;
+  height: fit-content;
+  width: calc(fit-content + 50px);
+  margin-top: -5px;
+  border: 2px;
+  text-align: center;
+  border-radius: 7px;
+  background-color: #1d1d2d;
+  text-decoration: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  z-index: 10;
+}
+
+/*-----------------------------------Tag Attribute Variables-------------------------------------*/
 * {
   font-family: Arial, Helvetica, sans-serif !important;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -36,16 +78,15 @@ body {
 }
 
 textarea {
-  border: 2px solid black;
+  border: 1px solid black;
   width: 225vh;
   height: 98vh;
   margin: 0;
   box-sizing: border-box;
   font-size: 1.1em;
 }
-
 textarea:focus {
-  border: 2px solid black;
+  border: 1px solid black;
   outline: none;
 }
 
@@ -65,8 +106,13 @@ h1 {
 
 h2, h3, h4, h5, h6, text {
   color: var(--text-color);
+  padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
   display: block;
+}
+
+h4#todo {
+  padding-top: 18px;
 }
 
 nav {
@@ -76,6 +122,10 @@ nav {
   text-indent: 5px;
   height: fit-content;
   padding-bottom: 10px;
+}
+
+nav > button:nth-child(1) {
+  margin-left: 10px;
 }
 
 aside {
@@ -89,34 +139,39 @@ section {
   float: right;
   left: 50%;
   position: absolute;
+  padding-bottom: 100px;
 }
 
-input:hover {
-  transform: none;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+button:not(.no):hover, input[type=button]:hover, select:hover, option:hover {
+  background-color: #191927;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+button:not(.no):focus, input[type=button]:focus, select:focus, option:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #212133;
 }
 
-button, input[type=button], input.button, select, option {
-  height: 25px;
-  font-size: 15px;
-  border: 2px;
-  border-radius: 100px;
-  display: inline-block;
-  transition-duration: 0.2s;
-  color: var(--a-color);
+button.no {
+  cursor: not-allowed;
+  color: red;
+  transition: none;
+}
+button.no:hover {
+  background-color: #241724;
+}
+
+input[type=text] {
+  cursor: text;
+  width: calc(70vw + 2px);
+  padding: 6px 5px 5px 5px;
+  transition: translate 0.2s ease;
+}
+input[type=text]:hover {
   background-color: #1d1d2d;
-  cursor: pointer;
-  text-decoration: none;
-  margin-right: 5px;
 }
 
-input.button, input[type=button] {
-  width: 2500px;
-}
-
-button:hover, input[type=button]:hover, input.button:hover, select:hover {
-  box-shadow: #151515 0 0 1px;
-  transform: scale(1.05);
+label {
+  background-color: #1d1d2d;
 }
 
 div {
@@ -130,57 +185,34 @@ div {
   line-height: 10px;
 }
 
-.whitebg, span {
-  display: block;
-  height: fit-content;
-  width: calc(fit-content + 50px);
-  margin-top: -5px;
-  border: 2px;
-  text-align: center;
-  border-radius: 7px;
-  background-color: #1d1d2d;
-  text-decoration: none;
-  padding-left: 5px;
-  padding-right: 5px;
-  z-index: 10;
-}
-
 .main {
   width: 100%;
   text-align: left;
   align-self: auto;
 }
 
-section.main {
-  padding-bottom: 100px;
-}
-
 button.plus {
   height: 25px;
   width: 25px;
   margin-top: -10px;
-  text-align: center;
-  border: 2px solid;
   border-radius: 7.5px;
-  display: inline-block;
-  transition-duration: 0.2s;
   color: var(--text-color);
-  text-align: center;
-  text-overflow: initial;
   background-color: rgba(255, 255, 255, 0);
-  border-color: var(--text-color);
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 15px;
-}
-
-button.plus:hover {
-  box-shadow: 4px 6px 10px 0 rgba(0, 0, 0, 0.5), 0 17px 50px 0 rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--text-color);
+  box-shadow: 4px 6px 10px 0 rgba(0, 0, 0, 0.5) 0 17px 50px 0 rgba(0, 0, 0, 0.5);
   transform: none;
+}
+button.plus:hover {
+  background-color: #191927;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+button.plus:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #212133;
 }
 
 .spanA {
-  height: fit-content20px;
+  height: calc(fit-content + 20px);
   margin-top: -5px;
   border: 2px;
   text-align: center;
@@ -202,8 +234,8 @@ footer > h6 {
   position: absolute;
   border-top: 2px solid var(--hr-color);
   left: -150px;
-  bottom: -18px;
   width: 120%;
+  bottom: 0;
   color: var(--text-color);
   background-color: var(--background-color);
   padding-top: 0.5rem;
@@ -211,10 +243,15 @@ footer > h6 {
   text-align: center;
 }
 
-.clearfix::after {
-  content: "";
+#title {
+  margin-left: 0;
+  margin-top: 5px;
+  margin-bottom: 0;
+  color: white;
   display: inline-block;
-  clear: both;
+  line-height: 25px;
+  width: 50%;
+  cursor: default;
 }
 
 #tabs {
@@ -237,25 +274,56 @@ footer > h6 {
   position: relative;
 }
 
-.popout {
-  position: relative;
-  cursor: pointer !important;
-  opacity: 0;
-  margin-left: -5px;
-  padding: 0 5px 1px 10px;
-  font-size: 0.95rem;
-  border-radius: 0 5px 5px 0;
-  z-index: 2;
-  transform: translateX(-30px);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  left: 100%;
+.notifi > .notifi-content {
+  background-color: var(--background-color-d);
+  padding: 100px;
+  padding: 8px 7px 7px 7px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.notifi > .notifi-content > .notifi-header {
+  color: var(--a-color);
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.notifi > .notifi-content > .notifi-message {
+  color: var(--text-color);
+  padding: 0 0 5px 7px;
+}
+.notifi > .notifi-content > .dismis {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.4s ease;
+}
+.notifi > .notifi-content > .dismis:hover {
+  color: #fff;
+}
+.notifi .notifi-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.notifi .notifi-buttons > .notifi-button {
+  color: #aaa;
+  padding: 10px;
+  border: 1px solid #888;
+  border-radius: 6px;
+  font-weight: normal;
+  cursor: pointer;
+  transition: color 0.4s ease;
+  flex: 1;
+  margin: 0 7px;
+  max-height: 40px;
+}
+.notifi .notifi-buttons > .notifi-button:hover {
+  color: #fff;
 }
 
-div div.popout-wrapper:nth-child(2) {
-  z-index: 5 !important;
-}
-
-w div div.popout-wrapper:nth-child(2) > .popout {
+/*-------------------------------------Loop for Incrementing Variables--------------------------------------*/
+div div.popout-wrapper:nth-child(2) > .popout {
   z-index: 3;
   background-color: #232334;
 }

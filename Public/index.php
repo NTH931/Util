@@ -4,7 +4,7 @@ require_once "./Includes/header.php";
     if ($avaliable) {
         return "<button onclick=\"window.open('$href', '" . ($_blank ? '_blank' : '_self') . "')\">$text</button>\n";
     } else {
-        return "<button style='cursor: not-allowed'>$text - <b>Unavailable</b></button>\n";
+        return "<button class='no'>$text - <b>Unavailable</b></button>\n";
     }
   }
   function plus(string $id, bool $avaliable = true) {
@@ -33,16 +33,16 @@ require_once "./Includes/header.php";
         links("https://www.google.com/", "Google") .
         links("https://whanau.aotea.school.nz", "Whanau Portal") .
         links("quickwrite.php", "QuickType", false, false) .
-        links("Links.php", "Edit Classes", false)
+        links("links.php", "Edit Classes", false)
       ?>
     </nav>
-    <div>
+    <div class="content">
       <aside>
-        <h4><a id="todo" class="whitebg" style="max-width: 45px;" href="https://classroom.google.com/a/not-turned-in/all" target="_blank">To-do</a></h4>
+        <h4 id="todo"><a id="todo" class="whitebg" style="max-width: 45px;" href="https://classroom.google.com/a/not-turned-in/all" target="_blank">To-do</a></h4>
 
       </aside>
 
-      <h6 style="position: absolute; bottom: 20px; left: 6px;">left-click on the class to go straight to the classroom, or hover to find the 3 most used links in the class.</h6>
+      <h6 style="position: absolute; bottom: 40px; left: 6px;">left-click on the class to go straight to the classroom, or hover to find the 3 most used links in the class.</h6>
 
       <section class="main" tabindex="-1">
         <div id="tabs">
@@ -65,6 +65,7 @@ require_once "./Includes/header.php";
               plus("addNewExamSite", false) .
 
               "<h4>Google Services</h4>\n" .
+              links("https://mail.google.com", "Gmail") .
               links("https://drive.google.com/", "Drive") .
               links("https://classroom.google.com/", "Classroom") .
               links("https://docs.google.com/document/", "Docs") .
@@ -94,7 +95,7 @@ require_once "./Includes/header.php";
     </div>
     <link rel="stylesheet" href="CSS/jQuery-ui-tabs.css">
     <?php require_once "Includes/footer.php"; ?>
-    <script type="module" src="js/classbuilder.js"></script>
+    <script type="module" src="js/index.js"></script>
     <script>
       $(document).ready(function() {
         $("#tabs").tabs({

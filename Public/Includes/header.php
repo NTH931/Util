@@ -9,42 +9,39 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <?php require_once "Includes/process.php" ?>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            padding: 10px;
+        }
+        
+        #clock {
+            font-size: 26px;
+            font-weight: bold;
+            color: var(--text-color); /* Example color */
+            text-align: right;
+            margin-left: 20px;
+        }
+    </style>
   </head>
   <body>
-    <?php
-      if (!function_exists("echofile")) {
-        function echofile (string $name) {
-          echo "
-            <h1 style='color: white; display: inline-block; line-height: 25px; width: 50% ; cursor: default;'>\n
-              <em>$name</em>\n
-            </h1>\n
-          ";
+    <div class="container">
+      <?php
+        if (!function_exists("echofile")) {
+          function echofile (string $name) {
+            echo "
+              <h1 id='title'>\n
+                <em>$name</em>\n
+              </h1>\n
+            ";
+          }
         }
-      }
-      #The header on every page
-      $pos = strpos(REAL_FILE, "Subject-");
-      switch (REAL_FILE) {
-        case "index" :
-          echofile("Util");
-          break;
-
-        case "Subject-1" :
-        case "Subject-2" :
-        case "Subject-3" :
-        case "Subject-4" :
-        case "Subject-5" :
-        case "Subject-6" :
-        case "Subject-7" :
-        case "Subject-8" :
-          #echofile("Util - $subLink");
-          break;
-
-        case "quickwrite" :
-          echofile("Util - QuickType");
-          break;
-
-        default:
-          echofile("Util - " . Camel(REAL_FILE, false));
-          break;
-      }
-    ?>
+        // The header on every page
+        if   ( REAL_FILE === "index" ) {             echofile("Util");           } 
+        else /*REAL_FILE !== "index"*/ { echofile("Util - " . Camel(REAL_FILE)); }
+      ?>
+      <div id="clock"></div>
+    </div>
