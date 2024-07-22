@@ -71,11 +71,9 @@ You can...
  - 8 Customisable Classroom names/links
 
 ## Configuration
-
-Currently, only 2 configuration features are avaliable:
-
  - Edit Classes (The "Edit Classes" Button)
  - Edit Buttons (The "+" Button)
+ - Settings (The "Settings" Button)
 
 ## Troubleshooting
 
