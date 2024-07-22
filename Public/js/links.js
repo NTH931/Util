@@ -1,16 +1,16 @@
 import * as Utils from "./utilities.js";
-const { classes, Cookie, protoMethod } = Utils;
+const { classes, Storage } = Utils;
 $(function () {
     const reset = document.getElementById("reset");
     const form = document.getElementById("classes");
     const inputs = document.querySelectorAll("input[type='text']");
     const classNames = document.querySelectorAll("select, input[type='hidden']");
-    const localData = Cookie.length;
+    const localData = localStorage.length;
     reset === null || reset === void 0 ? void 0 : reset.addEventListener("click", (e) => {
         e.preventDefault();
         const choice = window.confirm("Are you sure you want to delete all of your classroom data?");
         if (choice) {
-            const deletion = Cookie.destroyAll();
+            const deletion = Storage.localStorage.clear();
             if (deletion) {
                 console.warn(`User Data deleted! ${localData} classes removed from storage.`);
                 alert("User Data deleted!");
@@ -48,14 +48,10 @@ $(function () {
         `);
             }
         }
-        const date = new Date();
-        protoMethod(Object, function isEmpty() {
-            return Object.keys(this).length === 0 && this.constructor === Object;
-        });
         if (classData.length > 0) {
             classData.forEach((item, index) => {
-                if (!item.isEmpty()) {
-                    Cookie.set(`class${index + 1}`, JSON.stringify(item), date.getFullYear() + 1);
+                if (item.code) {
+                    Storage.localStorage.set(`class${index + 1}`, JSON.stringify(item));
                 }
             });
             console.log(JSON.stringify(classData));

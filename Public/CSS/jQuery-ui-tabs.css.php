@@ -1,12 +1,20 @@
+<?php 
+require_once '../../Private/PHP/variables.php';
+require_once './css-functions.php';
+require_once './media-queries.css.php';
+
+header("Content-Type: text/css");
+?>
+
 /* Main container for the tabs UI */
 .ui-tabs {
   display: flex;
   flex-direction: row-reverse;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: <?= $backgroundColor ?>; 
+  color: <?= $textColor ?>;
   border: none !important;
   height: 77vh;
-  border-left: 2px solid var(--hr-color) !important;
+  border-left: 2px solid <?= $highlightColor ?> !important;
   border-radius: 0 !important;
   padding: 0;
   cursor: default;
@@ -15,7 +23,7 @@
 
 /* Container for the tab headers */
 .ui-tabs .ui-tabs-nav {
-  background-color: var(--background-color);
+  background-color: <?= $backgroundColor ?>;
   height: calc(98% + 4px);
   padding: 0;
   display: flex;
@@ -34,7 +42,7 @@
   flex: 1;
   border: none;
   border-radius: 0;
-  background-color: var(--background-color);
+  background-color: <?= $backgroundColor ?>; 
   cursor: pointer !important;
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -49,23 +57,23 @@
 
 /* Styles for the active tab */
 .ui-tabs .ui-tabs-nav .ui-state-active a {
-  background-color: var(--a-color);
-  color: var(--text-color);
-  border: 1px solid var(--text-color) !important;
+  background-color: <?= $backgroundColorLL ?>;
+  color: <?= $textColor ?>; 
+  border: 1px solid <?= $textColor ?> !important;
   padding: 1px 10px !important;
   text-align: center;
 }
 
 /* Styles for inactive tabs */
 .ui-tabs .ui-tabs-nav :not(.ui-state-active) a {
-  background-color: var(--background-color-d);
-  color: var(--text-color);
-  border: 1px solid var(--text-color) !important;
+  background-color: <?= $backgroundColorL ?>; /* Replaced var(--background-color-l) */
+  color: <?= $textColor ?>;
+  border: 1px solid <?= $textColor ?> !important;
 }
 
 /* Hover effect for inactive tabs */
 .ui-tabs .ui-tabs-nav :not(.ui-state-active) a:hover {
-  background-color: var(--background-color-dd);
+  background-color: <?= $backgroundColorLL ?>; /* Replaced var(--background-color-ll) */
   padding: 1px 10px !important;
 }
 
@@ -90,4 +98,24 @@
   opacity: 1;
   visibility: visible;
   transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Extras */
+
+#classes {
+  padding-top: 10px;
+  color: <?= $textColor ?>
+}
+
+#classes > * > b {
+  margin-right: 20px;
+  padding: 10px;
+  cursor: default;
+  font-family: "Courier New", Courier, monospace !important;
+  border: 1px solid <?= $highlightColor ?>
+}
+
+#classes > * {
+  padding: 5px;
+  margin-bottom: 10px;
 }

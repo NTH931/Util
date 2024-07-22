@@ -10,9 +10,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 var _a;
 export class Create {
     static notification(content_1) {
-        return __awaiter(this, arguments, void 0, function* (content, options = {}, lingers = true) {
-            var _a, _b, _c, _d;
-            const createdAt = new Date();
+        return __awaiter(this, arguments, void 0, function* (content, importance = false, options = {}, lingers = true) {
+            var _a, _b, _c, _d, _e, _f;
+            if ((importance ? 2 : 1) < ((_b = JSON.parse((_a = Cookie.get("settings")) !== null && _a !== void 0 ? _a : "")) === null || _b === void 0 ? void 0 : _b.Notifications))
+                return;
+            const createdAt = new Time();
             const contentHeader = typeof content === 'string' ? '' : content.header;
             const contentMessage = typeof content === 'string' ? content : content.message;
             const $notification = $(`
@@ -29,10 +31,10 @@ export class Create {
                 display: 'block',
                 position: 'fixed',
                 zIndex: 1,
-                left: ((_a = options.position) === null || _a === void 0 ? void 0 : _a.left) || 'auto',
-                top: ((_b = options.position) === null || _b === void 0 ? void 0 : _b.top) || 'auto',
-                right: ((_c = options.position) === null || _c === void 0 ? void 0 : _c.right) || '10px',
-                bottom: ((_d = options.position) === null || _d === void 0 ? void 0 : _d.bottom) || '10px',
+                left: ((_c = options.position) === null || _c === void 0 ? void 0 : _c.left) || 'auto',
+                top: ((_d = options.position) === null || _d === void 0 ? void 0 : _d.top) || 'auto',
+                right: ((_e = options.position) === null || _e === void 0 ? void 0 : _e.right) || '10px',
+                bottom: ((_f = options.position) === null || _f === void 0 ? void 0 : _f.bottom) || '10px',
                 width: options.width || '300px',
                 height: options.height || 'auto',
                 overflow: 'auto',
@@ -61,9 +63,11 @@ export class Create {
         });
     }
     static iNotification(content_1, buttons_1) {
-        return __awaiter(this, arguments, void 0, function* (content, buttons, options = {}, lingers = true) {
-            var _a, _b, _c, _d;
-            const createdAt = new Date();
+        return __awaiter(this, arguments, void 0, function* (content, buttons, importance = true, options = {}, lingers = true) {
+            var _a, _b, _c, _d, _e, _f;
+            if ((importance ? 2 : 1) < ((_b = JSON.parse((_a = Cookie.get("settings")) !== null && _a !== void 0 ? _a : "")) === null || _b === void 0 ? void 0 : _b.Notifications))
+                return;
+            const createdAt = new Time();
             const contentHeader = typeof content === 'string' ? '' : content.header;
             const contentMessage = typeof content === 'string' ? content : content.message;
             if (buttons.length > 4) {
@@ -88,10 +92,10 @@ export class Create {
                 display: 'block',
                 position: 'fixed',
                 zIndex: 1,
-                left: ((_a = options.position) === null || _a === void 0 ? void 0 : _a.left) || 'auto',
-                top: ((_b = options.position) === null || _b === void 0 ? void 0 : _b.top) || 'auto',
-                right: ((_c = options.position) === null || _c === void 0 ? void 0 : _c.right) || '10px',
-                bottom: ((_d = options.position) === null || _d === void 0 ? void 0 : _d.bottom) || '10px',
+                left: ((_c = options.position) === null || _c === void 0 ? void 0 : _c.left) || 'auto',
+                top: ((_d = options.position) === null || _d === void 0 ? void 0 : _d.top) || 'auto',
+                right: ((_e = options.position) === null || _e === void 0 ? void 0 : _e.right) || '10px',
+                bottom: ((_f = options.position) === null || _f === void 0 ? void 0 : _f.bottom) || '10px',
                 width: options.width || '300px',
                 height: options.height || 'auto',
                 overflow: 'auto',
@@ -128,7 +132,7 @@ export class Create {
         return __awaiter(this, arguments, void 0, function* (message, options = {}
         // @ts-ignore
         ) {
-            const createdAt = new Date();
+            const createdAt = new Time();
             const $popup = $(`
       <div id="popup">
         <div class="popup-content">
@@ -180,8 +184,44 @@ export class Create {
     }
     ;
 }
-export class Cookie {
-    static set(name, value, daysToExpire, path = "/") {
+export class Storage {
+}
+_a = Storage;
+Storage.localStorage = {
+    get(key) {
+        return localStorage.getItem(key);
+    },
+    set(key, value) {
+        try {
+            localStorage.setItem(key, value.toString());
+            return true;
+        }
+        catch (_b) {
+            return false;
+        }
+    },
+    remove(key) {
+        try {
+            localStorage.removeItem(key);
+            return true;
+        }
+        catch (_b) {
+            return false;
+        }
+    },
+    clear() {
+        try {
+            localStorage.clear();
+            return true;
+        }
+        catch (_b) {
+            return false;
+        }
+    }
+};
+// Method to get a cookie's value
+Storage.cookie = {
+    set(name, value, daysToExpire, path = "/") {
         let expirationDate = "";
         if (daysToExpire) {
             const date = new Date();
@@ -189,9 +229,8 @@ export class Cookie {
             expirationDate = "; expires=" + date.toUTCString();
         }
         document.cookie = `${name}=${encodeURIComponent(value)}${expirationDate}; path=${path}`;
-    }
-    // Method to get a cookie's value
-    static get(name) {
+    },
+    get(name) {
         const cookies = document.cookie.split(';');
         for (let i = 0; i < cookies.length; i++) {
             let cookie = cookies[i].trim();
@@ -200,8 +239,8 @@ export class Cookie {
             }
         }
         return null;
-    }
-    static getAll() {
+    },
+    getAll() {
         const allCookies = [];
         const cookies = document.cookie.split(';');
         for (let i = 0; i < cookies.length; i++) {
@@ -209,9 +248,9 @@ export class Cookie {
             allCookies.push(cookie);
         }
         return allCookies;
-    }
+    },
     // Method to delete a cookie
-    static delete(name) {
+    delete(name) {
         try {
             document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
             return true;
@@ -220,8 +259,8 @@ export class Cookie {
             return false;
         }
         ;
-    }
-    static clear() {
+    },
+    clear() {
         try {
             const cookies = document.cookie.split("; ");
             for (const cookie of cookies) {
@@ -234,20 +273,98 @@ export class Cookie {
             return false;
         }
     }
-}
-_a = Cookie;
+};
 // Aliases
-Cookie.create = _a.set;
-Cookie.construct = _a.set;
-Cookie.grab = _a.get;
-Cookie.pull = _a.get;
-Cookie.grabAll = _a.getAll;
-Cookie.pullAll = _a.getAll;
-Cookie.remove = _a.delete;
-Cookie.destroy = _a.delete;
-Cookie.removeAll = _a.clear;
-Cookie.deleteAll = _a.clear;
-Cookie.destroyAll = _a.clear;
+Storage.create = _a.cookie.set;
+Storage.construct = _a.cookie.set;
+Storage.grab = _a.cookie.get;
+Storage.pull = _a.cookie.get;
+Storage.grabAll = _a.cookie.getAll;
+Storage.pullAll = _a.cookie.getAll;
+Storage.remove = _a.cookie.delete;
+Storage.destroy = _a.cookie.delete;
+Storage.removeAll = _a.cookie.clear;
+Storage.deleteAll = _a.cookie.clear;
+Storage.setItem = _a.localStorage.set;
+Storage.getItem = _a.localStorage.get;
+Storage.removeItem = _a.localStorage.remove;
+/** Constructs date objects up to the hour */
+export class Time {
+    constructor(hours, minutes, seconds, milliseconds) {
+        this.date = new Date();
+        this.hours = hours !== null && hours !== void 0 ? hours : this.date.getHours();
+        this.minutes = minutes !== null && minutes !== void 0 ? minutes : this.date.getMinutes();
+        this.seconds = seconds !== null && seconds !== void 0 ? seconds : this.date.getSeconds();
+        this.milliseconds = milliseconds !== null && milliseconds !== void 0 ? milliseconds : this.date.getMilliseconds();
+        if (hours !== undefined && (hours < 0 || hours >= 24))
+            throw new Error("Hours must be between 0 and 23.");
+        if (minutes !== undefined && (minutes < 0 || minutes >= 60))
+            throw new Error("Minutes must be between 0 and 59.");
+        if (seconds !== undefined && (seconds < 0 || seconds >= 60))
+            throw new Error("Seconds must be between 0 and 59.");
+        if (milliseconds !== undefined && (milliseconds < 0 || milliseconds >= 1000))
+            throw new Error("Milliseconds must be between 0 and 999.");
+    }
+    setHours(hours) {
+        if (hours < 0 || hours >= 24) {
+            throw new Error("Hours must be between 0 and 23.");
+        }
+        this.hours = hours;
+    }
+    setMinutes(minutes) {
+        if (minutes < 0 || minutes >= 60) {
+            throw new Error("Minutes must be between 0 and 59.");
+        }
+        this.minutes = minutes;
+    }
+    // Additional setters
+    setSeconds(seconds) {
+        if (seconds < 0 || seconds >= 60) {
+            throw new Error("Seconds must be between 0 and 59.");
+        }
+        this.seconds = seconds;
+    }
+    setMilliseconds(milliseconds) {
+        if (milliseconds < 0 || milliseconds >= 1000) {
+            throw new Error("Milliseconds must be between 0 and 999.");
+        }
+        this.milliseconds = milliseconds;
+    }
+    getHours() { return this.hours; }
+    getMinutes() { return this.minutes; }
+    getSeconds() { return this.seconds; }
+    getMilliseconds() { return this.milliseconds; }
+    getTime() {
+        return (this.hours * 3600000 + // Convert hours to milliseconds
+            this.minutes * 60000 + // Convert minutes to milliseconds
+            this.seconds * 1000 + // Convert seconds to milliseconds
+            this.milliseconds // Add milliseconds
+        );
+    }
+    toString() { return `${this.hours.toString().padStart(2, '0')}:${this.minutes.toString().padStart(2, '0')}`; }
+    toISOString(dateInYears) { return `${dateInYears}T${this.toString()}:00.000Z`; }
+    addMinutes(minutesToAdd) {
+        const totalMinutes = this.hours * 60 + this.minutes + minutesToAdd;
+        const newHours = Math.floor((totalMinutes % 1440) / 60);
+        const newMinutes = totalMinutes % 60;
+        return new Time(newHours, newMinutes);
+    }
+    subtractMinutes(minutesToSubtract) {
+        const totalMinutes = this.hours * 60 + this.minutes - minutesToSubtract;
+        const newHours = Math.floor((totalMinutes % 1440 + 1440) / 60) % 24;
+        const newMinutes = ((totalMinutes % 60) + 60) % 60;
+        return new Time(newHours, newMinutes);
+    }
+    static fromISOString(isoString) {
+        const match = isoString.match(/T(\d{2}):(\d{2})/);
+        if (match) {
+            const hours = parseInt(match[1], 10);
+            const minutes = parseInt(match[2], 10);
+            return new Time(hours, minutes);
+        }
+        throw new Error("Invalid ISO string format.");
+    }
+}
 export function readFile(file) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -387,3 +504,5 @@ export const classes = {
     "SPEC": "Learning Support - SPEC",
     "LST": "Learning Support Transition"
 };
+export const LocalStorage = Storage.localStorage;
+export const Cookie = Storage.cookie;

@@ -8,8 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import * as Utils from "./utilities.js";
-const { Create, Cookie } = Utils;
+const { Create, LocalStorage, Cookie } = Utils;
+const $settings = $("#settings");
+$settings.hide();
+$("#settingsshow").on("click", function () {
+    $settings.toggle();
+});
 $(function () {
+    var _a;
+    const settings = JSON.parse((_a = Cookie.get("settings")) !== null && _a !== void 0 ? _a : "");
     // Function to create and add pop-out elements from structured data
     function addPopoutElements(parentDivId, jsonObject) {
         const $parentDiv = $("#" + parentDivId);
@@ -40,7 +47,7 @@ $(function () {
                     mouseenter: () => __awaiter(this, void 0, void 0, function* () {
                         setTimeout(() => {
                             $buttonElement.css({
-                                left: `30px`,
+                                left: "20px",
                                 visibility: "visible",
                                 opacity: 1,
                                 transition: `opacity 0.3s ease, visibility 0.3s ease`
@@ -50,7 +57,6 @@ $(function () {
                     mouseleave: () => __awaiter(this, void 0, void 0, function* () {
                         setTimeout(() => {
                             $buttonElement.css({
-                                left: `60px`,
                                 visibility: "hidden",
                                 opacity: 0,
                                 transition: `opacity 0.3s ease, visibility 0.3s ease`
@@ -91,7 +97,7 @@ $(function () {
         if (!data)
             return;
         for (let i = 1; i <= 9; i++) {
-            const jsonItems = JSON.parse(Cookie.pull(`class${i}`) || "[]");
+            const jsonItems = JSON.parse(LocalStorage.get(`class${i}`) || "[]");
             if (!jsonItems)
                 continue;
             try {
@@ -110,7 +116,8 @@ $(function () {
                 h4Element.appendChild(aElement);
                 (_a = document.querySelector('aside')) === null || _a === void 0 ? void 0 : _a.appendChild(divElement);
                 // Adding pop-out elements
-                addPopoutElements(`class${i}`, data[jsonItems.code]);
+                if (settings.Tooltips)
+                    addPopoutElements(`class${i}`, data[jsonItems.code]);
             }
             catch (_b) {
                 console.warn(`No class is defined for iteration ${i}.`);
@@ -122,4 +129,4 @@ $(function () {
 const notifi = Create.notification({
     header: "What do you Want?",
     message: "This is a new notification.",
-});
+}, false);

@@ -1,9 +1,4 @@
 <?php
-#############
-# IMPORTANT #
-#############
-# Need to replace the JSON file storage with the localStorage($key, $value) variable in javascript.
-
 # php.ini settings
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -21,11 +16,24 @@ error_reporting(E_ALL | E_STRICT);
 # Current file exact
 @define("CURR_FILE", basename(__FILE__));
 # Current file executing
-@define("EXT_FILE", basename($_SERVER["SCRIPT_FILENAME"]));
+@define("EXEC_FILE", basename($_SERVER["SCRIPT_FILENAME"]));
 # Current file executing (without extension)
-@define("REAL_FILE", pathinfo(EXT_FILE, PATHINFO_FILENAME));
+@define("THIS_FILE", pathinfo(EXEC_FILE, PATHINFO_FILENAME));
+# Servers Request Method
+@define("REQ_METHOD", $_SERVER["REQUEST_METHOD"]);
 # Newline
 @define("nl", "\n");
+@define("start", "s");
+@define("end", "e");
+
+if (isset($_COOKIE["settings"])) {
+  $_SETTINGS = [
+    "Tooltips" => cookie_get("settings")["Tooltips"],
+    "Base-Color" => cookie_get("settings")["Base-Color"],
+    "Notifications" => cookie_get("settings")["Notifications"],
+    "Buttons" => cookie_get("settings")["Buttons"]
+  ];
+}
 
 # Functions
 function listDirectory($dir) {
@@ -39,9 +47,13 @@ function listDirectory($dir) {
   }
 }
 
-function console_log($message) {
-  echo `<script>console.log("$message");</script>`;
-
+function cookie_get(string $name): string|array|null {
+  if (isset($_COOKIE["$name"])) {
+    $namejson = json_decode($_COOKIE["$name"], true) ?? null;
+    return $namejson;
+  } else {
+    return null;
+  }
 }
 
 function Camel(string $string, bool $concat = false) {
@@ -103,7 +115,26 @@ function insertIntoHeader($filePath, $insertLine, $insertPosition) {
   echo $newContent;
 }
 
-# Global Array
+function substr_slice(string $type, string $string, string $character) {
+  if ($type === "e" || $type === "end") {
+    $position = strpos($string, $character);
+    if ($position !== false) {
+      // Remove the substring from the start to the position of the character (inclusive)
+      $string = substr($string, $position + 1);
+    }
+  
+    return $string;
+  } elseif ($type === "s" || $type === "start") {
+    $position = strpos($string, $character);
+    if ($position !== false) {
+      // Remove the substring from the character to the end of the string
+      $string = substr($string, 0, $position);
+    }
+    
+    return $string;
+  }
+}
+
 global $subjects;
 $subjects = array(
   "HuiAko" => "HuiAko",

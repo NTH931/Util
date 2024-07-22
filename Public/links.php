@@ -45,7 +45,7 @@ function input($name, $autocomplete = false) {
             border-radius: 10px;
             margin-left: 5px;
             margin-right: 18px;
-            color: var(--a-color);
+            color: var(--highlight-color);
             font-size: .97rem;
         }
         label:hover {
