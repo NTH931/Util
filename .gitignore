@@ -29,6 +29,8 @@ app-structure.md
 error.php
 sass.json
 tsconfig.json
+package.json
+package-lock.json
 
 src/
 *.ts

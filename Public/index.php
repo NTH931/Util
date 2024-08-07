@@ -1,6 +1,7 @@
 <?php
 require_once "./Includes/header.php";
 require_once "../Private/PHP/settings.php";
+
 function links(string|null $id, string $href, string $text, bool $_blank = true) {
   global $_SETTINGS;
   if (isset($_SETTINGS["Buttons"][$id]) || $id === null) {
@@ -32,7 +33,7 @@ function classes($i, $text, $href) { return "<h4><a id='classbuttons$i' class='w
       links("GGL", "https://www.google.com/", "Google") .
       links(null, "https://whanau.aotea.school.nz", "Whanau Portal") .
       links(null, "quickwrite.php", "QuickType", false) .
-      links("EDC", "links.php", "Edit Classes", false)
+      links(null, "links.php", "Edit Classes", false)
     ?>
     <button id="settingsshow">Settings</button>
   </nav>
@@ -48,9 +49,8 @@ function classes($i, $text, $href) { return "<h4><a id='classbuttons$i' class='w
       <div id="tabs">
         <ul>
           <li id="child-1"><a href="#tab-1">Website Links</a></li>
-          <li id="child-2"><a href="#tab-2">Timetable</a></li>
+          <!--<li id="child-2"><a href="#tab-2">Timetable</a></li>-->
           <li id="child-3"><a href="#tab-3">Classes</a></li>
-          <!--<li id="child-3"><a href="#tab-3">Settings</a></li>-->
         </ul>
         <div id="tab-1">
           <?= DIVIDER ?> <?=
@@ -91,10 +91,10 @@ function classes($i, $text, $href) { return "<h4><a id='classbuttons$i' class='w
         <div id="tab-3">
           <?= DIVIDER ?>
           <input 
-            style="width: 100%" 
+            style="width: 100%; position: sticky; top: 1px; z-index: 10;" 
             type="search" 
             search-content="classes"  
-            placeholder="Class"
+            placeholder="Search For Classes..."
             elements=".class-item"
           >
           <div id="classes">
@@ -189,7 +189,6 @@ function classes($i, $text, $href) { return "<h4><a id='classbuttons$i' class='w
   </div>
   <link rel="stylesheet" href="CSS/jQuery-ui-tabs.css.php">
   <?php require_once "Includes/footer.php"; ?>
-  <script type="module" src="js/index.js"></script>
   <script>
     $(document).ready(function() {
       $("#tabs").tabs({

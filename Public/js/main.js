@@ -1,5 +1,30 @@
 import * as Utils from './utilities.js';
-const { Time, Create } = Utils;
+const { Time, Create, Storage, media, log, Cookie } = Utils;
+$(function () {
+    var _a, _b;
+    const visited = (_b = JSON.parse((_a = Cookie.get("page_visited")) !== null && _a !== void 0 ? _a : "")) !== null && _b !== void 0 ? _b : false;
+    if (visited === false) {
+        Cookie.set("page_visited", true);
+        window.location.reload();
+    }
+    if (media("max-width", "400px")) {
+        log(true);
+    }
+    else {
+        log(false);
+    }
+});
+const $settings = $("#settings");
+$(function () {
+    $("#settingsshow").on("click", function (event) {
+        event.stopPropagation(); // Prevent the click event from bubbling up to the document
+        $settings.toggle();
+    });
+    $("#exit").on("click", function (event) {
+        event.stopPropagation(); // Prevent the click event from bubbling up to the document
+        $settings.hide();
+    });
+});
 $.fn.in = function (timeInSecs) {
     const $this = this; // Store the context
     // Use setTimeout to delay the execution and return the jQuery object for chaining

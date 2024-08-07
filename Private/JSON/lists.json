@@ -39,30 +39,30 @@
   ],
   "INT": [
     {
-      "location": "#",
-      "text": "Button 1"
+      "location": "https://www.maoridictionary.co.nz/",
+      "text": "Maori Dictionary"
     },
     {
-      "location": "#",
-      "text": "Button 2"
+      "location": "https://www.dictionary.com/",
+      "text": "Dictionary.com"
     },
     {
-      "location": "#",
-      "text": "Button 3"
+      "location": "https://www.thesaurus.com/",
+      "text": "Thesaurus.com"
     }
   ],
   "INS": [
     {
-      "location": "#",
-      "text": "Button 1"
+      "location": "https://www.maoridictionary.co.nz/",
+      "text": "Maori Dictionary"
     },
     {
-      "location": "#",
-      "text": "Button 2"
+      "location": "https://www.dictionary.com/",
+      "text": "Dictionary.com"
     },
     {
-      "location": "#",
-      "text": "Button 3"
+      "location": "https://www.thesaurus.com/",
+      "text": "Thesaurus.com"
     }
   ],
   "ENG": [
@@ -135,6 +135,7 @@
       "text": "Button 3"
     }
   ],
+
   "HEA": [
     {
       "location": "#",
@@ -191,6 +192,7 @@
       "text": "Button 3"
     }
   ],
+
   "TGC": [
     {
       "location": "#",
@@ -359,6 +361,7 @@
       "text": "Button 3"
     }
   ],
+
   "ARP": [
     {
       "location": "#",
@@ -401,14 +404,15 @@
       "text": "Button 3"
     }
   ],
+
   "MUS": [
     {
       "location": "https://musicecademyapp.com/login/index.php",
       "text": "Music Ecademy"
     },
     {
-      "location": "#",
-      "text": "Button 2"
+      "location": "https://www.soundtrap.com/studio",
+      "text": "SoundTrap"
     },
     {
       "location": "#",
@@ -421,8 +425,8 @@
       "text": "Music Ecademy"
     },
     {
-      "location": "#",
-      "text": "Button 2"
+      "location": "https://www.soundtrap.com/studio",
+      "text": "SoundTrap"
     },
     {
       "location": "#",
@@ -457,6 +461,7 @@
       "text": "Button 3"
     }
   ],
+
   "MPA": [
     {
       "location": "#",
@@ -485,7 +490,6 @@
       "text": "Button 3"
     }
   ],
-
   "SFC": [
     {
       "location": "#",
@@ -500,7 +504,6 @@
       "text": "Button 3"
     }
   ],
-
   "SSU": [
     {
       "location": "#",
@@ -515,7 +518,6 @@
       "text": "Button 3"
     }
   ],
-
   "SNS": [
     {
       "location": "#",
@@ -530,7 +532,6 @@
       "text": "Button 3"
     }
   ],
-
   "SCB": [
     {
       "location": "#",
@@ -545,7 +546,6 @@
       "text": "Button 3"
     }
   ],
-
   "SPS": [
     {
       "location": "#",
@@ -560,7 +560,6 @@
       "text": "Button 3"
     }
   ],
-
   "BIO": [
     {
       "location": "#",
@@ -575,7 +574,6 @@
       "text": "Button 3"
     }
   ],
-
   "CHE": [
     {
       "location": "#",
@@ -590,7 +588,6 @@
       "text": "Button 3"
     }
   ],
-
   "PHY": [
     {
       "location": "#",
@@ -605,7 +602,6 @@
       "text": "Button 3"
     }
   ],
-
   "ELS": [
     {
       "location": "#",
@@ -635,7 +631,6 @@
       "text": "Button 3"
     }
   ],
-
   "FRA": [
     {
       "location": "#",
@@ -650,7 +645,6 @@
       "text": "Button 3"
     }
   ],
-
   "JPN": [
     {
       "location": "#",
@@ -665,7 +659,6 @@
       "text": "Button 3"
     }
   ],
-
   "JPA": [
     {
       "location": "#",
@@ -680,7 +673,6 @@
       "text": "Button 3"
     }
   ],
-
   "MDR": [
     {
       "location": "#",
@@ -695,7 +687,6 @@
       "text": "Button 3"
     }
   ],
-
   "MDA": [
     {
       "location": "#",
@@ -710,7 +701,6 @@
       "text": "Button 3"
     }
   ],
-
   "MAO": [
     {
       "location": "#",
@@ -725,7 +715,6 @@
       "text": "Button 3"
     }
   ],
-
   "MAA": [
     {
       "location": "#",
@@ -740,7 +729,6 @@
       "text": "Button 3"
     }
   ],
-
   "SAM": [
     {
       "location": "#",
@@ -770,7 +758,6 @@
       "text": "Button 3"
     }
   ],
-
   "PWR": [
     {
       "location": "#",
@@ -800,7 +787,6 @@
       "text": "Button 3"
     }
   ],
-
   "COM": [
     {
       "location": "#",
@@ -815,7 +801,6 @@
       "text": "Button 3"
     }
   ],
-
   "COT": [
     {
       "location": "#",
@@ -830,7 +815,6 @@
       "text": "Button 3"
     }
   ],
-
   "GEO": [
     {
       "location": "#",
@@ -845,7 +829,6 @@
       "text": "Button 3"
     }
   ],
-
   "HIS": [
     {
       "location": "#",
@@ -860,7 +843,6 @@
       "text": "Button 3"
     }
   ],
-
   "CLS": [
     {
       "location": "#",
@@ -875,7 +857,6 @@
       "text": "Button 3"
     }
   ],
-
   "ECC": [
     {
       "location": "#",
@@ -890,7 +871,6 @@
       "text": "Button 3"
     }
   ],
-
   "FIN": [
     {
       "location": "#",
@@ -905,7 +885,6 @@
       "text": "Button 3"
     }
   ],
-
   "MED": [
     {
       "location": "#",
@@ -920,7 +899,6 @@
       "text": "Button 3"
     }
   ],
-
   "PSY": [
     {
       "location": "#",
@@ -935,7 +913,6 @@
       "text": "Button 3"
     }
   ],
-
   "TOU": [
     {
       "location": "#",
@@ -965,7 +942,6 @@
       "text": "Button 3"
     }
   ],
-
   "ENGB": [
     {
       "location": "#",
@@ -980,7 +956,6 @@
       "text": "Button 3"
     }
   ],
-
   "ENGC": [
     {
       "location": "#",
@@ -995,7 +970,6 @@
       "text": "Button 3"
     }
   ],
-
   "ENGD": [
     {
       "location": "#",
@@ -1010,7 +984,6 @@
       "text": "Button 3"
     }
   ],
-
   "ENGF": [
     {
       "location": "#",
@@ -1025,7 +998,6 @@
       "text": "Button 3"
     }
   ],
-
   "ENGG": [
     {
       "location": "#",
@@ -1040,7 +1012,6 @@
       "text": "Button 3"
     }
   ],
-
   "ENGH": [
     {
       "location": "#",
@@ -1055,7 +1026,6 @@
       "text": "Button 3"
     }
   ],
-
   "ENGJ": [
     {
       "location": "#",
@@ -1070,7 +1040,6 @@
       "text": "Button 3"
     }
   ],
-
   "ENGK": [
     {
       "location": "#",
@@ -1085,7 +1054,6 @@
       "text": "Button 3"
     }
   ],
-
   "ENGL": [
     {
       "location": "#",
@@ -1100,7 +1068,6 @@
       "text": "Button 3"
     }
   ],
-
   "ENGM": [
     {
       "location": "#",
@@ -1115,7 +1082,6 @@
       "text": "Button 3"
     }
   ],
-
   "ENGN": [
     {
       "location": "#",
@@ -1130,7 +1096,6 @@
       "text": "Button 3"
     }
   ],
-
   "ENGQ": [
     {
       "location": "#",
@@ -1160,7 +1125,6 @@
       "text": "Button 3"
     }
   ],
-
   "MAS": [
     {
       "location": "#",
@@ -1174,8 +1138,8 @@
       "location": "#",
       "text": "Button 3"
     }
-    ],
-
+  ],
+  
   "GAT": [
     {
       "location": "#",
@@ -1190,7 +1154,6 @@
       "text": "Button 3"
     }
   ],
-
   "PAT": [
     {
       "location": "#",
@@ -1205,7 +1168,6 @@
       "text": "Button 3"
     }
   ],
-
   "WTA": [
     {
       "location": "#",
@@ -1220,7 +1182,6 @@
       "text": "Button 3"
     }
   ],
-
   "SPEC": [
     {
       "location": "#",
@@ -1235,7 +1196,6 @@
       "text": "Button 3"
     }
   ],
-
   "LST": [
     {
       "location": "#",

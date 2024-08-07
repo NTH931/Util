@@ -72,13 +72,13 @@ You can...
 
 ## Configuration
  - Edit Classes (The "Edit Classes" Button)
- - Edit Buttons (The "+" Button)
  - Settings (The "Settings" Button)
 
 ## Troubleshooting
 
-Usually the following teporarily fixes small bugs. We are still looking for the spacing bug!
- - Reloading the page
+Usually the following teporarily fixes small bugs!
+ - Reloading the page (Ctrl + r, F5)
+ - Force Reloading (Ctrl + Shift + r)
 
 ## Contributing
 
@@ -86,6 +86,6 @@ You can Contribute to Util! All you have to do is send an email to noah.haran@ao
 
 ## License
 
-Version 1.2.0 (Funky Fish)
+Version 1.2.1 (Funky Fish)
 
 &copy; 2022 - 2024 Noah Haran. All rights reserved.

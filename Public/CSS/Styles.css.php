@@ -4,7 +4,8 @@ require_once './css-functions.php';
 require_once './media-queries.css.php';
 
 header("Content-Type: text/css");
-?>
+
+echo <<<CSS
 
 /*-----------------------------------Tag Attribute Variables-------------------------------------*/
 * {
@@ -20,7 +21,7 @@ body {
   display: block;
   background-repeat: no-repeat;
   background-size: 100%, 100%;
-  background-color: <?= $backgroundColor ?>;
+  background-color: $backgroundColor;
 }
 
 textarea {
@@ -39,19 +40,19 @@ textarea:focus {
 a, span {
   text-decoration: none;
   font-size: 16px;
-  color: <?= $highlightColor ?>;
+  color: $highlightColor;
   width: fit-content;
 }
 
 h1 {
-  color: <?= $textColor ?>;
+  color: $textColor;
   display: inline-block;
   line-height: 10px;
   cursor: default;
 }
 
 h2, h3, h4, h5, h6, text {
-  color: <?= $textColor ?>;
+  color: $textColor;
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
   display: block;
@@ -62,7 +63,7 @@ h4#todo {
 }
 
 nav {
-  border-bottom: 2px solid <?= $highlightColor ?>;
+  border-bottom: 2px solid $highlightColor;
   margin-left: -8px;
   margin-right: -8px;
   text-indent: 5px;
@@ -91,32 +92,32 @@ section {
 button.plus, input[type=text], button.no, button:not(.no), input[type=button], input[type=search], select, option, input[type=submit] {
   margin: 2px;
   margin-top: 1px;
-  color: <?= $highlightColor ?>;
+  color: $highlightColor;
   font-size: 16px;
   padding: 3px 4px 2px 4px;
   border-radius: 20px;
   cursor: pointer;
-  border: 1px solid <?= $buttonBgLL ?>;
-  background-color: <?= $buttonBg ?>;
+  border: 1px solid $buttonBgLL;
+  background-color: $buttonBg;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 button:hover, input[type=button]:hover, input[type=submit]:hover, select:hover, option:hover {
-  background-color: <?= $buttonBgL ?>;
+  background-color: $buttonBgL;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 button:focus, input[type=button]:focus, input[type=submit]:focus, select:focus, option:focus {
   outline: none;
-  box-shadow: 0 0 0 3px <?= $buttonBg ?>;
+  box-shadow: 0 0 0 3px $buttonBg;
 }
 
 button.no {
   cursor: not-allowed;
-  color: <?= $redText ?>;
+  color: $redText;
 }
 button.no:hover {
-  background-color: <?= $buttonBgL ?>;
+  background-color: $buttonBgL;
 }
 
 input[type=text], input[type=search] {
@@ -128,15 +129,15 @@ input[type=text], input[type=search] {
 input[type=text] { width: calc(70vw + 2px) }
 
 input[type=text]:hover, input[type=button]:hover {
-  background-color: <?= $buttonBg ?>;
+  background-color: $buttonBg;
 }
 
 label {
-  background-color: <?= $buttonBg ?>;
+  background-color: $buttonBg;
 }
 
 div {
-  color: <?= $textColor ?>;
+  color: $textColor;
 }
 
 ul {
@@ -168,14 +169,15 @@ span#dropdown-label {
 span#dropdown-label:hover {
   cursor: pointer;
   text-decoration: underline;
-  background-color: <?= darken($buttonBg, 5) ?>
+  background-color: darken($buttonBg, 5)
 }
 
 /*----------------------------------------User-Made variables-------------------------------------*/
 .title {
-  color: <?= $textColor ?>;
+  color: $textColor;
   display: inline-block;
   line-height: 10px;
+  font-size: 1rem !important;
 }
 
 .main {
@@ -206,7 +208,7 @@ span#dropdown-label:hover {
   border: 2px;
   text-align: center;
   border-radius: 7px;
-  background-color: <?= $buttonBg ?>;
+  background-color: $buttonBg;
   text-decoration: none;
   padding-left: 5px;
   padding-right: 5px;
@@ -218,19 +220,19 @@ button.plus {
   width: 25px;
   margin-top: -10px;
   border-radius: 7.5px;
-  color: <?= $textColor ?>;
+  color: $textColor;
   background-color: rgba(255, 255, 255, 0);
-  border: 2px solid <?= $textColor ?>;
+  border: 2px solid $textColor;
   box-shadow: 4px 6px 10px 0 rgba(0, 0, 0, 0.5) 0 17px 50px 0 rgba(0, 0, 0, 0.5);
   transform: none;
 }
 button.plus:hover {
-  background-color: <?= $buttonBg ?>;
+  background-color: $buttonBg;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 button.plus:focus {
   outline: none;
-  box-shadow: 0 0 0 3px <?= $buttonBg ?>;
+  box-shadow: 0 0 0 3px $buttonBg;
 }
 
 .spanA {
@@ -239,14 +241,14 @@ button.plus:focus {
   border: 2px;
   text-align: center;
   border-radius: 7.5px;
-  background-color: <?= $buttonBg ?>;
+  background-color: $buttonBg;
   text-decoration: none;
   padding-left: 5px;
   padding-right: 5px;
 }
 
 .hrcolor {
-  border-bottom: 2px solid <?= $highlightColor ?>;
+  border-bottom: 2px solid $highlightColor;
   padding-bottom: 8px;
   width: 99vw;
 }
@@ -258,12 +260,12 @@ button.plus:focus {
 /*----------------------------------------Id Variables------------------------------------------*/
 footer > h6 {
   position: absolute;
-  border-top: 2px solid <?= $highlightColor ?>;
+  border-top: 2px solid $highlightColor;
   left: -150px;
   width: 120%;
   bottom: 0;
-  color: <?= $textColor ?>;
-  background-color: <?= $backgroundColor ?>;
+  color: $textColor;
+  background-color: $backgroundColor;
   padding-top: 0.5rem;
   padding-left: 0.5rem;
   text-align: center;
@@ -277,6 +279,7 @@ footer > h6 {
   display: inline-block;
   line-height: 25px;
   width: 50%;
+  font-size: 2.5rem !important;
   cursor: default;
 }
 
@@ -304,7 +307,7 @@ footer > h6 {
   display: none;
   padding: 10px;
   border-radius: 10px;
-  background-color: <?= $backgroundColorL ?>;
+  background-color: $backgroundColorL;
   position: fixed; /* Change to fixed to keep it in a fixed position */
   width: 340px;
   height: max-content;
@@ -315,20 +318,20 @@ footer > h6 {
 }
 
 .notifi > .notifi-content {
-  background-color: <?= $backgroundColorL ?>;
+  background-color: $backgroundColorL;
   padding: 100px;
   padding: 8px 7px 7px 7px;
   border: 1px solid #888;
   width: 80%;
 }
 .notifi > .notifi-content > .notifi-header {
-  color: <?= $highlightColor ?>;
+  color: $highlightColor;
   font-size: 0.8rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
 .notifi > .notifi-content > .notifi-message {
-  color: <?= $textColor ?>;
+  color: $textColor;
   padding: 0 0 5px 7px;
 }
 .notifi > .notifi-content > .dismis {
@@ -363,7 +366,7 @@ footer > h6 {
 }
 .notifi .notifi-buttons > .notifi-button:focus {
   color: white;
-  border: 1px solid <?= $highlightColor ?>;
+  border: 1px solid $highlightColor;
 }
 
 #notification-board {
@@ -373,3 +376,4 @@ footer > h6 {
   right: 5px;
   bottom: 5px;
 }
+CSS;

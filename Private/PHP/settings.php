@@ -138,19 +138,19 @@
         foreach ($file['ButtonsObj'] as $button => $value) {
           $modifiers = trim(substr_slice(end, $value, "!"));
 
-          if ($modifiers === "unavaliable") continue;
+          if ($modifiers === "unswitchable" || $modifiers === "unavaliable") continue;
 
           $specialButton = htmlspecialchars($button);
           $specialValue  = htmlspecialchars(trim(substr_slice(start, $value, "!")));
           $checked       = isset($cookie[$button]) ? ($cookie[$button] ? "checked" : "") : "";
 
-          echo <<<DOCSTR
+          echo <<<HTML
           <label class="switch">
             $specialValue:
             <input type="checkbox" id="$specialButton" name="Buttons[$specialButton]" value="1" $checked>
             <span class="slider"></span>
           </label><br>
-          DOCSTR;
+          HTML;
         }
       }
     ?>

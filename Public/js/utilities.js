@@ -104,12 +104,11 @@ export class Create {
                 mouseenter: function () { $(this).css('color', '#fff'); },
                 mouseleave: function () { $(this).css('color', '#888'); },
                 click: function () {
-                    var _a;
+                    var _a, _b, _c;
                     const index = $(this).data('index');
                     if (index !== undefined && ((_a = buttons[index]) === null || _a === void 0 ? void 0 : _a.buttonFunction)) {
+                        (_c = (_b = buttons[index]).buttonFunction) === null || _c === void 0 ? void 0 : _c.call(_b);
                         $('.notifi').fadeOut(1000, function () {
-                            var _a, _b;
-                            (_b = (_a = buttons[index]).buttonFunction) === null || _b === void 0 ? void 0 : _b.call(_a);
                             return { action: 'buttonClicked', buttonIndex: index, createdAt, interactedWithin: Date.now() - createdAt.getTime() };
                         });
                     }
@@ -417,7 +416,11 @@ export function protoMethod(Class, methodDefinition, options = { enumerable: fal
         throw new TypeError('Invalid type for first argument');
     }
 }
-export function echo(...data) { console.log(...data); }
+export function media(rule, value) {
+    const mediaQueryString = `(${rule}: ${value})`;
+    return window.matchMedia(mediaQueryString).matches;
+}
+export function log(...data) { console.log(...data); }
 export const classes = {
     "HuiAko": "HuiAko",
     "INT": "Integrated Studies",

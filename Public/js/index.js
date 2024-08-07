@@ -9,11 +9,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import * as Utils from "./utilities.js";
 const { Create, LocalStorage, Cookie } = Utils;
-const $settings = $("#settings");
-$settings.hide();
-$("#settingsshow").on("click", function () {
-    $settings.toggle();
-});
 $(function () {
     var _a;
     const settings = JSON.parse((_a = Cookie.get("settings")) !== null && _a !== void 0 ? _a : "");
@@ -126,7 +121,14 @@ $(function () {
     })
         .catch(error => alert(error.message));
 });
-const notifi = Create.notification({
-    header: "What do you Want?",
-    message: "This is a new notification.",
-}, false);
+if (!Cookie.get("clicked")) {
+    Create.iNotification({
+        header: "Welcome to Util!",
+        message: "Click the Go To Settings button to change the sites settings.<br>" +
+            "Click the Change Classes button to change your classes.",
+    }, [
+        { buttonText: "Go To Settings", buttonFunction: () => $("#settings").show() },
+        { buttonText: "Cutomize Classes", buttonFunction: () => window.location.href = "links.php" },
+        { buttonText: "Stop Showing", buttonFunction: () => { Cookie.set("clicked", true); } }
+    ], true, { width: "700px", position: { right: "20vw", top: "40vh" } });
+}
