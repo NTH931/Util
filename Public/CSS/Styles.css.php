@@ -32,10 +32,12 @@ textarea {
   box-sizing: border-box;
   font-size: 1.1em;
 }
+
 textarea:focus {
   border: 1px solid black;
   outline: none;
 }
+
 
 a, span {
   text-decoration: none;
@@ -109,13 +111,13 @@ button:hover, input[type=button]:hover, input[type=submit]:hover, select:hover, 
 }
 button:focus, input[type=button]:focus, input[type=submit]:focus, select:focus, option:focus {
   outline: none;
-  box-shadow: 0 0 0 3px $buttonBg;
 }
 
 button.no {
   cursor: not-allowed;
   color: $redText;
 }
+
 button.no:hover {
   background-color: $buttonBgL;
 }
@@ -226,10 +228,12 @@ button.plus {
   box-shadow: 4px 6px 10px 0 rgba(0, 0, 0, 0.5) 0 17px 50px 0 rgba(0, 0, 0, 0.5);
   transform: none;
 }
+  
 button.plus:hover {
   background-color: $buttonBg;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
+
 button.plus:focus {
   outline: none;
   box-shadow: 0 0 0 3px $buttonBg;
@@ -282,10 +286,9 @@ footer > h6 {
   font-size: 2.5rem !important;
   cursor: default;
 }
+#title:hover { cursor: pointer; }
 
-#tabs {
-  width: fit-content;
-}
+#tabs { width: fit-content; }
 
 #container {
   display: flex !important;
@@ -342,9 +345,11 @@ footer > h6 {
   cursor: pointer;
   transition: color 0.4s ease;
 }
+
 .notifi > .notifi-content > .dismis:hover {
   color: #fff;
 }
+
 .notifi .notifi-buttons {
   display: flex;
   justify-content: space-between;
@@ -361,9 +366,9 @@ footer > h6 {
   margin: 0 7px;
   max-height: 40px;
 }
-.notifi .notifi-buttons > .notifi-button:hover {
-  color: #fff;
-}
+
+.notifi .notifi-buttons > .notifi-button:hover { color: #fff; }
+
 .notifi .notifi-buttons > .notifi-button:focus {
   color: white;
   border: 1px solid $highlightColor;

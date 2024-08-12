@@ -21,12 +21,14 @@ error_reporting(E_ALL | E_STRICT);
 @define("THIS_FILE", pathinfo(EXEC_FILE, PATHINFO_FILENAME));
 # Servers Request Method
 @define("REQ_METHOD", $_SERVER["REQUEST_METHOD"]);
+# PHP_SELF
+@define("PHP_SELF", $_SERVER["PHP_SELF"]);
 # Newline
 @define("nl", "\n");
 @define("start", "s");
 @define("end", "e");
 
-if (isset($_COOKIE["settings"])) {
+if (isset($_COOKIE["settings"]) && isset($_COOKIE["page_visited"])) {
   $_SETTINGS = [
     "Tooltips" => cookie_get("settings")["Tooltips"],
     "Base-Color" => cookie_get("settings")["Base-Color"],
@@ -36,16 +38,6 @@ if (isset($_COOKIE["settings"])) {
 }
 
 # Functions
-function listDirectory($dir) {
-  $files = scandir($dir);
-  foreach($files as $file) {
-    if ($file == '.' || $file == '..') continue;
-      echo $dir . '/' . $file . PHP_EOL;
-    if (is_dir($dir . '/' . $file)) {
-      listDirectory($dir . '/' . $file);
-    }
-  }
-}
 
 function cookie_get(string $name): string|array|null {
   if (isset($_COOKIE["$name"])) {
@@ -54,6 +46,10 @@ function cookie_get(string $name): string|array|null {
   } else {
     return null;
   }
+}
+
+function cookie_set(string $name, string|array $value, $time_days = 1): void {
+  setcookie($name, is_array($value) ? json_encode($value) : $value, time() + ($time_days * (24 * 60 * 60)), '/');
 }
 
 function Camel(string $string, bool $concat = false) {
@@ -84,37 +80,6 @@ function systemPath($path) {
   return $result ? $result : '.'; // Return '.' if result is empty (no directories before 'Util')
 }
 
-function fromJs() {
-  $inputJSON = file_get_contents('php://input');
-  return json_decode($inputJSON, true); // Decode JSON into associative array
-}
-
-function insertIntoHeader($filePath, $insertLine, $insertPosition) {
-  // Start output buffering
-  ob_start();
-
-  // Include the header file
-  require_once $filePath;
-
-  // Get the content of the included file
-  $content = ob_get_contents();
-
-  // End output buffering and clean it
-  ob_end_clean();
-
-  // Insert new lines at a specific position
-  $lines = explode("\n", $content);
-
-  // Insert the new line into the array
-  array_splice($lines, $insertPosition, 0, $insertLine);
-
-  // Convert the array back to a string
-  $newContent = implode("\n", $lines);
-
-  // Output the modified content
-  echo $newContent;
-}
-
 function substr_slice(string $type, string $string, string $character) {
   if ($type === "e" || $type === "end") {
     $position = strpos($string, $character);
@@ -134,6 +99,8 @@ function substr_slice(string $type, string $string, string $character) {
     return $string;
   }
 }
+
+# Arrays
 
 global $subjects;
 $subjects = array(

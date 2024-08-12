@@ -86,6 +86,6 @@ You can Contribute to Util! All you have to do is send an email to noah.haran@ao
 
 ## License
 
-Version 1.2.1 (Funky Fish)
+Version 1.2.2 (Funky Fish)
 
 &copy; 2022 - 2024 Noah Haran. All rights reserved.

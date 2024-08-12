@@ -20,11 +20,12 @@
       width: 0;
       height: 0;
     }
+
     .switch .slider {
       position: relative;
       width: 31px;
       height: 17px;
-      background-color: var(--background-color-ll);
+      background-color: var(--background-color-lll);
       border-radius: 25px;
       cursor: pointer;
       margin: 0 10px;
@@ -81,7 +82,7 @@
 
   </style>
   <?php 
-    require_once 'variables.php';
+    require_once '../Private/PHP/variables.php';
     function current_setting_s(string $cookieName, string|bool $testValue) {
       $settingsCookie = json_decode($_COOKIE["settings"], true);
       return isset($settingsCookie[$cookieName]) && $settingsCookie[$cookieName] == $testValue ? "selected" : '';
@@ -106,8 +107,7 @@
     <label class="set">
       <b>Base Color:</b>
       <select name="Base-Color">
-        <option value="red" <?= current_setting_s("Base-Color", "red") ?>><b>Red</b></option>
-        <option value="orange" <?= current_setting_s("Base-Color", "orange") ?>><b>Orange</b></option>
+        <option value="red" <?= current_setting_s("Base-Color", "red") ?>><b>Red & Orange</b></option>
         <option value="yellow" <?= current_setting_s("Base-Color", "yellow") ?>><b>Yellow</b></option>
         <option value="green" <?= current_setting_s("Base-Color", "green") ?>><b>Green</b></option>
         <option value="blue" <?= current_setting_s("Base-Color", "blue") ?>><b>Blue</b> - Default</option>
@@ -123,7 +123,8 @@
         <option value="3" <?= current_setting_s("Notifications", "3") ?>>Notification Panel Only</option>
       </select>
     </label>
-    <?= switch_element("Tooltips", "tooltips", current_setting_c("Tooltips", true)) ?>
+    <?= switch_element("Tooltips", "Tooltips", current_setting_c("Tooltips", true)) ?>
+    <?= switch_element("Light Mode", "Dark-Mode", current_setting_c("Dark-Mode", true)) ?>
     <dropdown label="Buttons" class="parent">
     <?php
       ##################

@@ -72,37 +72,37 @@ function input($name, $autocomplete = false) {
         <?= input("class1", false) ?>
         <br><br>
 
-        <select name="selection2"><?php include "Includes/classes.php" ?></select>
+        <select name="selection2"><?php include "Includes/classes.html" ?></select>
         <?= input("class2", false) ?>
 
         <br><br>
 
-        <select name="selection3"><?php include "Includes/classes.php" ?></select>
+        <select name="selection3"><?php include "Includes/classes.html" ?></select>
         <?= input("class3", false) ?>
 
         <br><br>
 
-        <select name="selection4"><?php include "Includes/classes.php" ?></select>
+        <select name="selection4"><?php include "Includes/classes.html" ?></select>
         <?= input("class4", false) ?>
 
         <br><br>
 
-        <select name="selection5"><?php include "Includes/classes.php" ?></select>
+        <select name="selection5"><?php include "Includes/classes.html" ?></select>
         <?= input("class5", false) ?>
 
         <br><br>
 
-        <select name="selection6"><?php include "Includes/classes.php" ?></select>
+        <select name="selection6"><?php include "Includes/classes.html" ?></select>
         <?= input("class6", false) ?>
 
         <br><br>
 
-        <select name="selection7"><?php include "Includes/classes.php" ?></select>
+        <select name="selection7"><?php include "Includes/classes.html" ?></select>
         <?= input("class7", false) ?>
 
         <br><br>
 
-        <select name="selection8"><?php include "Includes/classes.php" ?></select>
+        <select name="selection8"><?php include "Includes/classes.html" ?></select>
         <?= input("class1", false) ?>
 
         <br>

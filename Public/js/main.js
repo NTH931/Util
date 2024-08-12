@@ -1,17 +1,17 @@
 import * as Utils from './utilities.js';
-const { Time, Create, Storage, media, log, Cookie } = Utils;
+const { Time, Create, media, cookie } = Utils;
 $(function () {
     var _a, _b;
-    const visited = (_b = JSON.parse((_a = Cookie.get("page_visited")) !== null && _a !== void 0 ? _a : "")) !== null && _b !== void 0 ? _b : false;
+    const visited = (_b = JSON.parse((_a = cookie.get("page_visited")) !== null && _a !== void 0 ? _a : "")) !== null && _b !== void 0 ? _b : false;
     if (visited === false) {
-        Cookie.set("page_visited", true);
+        cookie.set("page_visited", true);
         window.location.reload();
     }
     if (media("max-width", "400px")) {
-        log(true);
+        console.log(true);
     }
     else {
-        log(false);
+        console.log(false);
     }
 });
 const $settings = $("#settings");

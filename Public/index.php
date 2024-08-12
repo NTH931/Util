@@ -1,6 +1,6 @@
 <?php
 require_once "./Includes/header.php";
-require_once "../Private/PHP/settings.php";
+require_once "./Includes/settings.php";
 
 function links(string|null $id, string $href, string $text, bool $_blank = true) {
   global $_SETTINGS;
@@ -21,9 +21,9 @@ function plus(string $id, bool $avaliable = true) {
   }
 }
 
-define("DIVIDER", "<div style='position: fixed; border-top: 2px solid var(--highlight-color); margin-top: -6px; margin-right: -10px; margin-left: -10px; visibility: visible;'></div>");
-
 function classes($i, $text, $href) { return "<h4><a id='classbuttons$i' class='whitebg' href='$href'>$text</a></h4>"; }
+
+define("DIVIDER", "<div style='position: fixed; border-top: 2px solid var(--highlight-color); margin-top: -6px; margin-right: -10px; margin-left: -10px; visibility: visible;'></div>");
 ?>
 
 <body>
@@ -203,5 +203,4 @@ function classes($i, $text, $href) { return "<h4><a id='classbuttons$i' class='w
     });
   </script>
 </body>
-
 </html>

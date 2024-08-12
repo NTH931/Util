@@ -1,5 +1,5 @@
 import * as Utils from "./utilities.js";
-const { classes, Storage } = Utils;
+const { classes } = Utils;
 $(function () {
     const reset = document.getElementById("reset");
     const form = document.getElementById("classes");
@@ -10,7 +10,13 @@ $(function () {
         e.preventDefault();
         const choice = window.confirm("Are you sure you want to delete all of your classroom data?");
         if (choice) {
-            const deletion = Storage.localStorage.clear();
+            const deletion = (() => { try {
+                localStorage.clear();
+                return true;
+            }
+            catch (_a) {
+                return false;
+            } })();
             if (deletion) {
                 console.warn(`User Data deleted! ${localData} classes removed from storage.`);
                 alert("User Data deleted!");
@@ -51,7 +57,7 @@ $(function () {
         if (classData.length > 0) {
             classData.forEach((item, index) => {
                 if (item.code) {
-                    Storage.localStorage.set(`class${index + 1}`, JSON.stringify(item));
+                    localStorage.setItem(`class${index + 1}`, JSON.stringify(item));
                 }
             });
             console.log(JSON.stringify(classData));

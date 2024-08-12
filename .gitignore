@@ -24,6 +24,7 @@ extras/
 backups/
 log/
 SCSS/
+Setup/
 
 app-structure.md
 error.php

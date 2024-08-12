@@ -1,0 +1,16 @@
+# Changelog
+ - Added light theme to go along with dark theme
+ - Added LICENSE
+ - Added Changelog
+ - Removed sql.php
+ - Removed log.php
+ - Removed /Log, along with all log files
+ - Changed index.php
+ - Changed header.php
+ - Changed settings.php
+ - Changed css-functions.css.php
+ - Changed Styles.css.php
+ - Changed media-queries.css.php
+ - Changed jQuery-ui-tabs.css.php
+ - Changed cookies.php
+ - Moved settings.php from /PHP to /Includes

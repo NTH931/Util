@@ -7,12 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var _a;
-export class Create {
+class Create {
     static notification(content_1) {
         return __awaiter(this, arguments, void 0, function* (content, importance = false, options = {}, lingers = true) {
             var _a, _b, _c, _d, _e, _f;
-            if ((importance ? 2 : 1) < ((_b = JSON.parse((_a = Cookie.get("settings")) !== null && _a !== void 0 ? _a : "")) === null || _b === void 0 ? void 0 : _b.Notifications))
+            if ((importance ? 2 : 1) < ((_b = JSON.parse((_a = cookie.get("settings")) !== null && _a !== void 0 ? _a : "")) === null || _b === void 0 ? void 0 : _b.Notifications))
                 return;
             const createdAt = new Time();
             const contentHeader = typeof content === 'string' ? '' : content.header;
@@ -65,7 +64,7 @@ export class Create {
     static iNotification(content_1, buttons_1) {
         return __awaiter(this, arguments, void 0, function* (content, buttons, importance = true, options = {}, lingers = true) {
             var _a, _b, _c, _d, _e, _f;
-            if ((importance ? 2 : 1) < ((_b = JSON.parse((_a = Cookie.get("settings")) !== null && _a !== void 0 ? _a : "")) === null || _b === void 0 ? void 0 : _b.Notifications))
+            if ((importance ? 2 : 1) < ((_b = JSON.parse((_a = cookie.get("settings")) !== null && _a !== void 0 ? _a : "")) === null || _b === void 0 ? void 0 : _b.Notifications))
                 return;
             const createdAt = new Time();
             const contentHeader = typeof content === 'string' ? '' : content.header;
@@ -183,112 +182,8 @@ export class Create {
     }
     ;
 }
-export class Storage {
-}
-_a = Storage;
-Storage.localStorage = {
-    get(key) {
-        return localStorage.getItem(key);
-    },
-    set(key, value) {
-        try {
-            localStorage.setItem(key, value.toString());
-            return true;
-        }
-        catch (_b) {
-            return false;
-        }
-    },
-    remove(key) {
-        try {
-            localStorage.removeItem(key);
-            return true;
-        }
-        catch (_b) {
-            return false;
-        }
-    },
-    clear() {
-        try {
-            localStorage.clear();
-            return true;
-        }
-        catch (_b) {
-            return false;
-        }
-    }
-};
-// Method to get a cookie's value
-Storage.cookie = {
-    set(name, value, daysToExpire, path = "/") {
-        let expirationDate = "";
-        if (daysToExpire) {
-            const date = new Date();
-            date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
-            expirationDate = "; expires=" + date.toUTCString();
-        }
-        document.cookie = `${name}=${encodeURIComponent(value)}${expirationDate}; path=${path}`;
-    },
-    get(name) {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            let cookie = cookies[i].trim();
-            if (cookie.startsWith(name + '=')) {
-                return decodeURIComponent(cookie.substring(name.length + 1));
-            }
-        }
-        return null;
-    },
-    getAll() {
-        const allCookies = [];
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            let cookie = cookies[i].trim();
-            allCookies.push(cookie);
-        }
-        return allCookies;
-    },
-    // Method to delete a cookie
-    delete(name) {
-        try {
-            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-            return true;
-        }
-        catch (_b) {
-            return false;
-        }
-        ;
-    },
-    clear() {
-        try {
-            const cookies = document.cookie.split("; ");
-            for (const cookie of cookies) {
-                const name = cookie.split("=")[0];
-                this.delete(name);
-            }
-            return true;
-        }
-        catch (_b) {
-            return false;
-        }
-    }
-};
-// Aliases
-Storage.create = _a.cookie.set;
-Storage.construct = _a.cookie.set;
-Storage.grab = _a.cookie.get;
-Storage.pull = _a.cookie.get;
-Storage.grabAll = _a.cookie.getAll;
-Storage.pullAll = _a.cookie.getAll;
-Storage.remove = _a.cookie.delete;
-Storage.destroy = _a.cookie.delete;
-Storage.removeAll = _a.cookie.clear;
-Storage.deleteAll = _a.cookie.clear;
-Storage.setItem = _a.localStorage.set;
-Storage.getItem = _a.localStorage.get;
-Storage.removeItem = _a.localStorage.remove;
 /** Constructs date objects up to the hour */
-export class Time {
+class Time {
     constructor(hours, minutes, seconds, milliseconds) {
         this.date = new Date();
         this.hours = hours !== null && hours !== void 0 ? hours : this.date.getHours();
@@ -364,31 +259,23 @@ export class Time {
         throw new Error("Invalid ISO string format.");
     }
 }
-export function readFile(file) {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const response = yield fetch(file);
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            const text = yield response.text();
-            return text;
+function isset(...variables) {
+    for (const variable of variables) {
+        if (variable === null || variable === undefined) {
+            return false;
         }
-        catch (error) {
-            console.error('There has been a problem with your fetch operation:', error);
-            return null;
-        }
-    });
+    }
+    return true;
 }
-export function protoMethod(Class, methodDefinition, options = { enumerable: false }) {
-    var _b;
+function protoMethod(Class, methodDefinition, options = { enumerable: false }) {
+    var _a;
     if (typeof Class !== 'object' && typeof Class !== 'function') {
         throw new TypeError('First argument must be an object or function');
     }
     if (typeof methodDefinition !== 'function' && typeof methodDefinition !== 'object') {
         throw new TypeError('Second argument must be a function or property descriptor');
     }
-    const methodName = typeof methodDefinition === 'function' ? methodDefinition.name : (_b = methodDefinition.value) === null || _b === void 0 ? void 0 : _b.name;
+    const methodName = typeof methodDefinition === 'function' ? methodDefinition.name : (_a = methodDefinition.value) === null || _a === void 0 ? void 0 : _a.name;
     if (typeof Class === 'function') {
         try {
             Object.defineProperty(Class.prototype, methodName, Object.assign({ value: methodDefinition }, options));
@@ -416,12 +303,65 @@ export function protoMethod(Class, methodDefinition, options = { enumerable: fal
         throw new TypeError('Invalid type for first argument');
     }
 }
-export function media(rule, value) {
+function media(rule, value) {
     const mediaQueryString = `(${rule}: ${value})`;
     return window.matchMedia(mediaQueryString).matches;
 }
-export function log(...data) { console.log(...data); }
-export const classes = {
+function log(...data) { console.log(...data); }
+var cookie = {
+    set(name, value, daysToExpire, path = "/") {
+        let expirationDate = "";
+        if (daysToExpire) {
+            const date = new Date();
+            date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+            expirationDate = "; expires=" + date.toUTCString();
+        }
+        document.cookie = `${name}=${encodeURIComponent(JSON.stringify(value))}${expirationDate}; path=${path}`;
+    },
+    get(name) {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].trim();
+            if (cookie.startsWith(name + '='))
+                return decodeURIComponent(cookie.substring(name.length + 1));
+        }
+        return null;
+    },
+    getAll() {
+        const allCookies = [];
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].trim();
+            allCookies.push(cookie);
+        }
+        return allCookies;
+    },
+    // Method to delete a cookie
+    delete(name) {
+        try {
+            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+            return true;
+        }
+        catch (_a) {
+            return false;
+        }
+        ;
+    },
+    clear() {
+        try {
+            const cookies = document.cookie.split("; ");
+            for (const cookie of cookies) {
+                const name = cookie.split("=")[0];
+                this.delete(name);
+            }
+            return true;
+        }
+        catch (_a) {
+            return false;
+        }
+    }
+};
+const classes = {
     "HuiAko": "HuiAko",
     "INT": "Integrated Studies",
     "INS": "Integrated Studies Neuro-Diverse",
@@ -507,5 +447,4 @@ export const classes = {
     "SPEC": "Learning Support - SPEC",
     "LST": "Learning Support Transition"
 };
-export const LocalStorage = Storage.localStorage;
-export const Cookie = Storage.cookie;
+export { Create, Time, isset, protoMethod, media, classes, cookie };

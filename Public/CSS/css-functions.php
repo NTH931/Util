@@ -35,7 +35,7 @@ function modify_color_strength(string $color, string $baseColor, int $enhancment
   return sprintf("#%02x%02x%02x", $rEnhanced, $gEnhanced, $bEnhanced);
 }
 
-function filter_color(array|string $color, string $hex) {
+function filter_color(array|string $color, string $hex): string {
   if (str_starts_with($hex, '#')) {
       $hex = substr($hex, 1);
   } else {
@@ -73,13 +73,13 @@ function filter_color(array|string $color, string $hex) {
   return sprintf("#%02x%02x%02x", $r, $g, $b);
 }
 
-function greyscale(string $hex) {
+function greyscale(string $hex): string {
   if (str_starts_with($hex, '#') && strlen($hex) === 3) {
     return $hex . substr($hex, 1) . substr($hex, 1);
   }
 }
 
-function adjustHue(string $hex, $degrees) {
+function adjustHue(string $hex, $degrees): string {
   $hash = '';
   if (str_starts_with($hex, '#')) {
       $hex = substr($hex, 1);
@@ -139,25 +139,23 @@ function adjustHue(string $hex, $degrees) {
   return $hash . sprintf('%02x%02x%02x', round($r), round($g), round($b));
 }
 
-function adjustBrightness(string $hex, $percent) {
-  $hash = '';
-  if (str_starts_with($hex, '#')) {
-      $hex = substr($hex, 1);
-      $hash = '#';
-  }
-
+function adjustBrightness(string $hex, int $percent): string {
+  // Convert hex to RGB
+  $hex = ltrim($hex, '#');
   $r = hexdec(substr($hex, 0, 2));
   $g = hexdec(substr($hex, 2, 2));
   $b = hexdec(substr($hex, 4, 2));
 
-  $r = max(0, min(255, $r + $percent * 255 / 100));
-  $g = max(0, min(255, $g + $percent * 255 / 100));
-  $b = max(0, min(255, $b + $percent * 255 / 100));
+  // Adjust brightness
+  $r = min(255, max(0, $r + ($r * $percent / 100)));
+  $g = min(255, max(0, $g + ($g * $percent / 100)));
+  $b = min(255, max(0, $b + ($b * $percent / 100)));
 
-  return $hash . sprintf('%02x%02x%02x', $r, $g, $b);
+  // Convert back to hex
+  return sprintf("#%02x%02x%02x", $r, $g, $b);
 }
 
-function darken(string $hex, $percent) { return adjustBrightness($hex, -$percent); }
-function lighten(string $hex, $percent) { return adjustBrightness($hex, $percent); }
+function darken(string $hex, int $percent) { return adjustBrightness($hex, -$percent); }
+function lighten(string $hex, int $percent) { return adjustBrightness($hex, $percent); }
 function enhance(string $color, string $baseColor, int $enhancment = 100) { return modify_color_strength($color, $baseColor, $enhancment); };
 function de_enhance(string $color, string $baseColor, int $enhancment = 100) { return modify_color_strength($color, $baseColor, -$enhancment); };

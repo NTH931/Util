@@ -4,17 +4,18 @@ require_once './css-functions.php';
 require_once './media-queries.css.php';
 
 header("Content-Type: text/css");
-?>
+
+echo <<<CSS
 
 /* Main container for the tabs UI */
 .ui-tabs {
   display: flex;
   flex-direction: row-reverse;
-  background-color: <?= $backgroundColor ?>; 
-  color: <?= $textColor ?>;
+  background-color: $backgroundColor; 
+  color: $textColor;
   border: none !important;
   height: 77vh;
-  border-left: 2px solid <?= $highlightColor ?> !important;
+  border-left: 2px solid $highlightColor !important;
   border-radius: 0 !important;
   padding: 0;
   cursor: default;
@@ -23,7 +24,7 @@ header("Content-Type: text/css");
 
 /* Container for the tab headers */
 .ui-tabs .ui-tabs-nav {
-  background-color: <?= $backgroundColor ?>;
+  background-color: $backgroundColor;
   height: calc(98% + 4px);
   padding: 0;
   display: flex;
@@ -42,7 +43,7 @@ header("Content-Type: text/css");
   flex: 1;
   border: none;
   border-radius: 0;
-  background-color: <?= $backgroundColor ?>; 
+  background-color: $backgroundColor; 
   cursor: pointer !important;
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -57,23 +58,23 @@ header("Content-Type: text/css");
 
 /* Styles for the active tab */
 .ui-tabs .ui-tabs-nav .ui-state-active a {
-  background-color: <?= $backgroundColorLL ?>;
-  color: <?= $textColor ?>; 
-  border: 1px solid <?= $textColor ?> !important;
+  background-color: $backgroundColorLL;
+  color: $textColor; 
+  border: 1px solid $textColor !important;
   padding: 1px 10px !important;
   text-align: center;
 }
 
 /* Styles for inactive tabs */
 .ui-tabs .ui-tabs-nav :not(.ui-state-active) a {
-  background-color: <?= $backgroundColorL ?>; /* Replaced var(--background-color-l) */
-  color: <?= $textColor ?>;
-  border: 1px solid <?= $textColor ?> !important;
+  background-color: $backgroundColorL; /* Replaced var(--background-color-l) */
+  color: $textColor;
+  border: 1px solid $textColor !important;
 }
 
 /* Hover effect for inactive tabs */
 .ui-tabs .ui-tabs-nav :not(.ui-state-active) a:hover {
-  background-color: <?= $backgroundColorLL ?>; /* Replaced var(--background-color-ll) */
+  background-color: $backgroundColorLL; /* Replaced var(--background-color-ll) */
   padding: 1px 10px !important;
 }
 
@@ -104,7 +105,7 @@ header("Content-Type: text/css");
 
 #classes {
   padding-top: 10px;
-  color: <?= $textColor ?>
+  color: $textColor
 }
 
 #classes > * > b {
@@ -112,10 +113,11 @@ header("Content-Type: text/css");
   padding: 10px;
   cursor: default;
   font-family: "Courier New", Courier, monospace !important;
-  border: 1px solid <?= $highlightColor ?>
+  border: 1px solid $highlightColor
 }
 
 #classes > * {
   padding: 5px;
   margin-bottom: 10px;
 }
+CSS;
