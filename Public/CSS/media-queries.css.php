@@ -60,25 +60,27 @@ function ifTheme(string|array $testcolor, int $darkenBy, int $darkenFilterColorB
 }
 
 # Defaults
-$textColor          = greyscale("#dd");
-$redText            = lighten(enhance($theme, $baseColor, 225), 15);
-$green              = filter_color(["GREEN", $theme], darken($baseColor, 20));
+$textColor = greyscale("#dd");
+$redText   = lighten(enhance($theme, $baseColor, 225), 15);
+$green     = filter_color(["GREEN", $theme], darken($baseColor, 20));
+$darkGreen = darken(enhance("GREEN", $green), 80);
+$darkRed   = filter_color("RED", enhance("RED", $baseColor, 60));
 
-if ($light === false) { # Dark mode
+if (!$light) { # Dark mode
   $buttonBg           = filter_color([$theme, $confilct], darken($baseColor, 85));
   $buttonBgL          = filter_color([$theme, $confilct], darken($baseColor, 70));
-  $buttonBgLL         = filter_color([$theme, $confilct], darken($baseColor, 60));
-  $buttonBgLLL        = filter_color([$theme, $confilct], darken($baseColor, 5));
+  $buttonBgLL         = filter_color([$theme, $confilct], darken($baseColor, 75));
+  $buttonBgLLL        = filter_color([$theme, $confilct], darken($baseColor, 60));
   $backgroundColor    = darken($baseColor, 99);
   $backgroundColorL   = darken($baseColor, 95);
   $backgroundColorLL  = filter_color([$theme, $confilct], darken($baseColor, 80));
   $backgroundColorLLL = filter_color([$theme, $confilct], darken($baseColor, 55));
   $highlightColor     = $baseColor;
 } else { # Light Mode
-  $buttonBg           = darken(filter_color([$theme, $confilct], $baseColor), 70);
-  $buttonBgL          = filter_color([$theme, $confilct], darken($baseColor, 20));
-  $buttonBgLL         = filter_color([$theme, $confilct], darken($baseColor, 25));
-  $buttonBgLLL        = filter_color([$theme, $confilct], darken($baseColor, 30));
+  $buttonBg           = darken(filter_color([$theme, $confilct], $baseColor), 75);
+  $buttonBgL          = filter_color([$theme, $confilct], darken($baseColor, 70));
+  $buttonBgLL         = filter_color([$theme, $confilct], darken($baseColor, 65));
+  $buttonBgLLL        = filter_color([$theme, $confilct], darken($baseColor, 62));
   $backgroundColor    = darken($baseColor, 55);
   $backgroundColorL   = filter_color([$theme, $confilct], darken($baseColor, 60));
   $backgroundColorLL  = filter_color([$theme, $confilct], darken($baseColor, 35));
@@ -100,5 +102,7 @@ echo <<<CSS
   --highlight-color: $highlightColor; /* color of dividers */
   --red-text: $redText;
   --green: $green;
+  --darkgreen: $darkGreen;
+  --darkred: $darkRed
 }
 CSS;

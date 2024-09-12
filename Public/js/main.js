@@ -1,38 +1,79 @@
 import * as Utils from './utilities.js';
-const { Time, Create, media, cookie } = Utils;
+const { Time, popup, media, cookie, redirect, $document, $window } = Utils;
+document.bindShortcut("ctrl+s", (e) => e.preventDefault());
+cookie.set("page_visited", true);
+// Checks for school account
+// $(function() {
+//   if ($("body").attr("data-gr-ext-installed") !== undefined) {
+//     console.log("Not a School Account")
+//     $("li#child-1").hide();
+//     $("li#child-2").hide();
+//     $("div#tab-2") .hide();
+//     $("li#child-3").hide();
+//     $("div#tab-3") .hide();
+//   }
+// });
 $(function () {
-    var _a, _b;
-    const visited = (_b = JSON.parse((_a = cookie.get("page_visited")) !== null && _a !== void 0 ? _a : "")) !== null && _b !== void 0 ? _b : false;
-    if (visited === false) {
-        cookie.set("page_visited", true);
-        window.location.reload();
-    }
-    if (media("max-width", "400px")) {
-        console.log(true);
-    }
-    else {
-        console.log(false);
+    if (!cookie.get("settings")) {
+        cookie.set("settings", {
+            // Value: Common colours
+            "Base-Color": "default",
+            // Value: 1=all, 2=important_popup_only, 3=notification_panel_only
+            "Notifications": 1,
+            // Value: Boolean
+            "Tooltips": true,
+            // Value: Boolean
+            "Dark-Mode": true,
+            // Assoc Array
+            "Buttons": {
+                "GGL": null,
+                "WNP": true,
+                "QCT": false,
+                "EDC": true,
+                "ATC": true,
+                "ATL": true,
+                "ATN": null,
+                "NQA": true,
+                "NCR": true,
+                "GML": true,
+                "DRV": true,
+                "CLR": true,
+                "DCS": true,
+                "SLD": true,
+                "SHT": true,
+                "FRM": true,
+                "STS": true,
+                "KHT": true,
+                "BLK": true,
+                "RMB": true,
+                "USC": true,
+                "CVT": true
+            }
+        });
     }
 });
-const $settings = $("#settings");
+// Redirects if the "page_visited" Cookie is set
 $(function () {
+    if (!cookie.get("page_visited")) {
+        cookie.set("page_visited", true);
+        redirect("index.php");
+    }
+});
+// Setttings
+$(function () {
+    const $settings = $("#settings");
     $("#settingsshow").on("click", function (event) {
         event.stopPropagation(); // Prevent the click event from bubbling up to the document
-        $settings.toggle();
+        $settings.fadeToggle(400);
     });
     $("#exit").on("click", function (event) {
         event.stopPropagation(); // Prevent the click event from bubbling up to the document
-        $settings.hide();
+        $settings.fadeOut(400);
+    });
+    document.bindShortcut("ctrl+shift+s", (e) => {
+        $settings.fadeIn(400);
     });
 });
-$.fn.in = function (timeInSecs) {
-    const $this = this; // Store the context
-    // Use setTimeout to delay the execution and return the jQuery object for chaining
-    setTimeout(() => {
-        // This block is intentionally left empty
-    }, timeInSecs * 1000);
-    return $this;
-};
 // dropdown
 $(function () {
     $("dropdown").each(function () {
@@ -69,8 +110,7 @@ $(function () {
 // input[type=search]
 $(function () {
     $("input[type=search]").each(function () {
-        var _a;
-        const contentId = (_a = $(this).attr("search-content")) === null || _a === void 0 ? void 0 : _a.toString();
+        const contentId = $(this).attr("search-content")?.toString();
         if (contentId) {
             const container = $("#" + contentId);
             // Store the original HTML content
@@ -78,12 +118,11 @@ $(function () {
         }
     });
     $("input[type=search]").on("input", function () {
-        var _a;
         const $this = $(this);
         const searchText = $this.val() || "";
         const searchTextLower = searchText.toLowerCase() || "";
         const elementsSelector = $this.attr("elements") || "*";
-        const contentId = (_a = $this.attr("search-content")) === null || _a === void 0 ? void 0 : _a.toString();
+        const contentId = $this.attr("search-content")?.toString();
         if (!contentId)
             return;
         const container = $("#" + contentId);
@@ -161,7 +200,7 @@ $(function () {
             { hour: 11, minute: 5, condition: patternB },
             { hour: 13, minute: 5, condition: patternB },
         ];
-        const defautWarning = (time) => Create.popup(`You have ${time} minutes left of class`);
+        const defautWarning = (time) => popup(`You have ${time} minutes left of class`);
         let lastAlertTime;
         /*checkTimes.forEach(({ hour, minute, condition }) => {
           const { isRightBefore, timeLeft } = rightBefore(hour, minute);

@@ -1,20 +1,17 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
+import * as Utils from './utilities.js';
+const { iNotification, triggerDownload, cookie, redirect, $document, $window } = Utils;
+$.fn.toHTMLElement = function () {
+    return this.get(0) ?? null;
 };
-import * as Utils from "./utilities.js";
-const { Create, cookie } = Utils;
+// Creates 
 $(function () {
-    var _a;
-    const settings = JSON.parse((_a = cookie.get("settings")) !== null && _a !== void 0 ? _a : "");
+    const $addClasses = $("#addClasses");
+    const $saveTemplate = $("#saveTemplate");
+    const $deleteClasses = $("#deleteClasses");
+    const settings = JSON.parse(cookie.get("settings") ?? "");
     // Function to create and add pop-out elements from structured data
     function addPopoutElements(parentDivId, jsonObject) {
-        const $parentDiv = $("//" + parentDivId);
+        const $parentDiv = $("#" + parentDivId);
         $parentDiv.css({
             display: "flex",
             flexDirection: "row",
@@ -27,7 +24,7 @@ $(function () {
         });
         try {
             // Iterate over jsonObject to create buttons
-            $.each(jsonObject, function (index, button) {
+            $.each([...jsonObject].reverse(), function (index, button) {
                 const buttonText = button["text"];
                 if (buttonText.toLowerCase() === "button 1" || buttonText.toLowerCase() === "button 2" || buttonText.toLowerCase() === "button 3")
                     return;
@@ -37,9 +34,26 @@ $(function () {
                     id: `button${String(index)}`,
                     text: buttonText
                 });
+                $buttonElement.css("background-color", function () {
+                    switch (index) {
+                        case 0:
+                            console.log("Applied l");
+                            return "var(--button-bg-lll)";
+                        case 1:
+                            console.log("Applied ll");
+                            return "var(--button-bg-ll)";
+                        case 2:
+                            console.log("Applied lll");
+                            return "var(--button-bg-l)";
+                        default:
+                            console.log("Applied default");
+                            return "var(--button-bg-l)";
+                    }
+                });
+                $buttonElement.css("z-index", index);
                 $buttonElement.on('click', function () { window.open(button["location"], '_blank'); });
                 $parentDiv.on({
-                    mouseenter: () => __awaiter(this, void 0, void 0, function* () {
+                    mouseenter: async () => {
                         setTimeout(() => {
                             $buttonElement.css({
                                 left: "20px",
@@ -48,8 +62,8 @@ $(function () {
                                 transition: `opacity 0.3s ease, visibility 0.3s ease`
                             });
                         }, 100);
-                    }),
-                    mouseleave: () => __awaiter(this, void 0, void 0, function* () {
+                    },
+                    mouseleave: async () => {
                         setTimeout(() => {
                             $buttonElement.css({
                                 visibility: "hidden",
@@ -57,7 +71,7 @@ $(function () {
                                 transition: `opacity 0.3s ease, visibility 0.3s ease`
                             });
                         }, 100);
-                    })
+                    }
                 });
                 // Append button to wrapper and wrapper to parentDiv
                 $wrapper.append($buttonElement);
@@ -69,32 +83,31 @@ $(function () {
         }
     }
     // Function to fetch JSON data
-    function fetchData(url) {
-        return __awaiter(this, void 0, void 0, function* () {
-            console.log(`Fetching data from ${url}`);
-            try {
-                const response = yield fetch(url);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                const data = yield response.json();
-                return data;
+    async function fetchData(url) {
+        console.log(`Fetching data from ${url}`);
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
             }
-            catch (error) {
-                console.error("Error fetching data:", error);
-                return null;
-            }
-        });
+            const data = await response.json();
+            return data;
+        }
+        catch (error) {
+            console.error("Error fetching data:", error);
+            return null;
+        }
     }
     fetchData("../Private/JSON/lists.json")
         .then((data) => {
-        var _a;
         if (!data)
             return;
-        for (let i = 1; i <= 9; i++) {
-            const jsonItems = JSON.parse(localStorage.getItem(`class${i}`) || "[]");
-            if (!jsonItems)
+        for (let i = 1; i <= 8; i++) {
+            const jsonString = localStorage.getItem(`class${i}`);
+            const jsonItems = jsonString ? JSON.parse(jsonString) : null;
+            if (!jsonItems || typeof jsonItems !== 'object' || Array.isArray(jsonItems) || Object.keys(jsonItems).length === 0) {
                 continue;
+            }
             try {
                 const divElement = document.createElement('div');
                 const aElement = document.createElement('a');
@@ -109,18 +122,137 @@ $(function () {
                 h4Element.classList.add('popout-parent');
                 divElement.appendChild(h4Element);
                 h4Element.appendChild(aElement);
-                (_a = document.querySelector('aside')) === null || _a === void 0 ? void 0 : _a.appendChild(divElement);
+                if ($addClasses)
+                    document.querySelector('aside')?.insertBefore(divElement, $addClasses.toHTMLElement());
                 // Adding pop-out elements
                 if (settings.Tooltips)
                     addPopoutElements(`class${i}`, data[jsonItems.code]);
             }
-            catch (_b) {
-                console.warn(`No class is defined for iteration ${i}.`);
+            catch (error) {
+                console.warn(error);
             }
+        }
+        // AddClasses
+        if (document.querySelector("aside > div#class7")) {
+            console.log(`#class7 found`);
+            $addClasses.html("<b>~ </b>Edit Classes");
+        }
+        else {
+            console.error(`#class7 not found`);
+            $addClasses.html("<b>+ </b>Add Classes");
+        }
+        // SaveTemplate
+        if (document.querySelector("aside > div#class1")) {
+            console.log("#class1 found");
+            $saveTemplate.show();
+        }
+        else {
+            console.error("#class1 not found");
+            $saveTemplate.hide();
+        }
+        // DeleteClasses
+        if (document.querySelector("aside > div#class1")) {
+            console.log("#class1 found");
+            $deleteClasses.show();
+        }
+        else {
+            console.error("#class1 not found");
+            $deleteClasses.hide();
         }
     })
         .catch(error => alert(error.message));
 });
+// DeleteClasses
+$(function () {
+    $("#deleteClasses").on("click", function () {
+        let result = confirm("Delete All Classes?");
+        if (result) {
+            localStorage.clear();
+            alert("Classes Reset");
+            redirect("index.php");
+        }
+    });
+});
+// Savetemplate
+$(function () {
+    $("#saveTemplate").on("click", function () {
+        const classData = [];
+        // Iterate over localStorage keys in the sequence they are retrieved
+        for (let i = 1; i < localStorage.length + 1; i++) {
+            const value = localStorage.getItem(`class${i}`) ?? "";
+            if (value !== null) {
+                // Matching keys such as class1, class2, ..., class8
+                try {
+                    // Parse and add to classData array in the order of access
+                    const item = JSON.parse(value);
+                    const itemcode = item.code ?? "";
+                    const itemsubject = item.subject ?? "";
+                    const itemlink = item.link ?? "";
+                    console.log(i);
+                    console.log(value);
+                    classData.push({ code: itemcode, subject: itemsubject, link: itemlink });
+                }
+                catch (e) {
+                    console.error("Error parsing JSON from localStorage:", e);
+                }
+            }
+            else {
+                console.error(`class${i} does not have any items or does not exist.`);
+            }
+        }
+        triggerDownload(`Util_${new Date().toDayString()}.json`, classData);
+    });
+});
+// Button.on("click") popouts
+$(function () {
+    $(document).on("click", () => $(".side-element").fadeOut(400).remove());
+    $("button").on("contextmenu", function (event) {
+        event.stopPropagation();
+        event.preventDefault();
+        $(".side-element").fadeOut(400).remove();
+        const button = $(this);
+        const buttonOffset = button.offset();
+        const buttonHeight = button.outerHeight();
+        const buttonWidth = button.outerWidth();
+        if (buttonOffset && buttonHeight && buttonWidth) {
+            ['left', 'right'].forEach(position => {
+                const $el = $("<div>", { class: "side-element" }).appendTo("body");
+                $el
+                    .css({
+                    position: "absolute",
+                    zIndex: 10,
+                    width: "50px",
+                    height: "50px",
+                    backgroundColor: "lightblue",
+                    display: "none"
+                })
+                    .addClass("button")
+                    .addClass("side-element");
+                switch (position) {
+                    case 'left':
+                        $el.css({
+                            top: buttonOffset.top + (buttonHeight / 2) - ($el.outerHeight() / 2),
+                            left: buttonOffset.left - $el.outerWidth()
+                        }).show().animate({
+                            left: buttonOffset.left - $el.outerWidth() - 10
+                        }, 400);
+                        $el.text("Info");
+                        break;
+                    case 'right':
+                        $el.css({
+                            top: buttonOffset.top + (buttonHeight / 2) - ($el.outerHeight() / 2),
+                            left: buttonOffset.left + buttonWidth
+                        }).show().animate({
+                            left: buttonOffset.left + buttonWidth + 10
+                        }, 400);
+                        $el.text("Remove");
+                        break;
+                }
+            });
+        }
+    });
+});
+// Cookies
 if (!cookie.get("page_visited")) {
     cookie.set("page_visited", true, 365 * 5);
     cookie.set("settings", {
@@ -161,13 +293,13 @@ if (!cookie.get("page_visited")) {
     location.reload();
 }
 if (!cookie.get("clicked")) {
-    Create.iNotification({
+    iNotification({
         header: "Welcome to Util!",
         message: "Click the Go To Settings button to change the sites settings.<br>" +
             "Click the Change Classes button to change your classes.",
     }, [
         { buttonText: "Go To Settings", buttonFunction: () => $("//settings").show() },
-        { buttonText: "Cutomize Classes", buttonFunction: () => window.location.href = "links.php" },
+        { buttonText: "Cutomize Classes", buttonFunction: () => redirect("links.php") },
         { buttonText: "Stop Showing", buttonFunction: () => { cookie.set("clicked", true); } }
     ], true, { width: "700px", position: { right: "20vw", top: "40vh" } });
 }

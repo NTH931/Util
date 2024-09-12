@@ -100,92 +100,45 @@ function substr_slice(string $type, string $string, string $character) {
   }
 }
 
-# Arrays
+# Arrays As SuperGlobals
+$_ENV = [
+  "defaultValues" => [
+    # Value: Common colours
+    "Base-Color" => "default",
+    # Value: 1=all, 2=important_popup_only, 3=notification_panel_only
+    "Notifications" => 1,
+    # Value: Boolean
+    "Tooltips" => true,
+    # Value: Boolean
+    "Dark-Mode" => true,
+    # Assoc Array
+    "Buttons" => [
+      "GGL" => true,
+      "WNP" => true,
+      "QCT" => false,
+      "EDC" => true,
 
-global $subjects;
-$subjects = array(
-  "HuiAko" => "HuiAko",
-  "INT" => "Intergrated Studies",
-  "INS" => "Intergrated Studies Neuro-Diverse",
-  "ENG" => "English",
-  "MAT" => "Maths",
-  "SCI" => "Science",
-  "AHI" => "Aotearoa Histories",
-  "HPE" => "Health & PE",
-  "HEA" => "Health & Wellbeing",
-  "PEO" => "Physical Education Outdoors",
-  "PED" => "Physical Education",
-  "PES" => "Sports And Training",
-  "TGC" => "Coding For Gaming",
-  "TDE" => "Digital Technologies",
-  "DTE" => "Digital Technology Enviroments",
-  "TPD" => "Product Design And Construction",
-  "TBT" => "Bio Technology",
-  "TDV" => "Architecture And Product Design",
-  "TFD" => "Food Around The World",
-  "TTX" => "Fashion And Textiles",
-  "JDT" => "Jewellery And Product Design",
-  "CAR" => "Carpentry",
-  "HOS" => "Hospitality",
-  "PHT" => "Photography",
-  "ARP" => "Art Painting",
-  "ARD" => "Art Design",
-  "ART" => "Visual Art",
-  "MUS" => "Music",
-  "MUJ" => "Music Jazz",
-  "DAN" => "Dance",
-  "DRA" => "Drama",
-  "MPA" => "Maori Performing Arts",
-  "FSI" => "Forensics Science",
-  "SFC" => "Food Chemistry",
-  "SSU" => "Space And Us",
-  "SNS" => "The Nature Of Science",
-  "SCB" => "Chemistry And Biology",
-  "SPS" => "Physics And Space Science",
-  "BIO" => "Biology",
-  "CHE" => "Chemistry",
-  "PHY" => "Physics",
-  "ELS" => "Enviromental Life Science",
-  "FRE" => "French",
-  "FRA" => "French Advanced",
-  "JPN" => "Japanese",
-  "JPA" => "Japanese Advanced",
-  "MDR" => "Mandarin",
-  "MDA" => "Mandarin Advanced",
-  "MAO" => "Maori",
-  "MAA" => "Maori Advanced",
-  "SAM" => "Te Kura Samoan",
-  "EPS" => "English Proficiency Studies",
-  "PWR" => "Power Of The Word",
-  "BUS" => "Business Studies",
-  "COM" => "Commerce Money Talks",
-  "COT" => "Interenational Travel",
-  "GEO" => "Geography",
-  "HIS" => "History",
-  "CLS" => "Classical Studies",
-  "ECC" => "Economics",
-  "FIN" => "Financial Capability",
-  "MED" => "Media Studies",
-  "PSY" => "Pyschology",
-  "TOU" => "Tourism",
-  "ENGA" => "Sport And Society",
-  "ENGB" => "English And The Enviroment",
-  "ENGC" => "Maori And Pacific Voices",
-  "ENGD" => "Conspiracy Theories",
-  "ENGF" => "Dystopia",
-  "ENGG" => "Messages In Music",
-  "ENGH" => "Modern Mythic",
-  "ENGJ" => "NZ Culture In Film",
-  "ENGK" => "It's The Little Things",
-  "ENGL" => "What Do They Have To Say?",
-  "ENGM" => "Poetry Power",
-  "ENGN" => "Maori And Pacific Voices 2",
-  "ENGQ" => "Wahine Toa",
-  "MAC" => "Mathematics With Calculus",
-  "MAS" => "Mathematics With Statistics",
-  "GAT" => "Pathways Gateway Level",
-  "PAT" => "Pathways Pathways Level",
-  "WTA" => "Pathways Wellington Trades Academy",
-  "SPEC" => "Learning Support - SPEC",
-  "LST" => "Learning Support Transition"
-);
+      "ATC" => true,
+      "ATL" => true,
+      "ATN" => null,
+
+      "NQA" => true,
+      "NCR" => true,
+
+      "GML" => true,
+      "DRV" => true,
+      "CLR" => true,
+      "DCS" => true,
+      "SLD" => true,
+      "SHT" => true,
+      "FRM" => true,
+      "STS" => true,
+
+      "KHT" => true,
+      "BLK" => true,
+      "RMB" => true,
+      "USC" => true,
+      "CVT" => true
+    ]
+  ]
+];

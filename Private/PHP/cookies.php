@@ -18,57 +18,16 @@ function post_set_array_of_switch(string $postdataname) {
   return $array;
 }
 
-# Default Values (For Use Later)
-$defaultValue = [
-  # Value: Common colours
-  "Base-Color" => "default",
-  # Value: 1=all, 2=important_popup_only, 3=notification_panel_only
-  "Notifications" => 1,
-  # Value: Boolean
-  "Tooltips" => true,
-  # Value: Boolean
-  "Dark-Mode" => true,
-  # Assoc Array
-  "Buttons" => [
-    "GGL" => null,
-    "WNP" => true,
-    "QCT" => false,
-    "EDC" => true,
-
-    "ATC" => true,
-    "ATL" => true,
-    "ATN" => null,
-
-    "NQA" => true,
-    "NCR" => true,
-
-    "GML" => true,
-    "DRV" => true,
-    "CLR" => true,
-    "DCS" => true,
-    "SLD" => true,
-    "SHT" => true,
-    "FRM" => true,
-    "STS" => true,
-
-    "KHT" => true,
-    "BLK" => true,
-    "RMB" => true,
-    "USC" => true,
-    "CVT" => true
-  ]
-];
-
 # Handling if settings cookie dosen't exist
 if (!isset($_COOKIE["settings"])) {
-  cookie_set("settings", $defaultValue, $expiry);
+  cookie_set("settings", $_ENV["defaultValues"], $expiry);
   header("Location: /Util/Public/index.php");
   exit;
 } else {
   $currentSettings = json_decode($_COOKIE["settings"], true);
 
   # Merge with defaults to handle missing keys
-  $currentSettings = array_merge($defaultValue, $currentSettings);
+  $currentSettings = array_merge($_ENV["defaultValues"], $currentSettings);
 }
 
 # Handle POST Data

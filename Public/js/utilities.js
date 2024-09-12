@@ -1,226 +1,47 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-class Create {
-    static notification(content_1) {
-        return __awaiter(this, arguments, void 0, function* (content, importance = false, options = {}, lingers = true) {
-            var _a, _b, _c, _d, _e, _f;
-            if ((importance ? 2 : 1) < ((_b = JSON.parse((_a = cookie.get("settings")) !== null && _a !== void 0 ? _a : "")) === null || _b === void 0 ? void 0 : _b.Notifications))
-                return;
-            const createdAt = new Time();
-            const contentHeader = typeof content === 'string' ? '' : content.header;
-            const contentMessage = typeof content === 'string' ? content : content.message;
-            const $notification = $(`
-        <div class="notifi">
-          <div class="notifi-content">
-            <span class="dismis">&times;</span>
-            ${contentHeader ? `<p class='notifi-header'>${contentHeader}</p>` : ''}
-            <p class="notifi-message">${contentMessage}</p>
-          </div>
-        </div>
-      `);
-            $("footer").after($notification);
-            $('.notifi').css({
-                display: 'block',
-                position: 'fixed',
-                zIndex: 1,
-                left: ((_c = options.position) === null || _c === void 0 ? void 0 : _c.left) || 'auto',
-                top: ((_d = options.position) === null || _d === void 0 ? void 0 : _d.top) || 'auto',
-                right: ((_e = options.position) === null || _e === void 0 ? void 0 : _e.right) || '10px',
-                bottom: ((_f = options.position) === null || _f === void 0 ? void 0 : _f.bottom) || '10px',
-                width: options.width || '300px',
-                height: options.height || 'auto',
-                overflow: 'auto',
-            });
-            $('.dismis').on({
-                mouseenter: function () { $(this).css('color', '#fff'); },
-                mouseleave: function () { $(this).css('color', '#888'); },
-                click: function () {
-                    $('.notifi').fadeOut(1000);
-                    return { action: 'closed', createdAt, interactedWithin: Date.now() - createdAt.getTime() };
-                }
-            });
-            const time = options.time;
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    $('.notifi').fadeOut(1000, function () {
-                        if (lingers) {
-                            const $notificationBoard = $('.notification-board');
-                            if ($notificationBoard.length)
-                                $(this).appendTo($notificationBoard);
-                        }
-                        resolve({ action: 'timeout', createdAt, interactedWithin: Date.now() - createdAt.getTime() });
-                    });
-                }, time ? time * 1000 : 7500);
-            });
-        });
-    }
-    static iNotification(content_1, buttons_1) {
-        return __awaiter(this, arguments, void 0, function* (content, buttons, importance = true, options = {}, lingers = true) {
-            var _a, _b, _c, _d, _e, _f;
-            if ((importance ? 2 : 1) < ((_b = JSON.parse((_a = cookie.get("settings")) !== null && _a !== void 0 ? _a : "")) === null || _b === void 0 ? void 0 : _b.Notifications))
-                return;
-            const createdAt = new Time();
-            const contentHeader = typeof content === 'string' ? '' : content.header;
-            const contentMessage = typeof content === 'string' ? content : content.message;
-            if (buttons.length > 4) {
-                console.error("Maximum of 4 buttons allowed");
-                return { action: 'timeout', createdAt, interactedWithin: 0 };
-            }
-            const $notification = $(`
-      <div class="notifi">
-        <div class="notifi-content">
-          ${contentHeader ? `<p class='notifi-header'>${contentHeader}</p>` : ''}
-          <p class="notifi-message">${contentMessage}</p>
-          <div class="notifi-buttons">
-            ${buttons.map((button, index) => `
-              <button class="notifi-button" data-index="${index}">${button.buttonText}</button>
-            `).join('')}
-          </div>
-        </div>
-      </div>
-      `);
-            $("footer").after($notification);
-            $('.notifi').css({
-                display: 'block',
-                position: 'fixed',
-                zIndex: 1,
-                left: ((_c = options.position) === null || _c === void 0 ? void 0 : _c.left) || 'auto',
-                top: ((_d = options.position) === null || _d === void 0 ? void 0 : _d.top) || 'auto',
-                right: ((_e = options.position) === null || _e === void 0 ? void 0 : _e.right) || '10px',
-                bottom: ((_f = options.position) === null || _f === void 0 ? void 0 : _f.bottom) || '10px',
-                width: options.width || '300px',
-                height: options.height || 'auto',
-                overflow: 'auto',
-            });
-            $('.notifi-button').on({
-                mouseenter: function () { $(this).css('color', '#fff'); },
-                mouseleave: function () { $(this).css('color', '#888'); },
-                click: function () {
-                    var _a, _b, _c;
-                    const index = $(this).data('index');
-                    if (index !== undefined && ((_a = buttons[index]) === null || _a === void 0 ? void 0 : _a.buttonFunction)) {
-                        (_c = (_b = buttons[index]).buttonFunction) === null || _c === void 0 ? void 0 : _c.call(_b);
-                        $('.notifi').fadeOut(1000, function () {
-                            return { action: 'buttonClicked', buttonIndex: index, createdAt, interactedWithin: Date.now() - createdAt.getTime() };
-                        });
-                    }
-                }
-            });
-            const time = options.time;
-            setTimeout(() => {
-                $('.notifi').fadeOut(1000, function () {
-                    if (lingers) {
-                        const $notificationBoard = $('.notification-board');
-                        if ($notificationBoard.length)
-                            $(this).appendTo($notificationBoard);
-                    }
-                    return { action: 'timeout', createdAt, interactedWithin: Date.now() - createdAt.getTime() };
-                });
-            }, time ? time * 1000 : 15000);
-        });
-    }
-    static popup(message_1) {
-        return __awaiter(this, arguments, void 0, function* (message, options = {}
-        // @ts-ignore
-        ) {
-            const createdAt = new Time();
-            const $popup = $(`
-      <div id="popup">
-        <div class="popup-content">
-          <span class="close">&times;</span>
-          <p id="popup-message">${message}</p>
-        </div>
-      </div>
-    `);
-            $("html").append($popup);
-            $('#popup').css({
-                display: 'block',
-                position: 'fixed',
-                zIndex: 1,
-                left: options.left || '0',
-                top: options.top || '0',
-                width: options.width || '100%',
-                height: options.height || '100%',
-                overflow: 'auto',
-                backgroundColor: 'rgba(0,0,0,0.4)',
-            });
-            $('.popup-content').css({
-                backgroundColor: 'var(--background-color-d)',
-                margin: '15% auto',
-                padding: '20px',
-                border: '1px solid #888',
-                width: '80%',
-            });
-            $('.close').css({
-                color: '#aaa',
-                float: 'right',
-                fontSize: '28px',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                transition: "color 0.4s ease",
-            });
-            setTimeout(() => {
-                $('#popup').fadeOut(60000);
-                return { action: 'unclosed', createdAt, interactedWithin: null, closedAt: null };
-            });
-            $('.close').on({
-                mouseenter: function () { $(this).css('color', '#fff'); },
-                mouseleave: function () { $(this).css('color', '#888'); },
-                click: function () {
-                    $('#popup').fadeOut(1000);
-                    return { action: 'closed', createdAt, interactedWithin: Date.now() - createdAt.getTime(), closedAt: Date.now() };
-                }
-            });
-        });
-    }
-    ;
-}
-/** Constructs date objects up to the hour */
+/** Constructs date objects from milliseconds up to the hour */
 class Time {
+    hours;
+    minutes;
+    seconds;
+    milliseconds;
+    date;
     constructor(hours, minutes, seconds, milliseconds) {
         this.date = new Date();
-        this.hours = hours !== null && hours !== void 0 ? hours : this.date.getHours();
-        this.minutes = minutes !== null && minutes !== void 0 ? minutes : this.date.getMinutes();
-        this.seconds = seconds !== null && seconds !== void 0 ? seconds : this.date.getSeconds();
-        this.milliseconds = milliseconds !== null && milliseconds !== void 0 ? milliseconds : this.date.getMilliseconds();
+        this.hours = hours ?? this.date.getHours();
+        this.minutes = minutes ?? this.date.getMinutes();
+        this.seconds = seconds ?? this.date.getSeconds();
+        this.milliseconds = milliseconds ?? this.date.getMilliseconds();
         if (hours !== undefined && (hours < 0 || hours >= 24))
-            throw new Error("Hours must be between 0 and 23.");
+            throw new SyntaxError("Hours must be between 0 and 23.");
         if (minutes !== undefined && (minutes < 0 || minutes >= 60))
-            throw new Error("Minutes must be between 0 and 59.");
+            throw new SyntaxError("Minutes must be between 0 and 59.");
         if (seconds !== undefined && (seconds < 0 || seconds >= 60))
-            throw new Error("Seconds must be between 0 and 59.");
+            throw new SyntaxError("Seconds must be between 0 and 59.");
         if (milliseconds !== undefined && (milliseconds < 0 || milliseconds >= 1000))
-            throw new Error("Milliseconds must be between 0 and 999.");
+            throw new SyntaxError("Milliseconds must be between 0 and 999.");
     }
     setHours(hours) {
         if (hours < 0 || hours >= 24) {
-            throw new Error("Hours must be between 0 and 23.");
+            throw new SyntaxError("Hours must be between 0 and 23.");
         }
         this.hours = hours;
     }
     setMinutes(minutes) {
         if (minutes < 0 || minutes >= 60) {
-            throw new Error("Minutes must be between 0 and 59.");
+            throw new SyntaxError("Minutes must be between 0 and 59.");
         }
         this.minutes = minutes;
     }
     // Additional setters
     setSeconds(seconds) {
         if (seconds < 0 || seconds >= 60) {
-            throw new Error("Seconds must be between 0 and 59.");
+            throw new SyntaxError("Seconds must be between 0 and 59.");
         }
         this.seconds = seconds;
     }
     setMilliseconds(milliseconds) {
         if (milliseconds < 0 || milliseconds >= 1000) {
-            throw new Error("Milliseconds must be between 0 and 999.");
+            throw new SyntaxError("Milliseconds must be between 0 and 999.");
         }
         this.milliseconds = milliseconds;
     }
@@ -259,6 +80,7 @@ class Time {
         throw new Error("Invalid ISO string format.");
     }
 }
+// Functions
 function isset(...variables) {
     for (const variable of variables) {
         if (variable === null || variable === undefined) {
@@ -267,47 +89,353 @@ function isset(...variables) {
     }
     return true;
 }
-function protoMethod(Class, methodDefinition, options = { enumerable: false }) {
-    var _a;
-    if (typeof Class !== 'object' && typeof Class !== 'function') {
-        throw new TypeError('First argument must be an object or function');
-    }
-    if (typeof methodDefinition !== 'function' && typeof methodDefinition !== 'object') {
-        throw new TypeError('Second argument must be a function or property descriptor');
-    }
-    const methodName = typeof methodDefinition === 'function' ? methodDefinition.name : (_a = methodDefinition.value) === null || _a === void 0 ? void 0 : _a.name;
-    if (typeof Class === 'function') {
-        try {
-            Object.defineProperty(Class.prototype, methodName, Object.assign({ value: methodDefinition }, options));
-            return [true, null];
+function addMethod(Class, methodDefinition, options = { enumerable: false }) {
+    // Normalize method definitions and classes into arrays
+    const methods = Array.isArray(methodDefinition) ? methodDefinition : [methodDefinition];
+    const classes = Array.isArray(Class) ? Class : [Class];
+    // Handle the case where both Class and methodDefinition are arrays
+    if (Array.isArray(Class) && Array.isArray(methodDefinition)) {
+        // Check that both arrays are of the same length
+        if (classes.length !== methods.length) {
+            return [false, new Error('Class and methodDefinition arrays must be of the same length')];
         }
-        catch (error) {
-            return [false, error];
-        }
-    }
-    else if (typeof Class === 'object') {
-        try {
-            if (typeof methodDefinition === 'function') {
-                Class[methodName] = methodDefinition;
+        // Map methods to corresponding classes
+        for (let i = 0; i < classes.length; i++) {
+            const cls = classes[i];
+            const method = methods[i];
+            if (typeof cls !== 'object' && typeof cls !== 'function') {
+                return [false, new TypeError('Each class must be an object or function')];
             }
-            else {
-                Object.defineProperty(Class, methodName, methodDefinition);
+            if (typeof method !== 'function' || !method.name) {
+                return [false, new TypeError('Each method must be a named function')];
             }
-            return [true, null];
-        }
-        catch (error) {
-            return [false, error];
+            try {
+                const methodName = method.name;
+                // Define method on a class (function prototype)
+                if (typeof cls === 'function') {
+                    Object.defineProperty(cls.prototype, methodName, {
+                        value: method,
+                        ...options,
+                    });
+                }
+                else {
+                    // Define method directly on an object
+                    Object.defineProperty(cls, methodName, {
+                        value: method,
+                        ...options,
+                    });
+                }
+            }
+            catch (error) {
+                return [false, error];
+            }
         }
     }
     else {
-        throw new TypeError('Invalid type for first argument');
+        // Original handling when Class and methodDefinition are not both arrays
+        for (const cls of classes) {
+            if (typeof cls !== 'object' && typeof cls !== 'function') {
+                return [false, new TypeError('Each class must be an object or function')];
+            }
+            for (const method of methods) {
+                if (typeof method !== 'function' || !method.name) {
+                    return [false, new TypeError('Each method must be a named function')];
+                }
+                try {
+                    const methodName = method.name;
+                    if (typeof cls === 'function') {
+                        Object.defineProperty(cls.prototype, methodName, {
+                            value: method,
+                            ...options,
+                        });
+                    }
+                    else {
+                        Object.defineProperty(cls, methodName, {
+                            value: method,
+                            ...options,
+                        });
+                    }
+                }
+                catch (error) {
+                    return [false, error];
+                }
+            }
+        }
+    }
+    return [true, null];
+}
+function addVariable(target, variables, options = { writable: false, enumerable: false, configurable: false }) {
+    // Check if the first argument is either an object or a function
+    if (typeof target !== 'object' && typeof target !== 'function') {
+        return [false, new TypeError('First argument must be an object or function')];
+    }
+    // Check if the second argument is an object
+    if (typeof variables !== 'object' || variables === null) {
+        return [false, new TypeError('Second argument must be an object containing variables')];
+    }
+    try {
+        // Define variables on a class (function prototype)
+        if (typeof target === 'function') {
+            for (const [key, value] of Object.entries(variables)) {
+                Object.defineProperty(target.prototype, key, {
+                    value,
+                    writable: options.writable ?? false,
+                    enumerable: options.enumerable ?? false,
+                    configurable: options.configurable ?? false,
+                });
+            }
+        }
+        // Define variables directly on an object
+        else if (typeof target === 'object') {
+            for (const [key, value] of Object.entries(variables)) {
+                Object.defineProperty(target, key, {
+                    value,
+                    writable: options.writable ?? false,
+                    enumerable: options.enumerable ?? false,
+                    configurable: options.configurable ?? false,
+                });
+            }
+        }
+        return [true, null];
+    }
+    catch (error) {
+        // Return false with the error if something goes wrong during property definition
+        return [false, error];
     }
 }
 function media(rule, value) {
     const mediaQueryString = `(${rule}: ${value})`;
     return window.matchMedia(mediaQueryString).matches;
 }
-function log(...data) { console.log(...data); }
+function redirect(page, replaceCurrentPage = false) {
+    if (!replaceCurrentPage)
+        window.location.href = page;
+    else
+        window.location.replace(page);
+}
+async function notification(content, importance = false, options = {}, lingers = true) {
+    if ((importance ? 2 : 1) < JSON.parse(cookie.get("settings") ?? "")?.Notifications)
+        return;
+    const createdAt = new Time();
+    const contentHeader = typeof content === 'string' ? '' : content.header;
+    const contentMessage = typeof content === 'string' ? content : content.message;
+    const $notification = $(`
+        <div class="notifi">
+          <div class="notifi-content">
+            <span class="dismis">&times;</span>
+            ${contentHeader ? `<p class='notifi-header'>${contentHeader}</p>` : ''}
+            <p class="notifi-message">${contentMessage}</p>
+          </div>
+        </div>
+      `);
+    $("footer").after($notification);
+    $('.notifi').css({
+        display: 'block',
+        position: 'fixed',
+        zIndex: 1,
+        left: options.position?.left || 'auto',
+        top: options.position?.top || 'auto',
+        right: options.position?.right || '10px',
+        bottom: options.position?.bottom || '10px',
+        width: options.width || '300px',
+        height: options.height || 'auto',
+        overflow: 'auto',
+    });
+    $('.dismis').on({
+        mouseenter: function () { $(this).css('color', '#fff'); },
+        mouseleave: function () { $(this).css('color', '#888'); },
+        click: function () {
+            $('.notifi').fadeOut(1000);
+            return { action: 'closed', createdAt, interactedWithin: Date.now() - createdAt.getTime() };
+        }
+    });
+    const time = options.time;
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            $('.notifi').fadeOut(1000, function () {
+                if (lingers) {
+                    const $notificationBoard = $('.notification-board');
+                    if ($notificationBoard.length)
+                        $(this).appendTo($notificationBoard);
+                }
+                resolve({ action: 'timeout', createdAt, interactedWithin: Date.now() - createdAt.getTime() });
+            });
+        }, time ? time * 1000 : 7500);
+    });
+}
+async function iNotification(content, buttons, importance = true, options = {}, lingers = true) {
+    if ((importance ? 2 : 1) < JSON.parse(cookie.get("settings") ?? "")?.Notifications)
+        return;
+    const createdAt = new Time();
+    const contentHeader = typeof content === 'string' ? '' : content.header;
+    const contentMessage = typeof content === 'string' ? content : content.message;
+    if (buttons.length > 4) {
+        console.error("Maximum of 4 buttons allowed");
+        return { action: 'timeout', createdAt, interactedWithin: 0 };
+    }
+    const $notification = $(`
+      <div class="notifi">
+        <div class="notifi-content">
+          ${contentHeader ? `<p class='notifi-header'>${contentHeader}</p>` : ''}
+          <p class="notifi-message">${contentMessage}</p>
+          <div class="notifi-buttons">
+            ${buttons.map((button, index) => `
+              <button class="notifi-button" data-index="${index}">${button.buttonText}</button>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+      `);
+    $("footer").after($notification);
+    $('.notifi').css({
+        display: 'block',
+        position: 'fixed',
+        zIndex: 1,
+        left: options.position?.left || 'auto',
+        top: options.position?.top || 'auto',
+        right: options.position?.right || '10px',
+        bottom: options.position?.bottom || '10px',
+        width: options.width || '300px',
+        height: options.height || 'auto',
+        overflow: 'auto',
+    });
+    $('.notifi-button').on({
+        mouseenter: function () { $(this).css('color', '#fff'); },
+        mouseleave: function () { $(this).css('color', '#888'); },
+        click: function () {
+            const index = $(this).data('index');
+            if (index !== undefined && buttons[index]?.buttonFunction) {
+                buttons[index].buttonFunction?.();
+                $('.notifi').fadeOut(1000, function () {
+                    return { action: 'buttonClicked', buttonIndex: index, createdAt, interactedWithin: Date.now() - createdAt.getTime() };
+                });
+            }
+        }
+    });
+    const time = options.time;
+    setTimeout(() => {
+        $('.notifi').fadeOut(1000, function () {
+            if (lingers) {
+                const $notificationBoard = $('.notification-board');
+                if ($notificationBoard.length)
+                    $(this).appendTo($notificationBoard);
+            }
+            return { action: 'timeout', createdAt, interactedWithin: Date.now() - createdAt.getTime() };
+        });
+    }, time ? time * 1000 : 15000);
+}
+async function popup(message, options = {}
+// @ts-ignore
+) {
+    const createdAt = new Time();
+    const $popup = $(`
+      <div id="popup">
+        <div class="popup-content">
+          <span class="close">&times;</span>
+          <p id="popup-message">${message}</p>
+        </div>
+      </div>
+    `);
+    $("html").append($popup);
+    $('#popup').css({
+        display: 'block',
+        position: 'fixed',
+        zIndex: 1,
+        left: options.left || '0',
+        top: options.top || '0',
+        width: options.width || '100%',
+        height: options.height || '100%',
+        overflow: 'auto',
+        backgroundColor: 'rgba(0,0,0,0.4)',
+    });
+    $('.popup-content').css({
+        backgroundColor: 'var(--background-color-d)',
+        margin: '15% auto',
+        padding: '20px',
+        border: '1px solid #888',
+        width: '80%',
+    });
+    $('.close').css({
+        color: '#aaa',
+        float: 'right',
+        fontSize: '28px',
+        fontWeight: 'bold',
+        cursor: 'pointer',
+        transition: "color 0.4s ease",
+    });
+    setTimeout(() => {
+        $('#popup').fadeOut(60000);
+        return { action: 'unclosed', createdAt, interactedWithin: null, closedAt: null };
+    });
+    $('.close').on({
+        mouseenter: function () { $(this).css('color', '#fff'); },
+        mouseleave: function () { $(this).css('color', '#888'); },
+        click: function () {
+            $('#popup').fadeOut(1000);
+            return { action: 'closed', createdAt, interactedWithin: Date.now() - createdAt.getTime(), closedAt: Date.now() };
+        }
+    });
+}
+function triggerDownload(filename, data) {
+    try {
+        // Create a new Blob object using JSON data
+        const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+        // Create a link element
+        const link = document.createElement("a");
+        link.href = window.URL.createObjectURL(blob);
+        link.download = filename;
+        // Append link to body and trigger click for download
+        document.body.appendChild(link);
+        link.click();
+        // Clean up by removing the link
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(link.href);
+    }
+    catch (error) {
+        throw new Error(error.message);
+    }
+}
+;
+// Extensions of Globals (Requires Modifying Interfaces)
+addMethod([document, window, HTMLElement], function bindShortcut(shortcut, callback) {
+    document.addEventListener('keydown', (event) => {
+        const keyboardEvent = event;
+        const keys = shortcut
+            .trim()
+            .toLowerCase()
+            .split("+");
+        // Separate out the modifier keys and the actual key
+        const modifiers = keys.slice(0, -1);
+        const finalKey = keys[keys.length - 1];
+        const modifierMatch = modifiers.every((key) => {
+            if (key === 'ctrl' || key === 'control')
+                return keyboardEvent.ctrlKey;
+            if (key === 'alt')
+                return keyboardEvent.altKey;
+            if (key === 'shift')
+                return keyboardEvent.shiftKey;
+            if (key === 'meta' || key === 'windows' || key === 'command')
+                return keyboardEvent.metaKey;
+            return false;
+        });
+        // Check that the pressed key matches the final key
+        const keyMatch = finalKey === keyboardEvent.key.toLowerCase();
+        if (modifierMatch && keyMatch) {
+            callback(keyboardEvent);
+        }
+    });
+});
+addMethod(Date, function toDayString() {
+    const day = String(this.getDate()).padStart(2, '0');
+    const month = String(this.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const year = this.getFullYear();
+    return `${day}-${month}-${year}`;
+}, {
+    writable: true,
+    enumerable: false,
+    configurable: true
+});
+// Variables
 var cookie = {
     set(name, value, daysToExpire, path = "/") {
         let expirationDate = "";
@@ -336,13 +464,12 @@ var cookie = {
         }
         return allCookies;
     },
-    // Method to delete a cookie
     delete(name) {
         try {
             document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
             return true;
         }
-        catch (_a) {
+        catch {
             return false;
         }
         ;
@@ -356,7 +483,7 @@ var cookie = {
             }
             return true;
         }
-        catch (_a) {
+        catch {
             return false;
         }
     }
@@ -447,4 +574,13 @@ const classes = {
     "SPEC": "Learning Support - SPEC",
     "LST": "Learning Support Transition"
 };
-export { Create, Time, isset, protoMethod, media, classes, cookie };
+addVariable(Document, { cookies: cookie.getAll().length });
+let $window = $(window);
+let $document = $(document);
+export { 
+// Classes 
+Time, 
+//Functions
+isset, addMethod, addVariable, media, redirect, notification, iNotification, popup, triggerDownload, 
+// Variables
+classes, cookie, $document, $window };

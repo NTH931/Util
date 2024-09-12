@@ -12,26 +12,23 @@ test.*
 extras.*
 
 *.log
+*.ts
 *.map
 *.bak
 *.min.js
 *.min.css
-*.ttr
-*.scss
 *.bat
+__*.*
 
-extras/
 backups/
+src/
 log/
 SCSS/
 Setup/
+modules/ 
+__*/
 
-app-structure.md
-error.php
-sass.json
+extras.md
 tsconfig.json
 package.json
 package-lock.json
-
-src/
-*.ts

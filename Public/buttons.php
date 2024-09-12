@@ -74,7 +74,7 @@ require "Includes/header.php";
       <!--Aotea College Buttons-->
       <div class="space"></div>
       <a id="aoteaCollege"></a>
-      <h2 class="header">Aotea College</h2>
+      <h2 class="header" id="addNewAotea">Aotea College</h2>
       <br>
       <div style="border: 0px; padding: 0px; padding-top: 0px;">
         <div id="library">

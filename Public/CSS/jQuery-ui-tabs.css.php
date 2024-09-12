@@ -25,6 +25,7 @@ echo <<<CSS
 /* Container for the tab headers */
 .ui-tabs .ui-tabs-nav {
   background-color: $backgroundColor;
+  margin: 0;
   height: calc(98% + 4px);
   padding: 0;
   display: flex;
@@ -103,12 +104,12 @@ echo <<<CSS
 
 /* Extras */
 
-#classes {
+#classes, #rooms {
   padding-top: 10px;
   color: $textColor
 }
 
-#classes > * > b {
+#classes > * > b, #rooms > * > b {
   margin-right: 20px;
   padding: 10px;
   cursor: default;
@@ -116,7 +117,11 @@ echo <<<CSS
   border: 1px solid $highlightColor
 }
 
-#classes > * {
+#rooms > * > b + b {
+  border-color: $backgroundColorLLL
+}
+
+#classes > *, #rooms > * {
   padding: 5px;
   margin-bottom: 10px;
 }

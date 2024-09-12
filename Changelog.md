@@ -1,16 +1,14 @@
 # Changelog
- - Added light theme to go along with dark theme
- - Added LICENSE
- - Added Changelog
- - Removed sql.php
- - Removed log.php
- - Removed /Log, along with all log files
+ - Changed the name of quickwrite to quicktype
+ - Changed cookies.php
+ - Changed variables.php
  - Changed index.php
+ - Changed links.php
+ - Changed Styles.css.php
+ - Changed footer.php
  - Changed header.php
  - Changed settings.php
- - Changed css-functions.css.php
- - Changed Styles.css.php
- - Changed media-queries.css.php
- - Changed jQuery-ui-tabs.css.php
- - Changed cookies.php
- - Moved settings.php from /PHP to /Includes
+ - Changed index.js
+ - Changed links.js
+ - Changed main.js
+ - Changed utilities.js
