@@ -72,6 +72,8 @@ You can...
 
 ## Configuration
  - Edit Classes (The "Edit Classes" Button)
+ - Save Classes (The "Save Classes" Button)
+ - Delete classes (The "Delete Classes" Button)
  - Settings (The "Settings" Button)
 
 ## Troubleshooting
