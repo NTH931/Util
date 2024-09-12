@@ -68,7 +68,7 @@ You can...
 
 ## Classrooms
  - HuiAko
- - 8 Customisable Classroom names/links
+ - 6 Customisable Classroom names/links
 
 ## Configuration
  - Edit Classes (The "Edit Classes" Button)
