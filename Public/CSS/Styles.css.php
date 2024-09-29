@@ -5,16 +5,17 @@ require_once './media-queries.css.php';
 
 header("Content-Type: text/css");
 
+//! CSS Rules
 echo <<<CSS
 
-/*-----------------------------------Tag Attribute Variables-------------------------------------*/
+/*----------------------------------------Tag Attribute Variables------------------------------------------*/
 * {
-  color: var(--text-color);
-  color: inherit;
-  font-family: Arial, Helvetica, sans-serif !important;
+  color: $textColor;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
 }
+
 
 html { color: $textColor }
 
@@ -89,12 +90,12 @@ section {
 
 label { background-color: $buttonBg }
 
-div { color: $textColor }
-
 ul {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
+ul { text-decoration: underline }
 
 dropdown {
   display: inline-block; /* Prevents it from stretching to the full width */
@@ -115,33 +116,6 @@ footer > h6 {
   padding-top: 0.5rem;
   padding-left: 0.5rem;
   text-align: center;
-}
-
-.addSave {
-  font-size: 1rem;
-  color: $highlightColor;
-  width: fit-content;
-  height: fit-content;
-  padding: 0 5px 3px 5px;
-  margin-top: 10px;
-  margin-left: 10px;
-  border-radius: 10px;
-  border: 2px solid $highlightColor;
-  background-color: transparent;
-  transition: background-color 0.3s ease;
-}
-
-.addSave > b {
-  position: relative;
-  font-size: 1.3rem;
-  top: 1px;
-}
-
-.addSave:hover {
-  transition: none;
-  background-color: $buttonBg;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 h4#todo {
@@ -213,6 +187,60 @@ input[type=submit]:focus,
 .valid { background-color: $darkGreen !important }
 
 .invalid { background-color: $darkRed !important }
+
+.green { color: rgb(105, 212, 23) }
+
+.red { color: red }
+
+.addSave {
+  font-size: 1rem;
+  color: $highlightColor;
+  width: fit-content;
+  height: fit-content;
+  padding: 0 5px 3px 5px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  border: 2px solid $highlightColor;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.addSave > b {
+  position: relative;
+  font-size: 1.3rem;
+  top: 1px;
+}
+
+.addSave:hover {
+  transition: none;
+  background-color: $buttonBg;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contain {
+  border: 2px solid white;
+  padding: 5px;
+  padding-top: 0px;
+  margin: 4px;
+}
+
+.contain > div { background-color: rgb(0, 112, 112) }
+
+.contain > a > ul {
+  display: block;
+  font-size: 1.17em; /* Equivalent to the font-size of h3 */
+  font-weight: bold;
+  margin-top: 4px;
+  margin-bottom: 2px;
+  color: white;
+  transition: color 0.2s ease;
+}
+
+.contain > a:hover > ul {
+  color: #aaf;
+}
 
 button.no {
   cursor: not-allowed;

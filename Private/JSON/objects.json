@@ -1,0 +1,26 @@
+{
+  "ButtonsObj": {
+    "GGL": "Google",
+    "WNP": "Whanau Portal !unswitchable",
+    "QCT": "QuickType !unavaliable",
+    "EDC": "Edit Classes !unswitchable",
+    "ATC": "Aotea College",
+    "ATL": "Aotea Library",
+    "ATN": "New Library !unavaliable",
+    "NQA": "NZQA",
+    "NCR": "NZCER",
+    "GML": "Gmail",
+    "DRV": "Drive",
+    "CLR": "Classroom",
+    "DCS": "Docs",
+    "SLD": "Slides",
+    "SHT": "Sheets",
+    "FRM": "Forms",
+    "STS": "Sites",
+    "KHT": "Kahoot",
+    "BLK": "Blooket",
+    "RMB": "Remove.bg",
+    "USC": "Unscreen",
+    "CVT": "Convertio"
+  }
+}

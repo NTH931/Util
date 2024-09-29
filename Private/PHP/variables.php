@@ -142,3 +142,31 @@ $_ENV = [
     ]
   ]
 ];
+
+# Enums
+enum Codes: string {
+  /** Google */
+  case GGL = "GGL";
+  case WNP = "WNP";
+  case QCT = "QCT";
+  case EDC = "EDC";
+  case ATC = "ATC";
+  case ATL = "ATL";
+  case ATN = "ATN";
+  case NQA = "NQA";
+  case NCR = "NCR";
+  case GML = "GML";
+  case DRV = "DRV";
+  case CLR = "CLR";
+  case DCS = "DCS";
+  case SLD = "SLD";
+  case SHT = "SHT";
+  case FRM = "FRM";
+  case STS = "STS";
+  case KHT = "KHT";
+  case BLK = "BLK";
+  case RMB = "RMB";
+  case USC = "USC";
+  case CVT = "CVT";
+  case CML = "CML";
+}

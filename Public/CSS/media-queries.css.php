@@ -48,7 +48,8 @@ switch ($baseTheme) {
 
 $light = cookie_get("settings")["Dark-Mode"];
 
-function ifTheme(string|array $testcolor, int $darkenBy, int $darkenFilterColorBy = null) {
+function ifTheme(string|array $testcolor, int $darkenBy, int $darkenFilterColorBy = null)
+{
   global $baseTheme;
   global $baseColor;
   global $theme;
@@ -68,9 +69,9 @@ $darkRed   = filter_color("RED", enhance("RED", $baseColor, 60));
 
 if (!$light) { # Dark mode
   $buttonBg           = filter_color([$theme, $confilct], darken($baseColor, 85));
-  $buttonBgL          = filter_color([$theme, $confilct], darken($baseColor, 70));
+  $buttonBgL          = filter_color([$theme, $confilct], darken($baseColor, 80));
   $buttonBgLL         = filter_color([$theme, $confilct], darken($baseColor, 75));
-  $buttonBgLLL        = filter_color([$theme, $confilct], darken($baseColor, 60));
+  $buttonBgLLL        = filter_color([$theme, $confilct], darken($baseColor, 70));
   $backgroundColor    = darken($baseColor, 99);
   $backgroundColorL   = darken($baseColor, 95);
   $backgroundColorLL  = filter_color([$theme, $confilct], darken($baseColor, 80));

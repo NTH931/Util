@@ -119,7 +119,7 @@
 
         <label class="set">
           <b>Notifications:</b>
-          <select name="Notifications" name="Notifications">
+          <select name="Notifications">
             <option value="1" <?= current_setting_s("Notifications", "1") ?>>All - Default (Popup)</option>
             <option value="2" <?= current_setting_s("Notifications", "2") ?>>Important Only (Popup)</option>
             <option value="3" <?= current_setting_s("Notifications", "3") ?>>Notification Panel Only</option>
@@ -129,12 +129,9 @@
         <?= switch_element("Light Mode", "Dark-Mode", current_setting_c("Dark-Mode", true)) ?>
         <dropdown label="Buttons" class="parent">
           <?php
-            ##################
-            ## DON'T CHANGE ##
-            ##################
-            $file = json_decode(file_get_contents("../Private/JSON/lists.json"), true);
+            $file = json_decode(file_get_contents("../Private/JSON/objects.json"), true);
             $cookie = json_decode($_COOKIE["settings"], true)["Buttons"] ?? [];
-            $cookie = array_merge($_ENV["defaultValues"], $cookie);
+            $cookie = array_merge(is_array($_ENV["defaultValues"]) ? $_ENV["defaultValues"] : [], $cookie);
 
             // Check if 'Buttons' key exists and is an array
             if (isset($file['ButtonsObj']) && is_array($file['ButtonsObj'])) {

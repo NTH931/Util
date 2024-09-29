@@ -1,5 +1,5 @@
-import * as Utils from './utilities.js';
-const { Time, popup, media, cookie, redirect, $document, $window } = Utils;
+import * as utils from './utilities.js';
+const { Time, popup, media, cookie, redirect, $document, $window } = utils;
 document.bindShortcut("ctrl+s", (e) => e.preventDefault());
 cookie.set("page_visited", true);
 // Checks for school account
@@ -70,7 +70,7 @@ $(function () {
         event.stopPropagation(); // Prevent the click event from bubbling up to the document
         $settings.fadeOut(400);
     });
-    document.bindShortcut("ctrl+shift+s", (e) => {
+    document.bindShortcut("ctrl+shift+s", () => {
         $settings.fadeIn(400);
     });
 });

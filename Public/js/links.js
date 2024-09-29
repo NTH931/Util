@@ -1,5 +1,5 @@
-import * as Utils from "./utilities.js";
-const { classes, redirect, triggerDownload } = Utils;
+import * as utils from "./utilities.js";
+const { classes, redirect, triggerDownload } = utils;
 function setItemInArray(item, index) {
     return localStorage.setItem(`class${index}`, JSON.stringify(item));
 }
@@ -115,7 +115,7 @@ $(function () {
         }
         $(fileLabel).text("Content Transferred!");
     });
-    document.querySelectorAll("input[type='text']").forEach((value, i) => {
+    document.querySelectorAll("input[type='text']").forEach((value) => {
         const item = localStorage.getItem(value.id);
         // Check if the item is non-empty and valid JSON before parsing
         if (item) {

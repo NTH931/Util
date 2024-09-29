@@ -9,7 +9,7 @@ function jQueryFunct(functionName, funct) {
 }
 // JQuery functions
 jQueryFunct('in', function (time) {
-    setTimeout(() => { }, time);
+    setTimeout(() => null, time);
     return this;
 });
 jQueryFunct('scrollTo', function (offset = 0) {
@@ -28,4 +28,13 @@ jQueryFunct('isVisible', function () {
         rect.left >= 0 &&
         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
         rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+});
+jQueryVar("id", function () { return this.attr("id"); });
+jQueryVar("class", function () { return this.attr("class"); });
+jQueryVar("exists", function () {
+    const element = this.get(0);
+    if (!element)
+        return false; // If no element exists in the jQuery object, return false
+    // Check by ID if available, otherwise use the element itself
+    return !!document.getElementById(element.id) || document.body.contains(element);
 });

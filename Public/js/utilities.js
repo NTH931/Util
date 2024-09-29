@@ -324,6 +324,27 @@ async function iNotification(content, buttons, importance = true, options = {}, 
         });
     }, time ? time * 1000 : 15000);
 }
+async function fetchData(url, json = true) {
+    console.log(`Fetching data from ${url}`);
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        let data;
+        if (json) {
+            data = await response.json();
+        }
+        else {
+            data = response;
+        }
+        return data;
+    }
+    catch (error) {
+        console.error("Error fetching data:", error);
+        return null;
+    }
+}
 async function popup(message, options = {}
 // @ts-ignore
 ) {
@@ -577,10 +598,11 @@ const classes = {
 addVariable(Document, { cookies: cookie.getAll().length });
 let $window = $(window);
 let $document = $(document);
+let Settings = JSON.parse(cookie.get("settings") ?? "{}");
 export { 
 // Classes 
 Time, 
 //Functions
-isset, addMethod, addVariable, media, redirect, notification, iNotification, popup, triggerDownload, 
+isset, addMethod, addVariable, media, redirect, notification, iNotification, popup, triggerDownload, fetchData, 
 // Variables
-classes, cookie, $document, $window };
+classes, cookie, $document, $window, Settings };

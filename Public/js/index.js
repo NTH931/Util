@@ -1,8 +1,20 @@
-import * as Utils from './utilities.js';
-const { iNotification, triggerDownload, cookie, redirect, $document, $window } = Utils;
+import * as utils from './utilities.js';
+const { iNotification, cookie, redirect, fetchData, $document, $window } = utils;
 $.fn.toHTMLElement = function () {
     return this.get(0) ?? null;
 };
+// JQuery UI Tabs
+$(function () {
+    $("#tabs").tabs({
+        beforeActivate: (_, ui) => {
+            ui.oldPanel.removeClass("ui-container-active");
+        },
+        activate: (_, ui) => {
+            ui.newPanel.addClass("ui-container-active");
+        }
+    });
+    $("#tabs .ui-tabs-panel").first().addClass("ui-container-active");
+});
 // Creates 
 $(function () {
     const $addClasses = $("#addClasses");
@@ -37,16 +49,12 @@ $(function () {
                 $buttonElement.css("background-color", function () {
                     switch (index) {
                         case 0:
-                            console.log("Applied l");
                             return "var(--button-bg-lll)";
                         case 1:
-                            console.log("Applied ll");
                             return "var(--button-bg-ll)";
                         case 2:
-                            console.log("Applied lll");
                             return "var(--button-bg-l)";
                         default:
-                            console.log("Applied default");
                             return "var(--button-bg-l)";
                     }
                 });
@@ -80,22 +88,6 @@ $(function () {
         }
         catch (error) {
             console.error(error);
-        }
-    }
-    // Function to fetch JSON data
-    async function fetchData(url) {
-        console.log(`Fetching data from ${url}`);
-        try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            const data = await response.json();
-            return data;
-        }
-        catch (error) {
-            console.error("Error fetching data:", error);
-            return null;
         }
     }
     fetchData("../Private/JSON/lists.json")
@@ -134,16 +126,15 @@ $(function () {
         }
         // AddClasses
         if (document.querySelector("aside > div#class7")) {
-            console.log(`#class7 found`);
+            console.log(`AddClasses button Generated`);
             $addClasses.html("<b>~ </b>Edit Classes");
         }
         else {
-            console.error(`#class7 not found`);
             $addClasses.html("<b>+ </b>Add Classes");
         }
         // SaveTemplate
         if (document.querySelector("aside > div#class1")) {
-            console.log("#class1 found");
+            console.log("SaveTemplate button Generated");
             $saveTemplate.show();
         }
         else {
@@ -152,7 +143,7 @@ $(function () {
         }
         // DeleteClasses
         if (document.querySelector("aside > div#class1")) {
-            console.log("#class1 found");
+            console.log("DeleteClasses button Generated");
             $deleteClasses.show();
         }
         else {
@@ -161,47 +152,6 @@ $(function () {
         }
     })
         .catch(error => alert(error.message));
-});
-// DeleteClasses
-$(function () {
-    $("#deleteClasses").on("click", function () {
-        let result = confirm("Delete All Classes?");
-        if (result) {
-            localStorage.clear();
-            alert("Classes Reset");
-            redirect("index.php");
-        }
-    });
-});
-// Savetemplate
-$(function () {
-    $("#saveTemplate").on("click", function () {
-        const classData = [];
-        // Iterate over localStorage keys in the sequence they are retrieved
-        for (let i = 1; i < localStorage.length + 1; i++) {
-            const value = localStorage.getItem(`class${i}`) ?? "";
-            if (value !== null) {
-                // Matching keys such as class1, class2, ..., class8
-                try {
-                    // Parse and add to classData array in the order of access
-                    const item = JSON.parse(value);
-                    const itemcode = item.code ?? "";
-                    const itemsubject = item.subject ?? "";
-                    const itemlink = item.link ?? "";
-                    console.log(i);
-                    console.log(value);
-                    classData.push({ code: itemcode, subject: itemsubject, link: itemlink });
-                }
-                catch (e) {
-                    console.error("Error parsing JSON from localStorage:", e);
-                }
-            }
-            else {
-                console.error(`class${i} does not have any items or does not exist.`);
-            }
-        }
-        triggerDownload(`Util_${new Date().toDayString()}.json`, classData);
-    });
 });
 // Button.on("click") popouts
 $(function () {
