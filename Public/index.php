@@ -320,8 +320,7 @@ define("DIVIDER", "<div style='position: fixed; border-top: 2px solid var(--high
   </section>
 
 </div>
-<link rel="stylesheet" href="CSS/jQuery-ui-tabs.css.php">
+<link rel="stylesheet" href="CSS/jQuery-ui-tabs.css">
 <?php require_once "Includes/footer.php"; ?>
 </body>
-
 </html>

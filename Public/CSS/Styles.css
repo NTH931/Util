@@ -1,30 +1,20 @@
-<?php
-require_once '../../Private/PHP/variables.php';
-require_once './css-functions.php';
-require_once './media-queries.css.php';
-
-header("Content-Type: text/css");
-
-//! CSS Rules
-echo <<<CSS
-
 /*----------------------------------------Tag Attribute Variables------------------------------------------*/
 * {
-  color: $textColor;
+  color: var(--text-color);
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
 }
 
 
-html { color: $textColor }
+html { color: var(--text-color) }
 
 body {
   overflow: hidden;
   display: block;
   background-repeat: no-repeat;
   background-size: 100%, 100%;
-  background-color: $backgroundColor;
+  background-color: var(--background-color);
 }
 
 textarea {
@@ -45,26 +35,26 @@ textarea:focus {
 a {
   text-decoration: none;
   font-size: 16px;
-  color: $highlightColor;
+  color: var(--highlight-color);
   width: fit-content;
 }
 
 h1 {
-  color: $textColor;
+  color: var(--text-color);
   display: inline-block;
   line-height: 10px;
   cursor: default;
 }
 
 h2, h3, h4, h5, h6, text {
-  color: $textColor;
+  color: var(--text-color);
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
   display: block;
 }
 
 nav {
-  border-bottom: 2px solid $highlightColor;
+  border-bottom: 2px solid var(--highlight-color);
   margin-left: -8px;
   margin-right: -8px;
   text-indent: 5px;
@@ -88,7 +78,7 @@ section {
   padding-bottom: 100px;
 }
 
-label { background-color: $buttonBg }
+label { background-color: var(--button-bg) }
 
 ul {
   margin-top: 15px;
@@ -107,12 +97,12 @@ dropdown {
 
 footer > h6 {
   position: absolute;
-  border-top: 2px solid $highlightColor;
+  border-top: 2px solid var(--highlight-color);
   left: -150px;
   width: 120%;
   bottom: 0;
-  color: $textColor;
-  background-color: $backgroundColor;
+  color: var(--text-color);
+  background-color: var(--background-color);
   padding-top: 0.5rem;
   padding-left: 0.5rem;
   text-align: center;
@@ -138,7 +128,7 @@ span#dropdown-label {
 span#dropdown-label:hover {
   cursor: pointer;
   text-decoration: underline;
-  background-color: darken($buttonBg, 5)
+  background-color: darken(var(--button-bg), 5)
 }
 
 button,
@@ -152,13 +142,13 @@ input[type=search],
 .button {
   margin: 2px;
   margin-top: 1px;
-  color: $highlightColor;
+  color: var(--highlight-color);
   font-size: 16px;
   padding: 3px 4px 2px 4px;
   border-radius: 20px;
   cursor: pointer;
-  border: 1px solid $buttonBgLL;
-  background-color: $buttonBg;
+  border: 1px solid var(--button-bgLL);
+  background-color: var(--button-bg);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
   z-index: 10
@@ -169,7 +159,7 @@ select:hover,
 option:hover,
 input[type=button]:hover, 
 input[type=submit]:hover {
-  background-color: $buttonBgLL;
+  background-color: var(--button-bgLL);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -178,15 +168,15 @@ select:focus,
 option:focus, 
 input[type=button]:focus, 
 input[type=submit]:focus, 
-.button:focus, {
+.button:focus {
   outline: none;
 }
 
 /*------------------------------------------Class Selectors--------------------------------------------------*/
 
-.valid { background-color: $darkGreen !important }
+.valid { background-color: var(--dark-green) !important }
 
-.invalid { background-color: $darkRed !important }
+.invalid { background-color: var(--dark-red) !important }
 
 .green { color: rgb(105, 212, 23) }
 
@@ -194,14 +184,14 @@ input[type=submit]:focus,
 
 .addSave {
   font-size: 1rem;
-  color: $highlightColor;
+  color: var(--highlight-color);
   width: fit-content;
   height: fit-content;
   padding: 0 5px 3px 5px;
   margin-top: 10px;
   margin-left: 10px;
   border-radius: 10px;
-  border: 2px solid $highlightColor;
+  border: 2px solid var(--highlight-color);
   background-color: transparent;
   transition: background-color 0.3s ease;
 }
@@ -214,7 +204,7 @@ input[type=submit]:focus,
 
 .addSave:hover {
   transition: none;
-  background-color: $buttonBg;
+  background-color: var(--button-bg);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -244,10 +234,10 @@ input[type=submit]:focus,
 
 button.no {
   cursor: not-allowed;
-  color: $redText;
+  color: var(--red-text);
 }
 
-button.no:hover { background-color: $buttonBgL }
+button.no:hover { background-color: var(--button-bgL) }
 
 input[type=text], input[type=search] {
   cursor: text;
@@ -255,32 +245,32 @@ input[type=text], input[type=search] {
   transition: translate 0.2s ease;
 }
 
-input[type=text]:hover, input[type=button]:hover { background-color: $buttonBg }
+input[type=text]:hover, input[type=button]:hover { background-color: var(--button-bg) }
 
 button.plus {
   height: 25px;
   width: 25px;
   margin-top: -10px;
   border-radius: 7.5px;
-  color: $textColor;
+  color: var(--text-color);
   background-color: rgba(255, 255, 255, 0);
-  border: 2px solid $textColor;
+  border: 2px solid var(--text-color);
   box-shadow: 4px 6px 10px 0 rgba(0, 0, 0, 0.5) 0 17px 50px 0 rgba(0, 0, 0, 0.5);
   transform: none;
 }
   
 button.plus:hover {
-  background-color: $buttonBg;
+  background-color: var(--button-bg);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 button.plus:focus {
   outline: none;
-  box-shadow: 0 0 0 3px $buttonBg;
+  box-shadow: 0 0 0 3px var(--button-bg);
 }
 
 .title {
-  color: $textColor;
+  color: var(--text-color);
   display: inline-block;
   line-height: 10px;
   font-size: 1rem !important;
@@ -314,7 +304,7 @@ button.plus:focus {
   border: 2px;
   text-align: center;
   border-radius: 7px;
-  background-color: $buttonBg;
+  background-color: var(--button-bg);
   text-decoration: none;
   padding-left: 5px;
   padding-right: 5px;
@@ -327,14 +317,14 @@ button.plus:focus {
   border: 2px;
   text-align: center;
   border-radius: 7.5px;
-  background-color: $buttonBg;
+  background-color: var(--button-bg);
   text-decoration: none;
   padding-left: 5px;
   padding-right: 5px;
 }
 
 .hrcolor {
-  border-bottom: 2px solid $highlightColor;
+  border-bottom: 2px solid var(--highlight-color);
   padding-bottom: 8px;
   width: 99vw;
 }
@@ -342,20 +332,20 @@ button.plus:focus {
 .hidden { display: none }
 
 .notifi > .notifi-content {
-  background-color: $backgroundColorL;
+  background-color: var(--background-colorL);
   padding: 100px;
   padding: 8px 7px 7px 7px;
   border: 1px solid #888;
   width: 80%;
 }
 .notifi > .notifi-content > .notifi-header {
-  color: $highlightColor;
+  color: var(--highlight-color);
   font-size: 0.8rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
 .notifi > .notifi-content > .notifi-message {
-  color: $textColor;
+  color: var(--text-color);
   padding: 0 0 5px 7px;
 }
 .notifi > .notifi-content > .dismis {
@@ -390,7 +380,7 @@ button.plus:focus {
 
 .notifi .notifi-buttons > .notifi-button:focus {
   color: white;
-  border: 1px solid $highlightColor;
+  border: 1px solid var(--highlight-color);
 }
 
 .popout-parent {
@@ -411,7 +401,7 @@ button.plus:focus {
 
 h3.periods {
   text-decoration: underline;
-  color: $highlightColor
+  color: var(--highlight-color)
 }
 
 ul.periods li {
@@ -419,14 +409,14 @@ ul.periods li {
   margin-bottom: 0.5rem;
 }
 
-ul.periods li { color: $backgroundColorLLL; text-decoration: underline }
+ul.periods li { color: var(--background-colorLLL); text-decoration: underline }
 
 /*----------------------------------------Id Selectors-------------------------------------------------------*/
 
 #clock {
   font-size: 26px;
   font-weight: bold;
-  color: var(--text-color);
+  color: var(var(--text-color));
   text-align: right;
   margin-left: 20px;
 }
@@ -457,7 +447,7 @@ ul.periods li { color: $backgroundColorLLL; text-decoration: underline }
   display: none;
   padding: 10px;
   border-radius: 10px;
-  background-color: $backgroundColorL;
+  background-color: var(--background-colorL);
   position: fixed; /* Change to fixed to keep it in a fixed position */
   width: 340px;
   height: max-content;
@@ -471,6 +461,4 @@ ul.periods li { color: $backgroundColorLLL; text-decoration: underline }
 
 #fileInput { transition: background-color 0.2s ease }
 
-#fileInput:hover { background-color: $buttonBgL }
-
-CSS;
+#fileInput:hover { background-color: var(--button-bgL) }

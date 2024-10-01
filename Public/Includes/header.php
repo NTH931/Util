@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="Favicons/favicon.png">
-    <link rel="stylesheet" type="text/css" href="CSS/media-queries.css.php">
-    <link rel="stylesheet" type="text/css" href="CSS/styles.css.php">
+    <script src="./CSS/media-queries.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     <?php require_once "../Private/PHP/variables.php" ?>
 
   </head>
