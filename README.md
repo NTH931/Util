@@ -11,22 +11,6 @@ Websites include:
  - [Aotea College Library](https://nz.accessit.online/ATC00/!#dashboard)
  - [NZQA](https://taku.nzqa.govt.nz/learner-home/)
 
-## Installation
-
-Before you can use Util, you must install it.
-Installation is very simple, but there are 2 ways, depending on what you want to do. If you want to run it from inside a zip file, follow these instructions:
-
-1. Install Util from your source.
-2. Install XAMPP for your os (Windows, Linux).
-3. Set up XAMPP.
-4. Put the extracted .zip file into XAMPP's `htdocs` folder.
-5. Navigate to `Util/Public/index.php`
-6. Open `index.php`
-
-And thats it! You can now navigate and use Util to it's fullest
-
-I am developing a online version of Util, so that this Installation process is not needed, so hang on!
-
 ## Usage & Features
 
 As explained in the Description, Util is a website where you can find links to multiple websites for the school. But Util has more features and functionality than that.
@@ -37,17 +21,13 @@ You can...
  - Go to the Whanau Portal
 
 ## Features
-
 #### QuickNavi (Top of Page)
-
  - Whanau portal
  - Google
 
 #### Website Links
-
  - Aotea College Home page
  - Aotea Library
- - New Library
  - NZQA
  - NZCER Online
  - Gmail
@@ -65,27 +45,21 @@ You can...
  - Convertio (File Conversion)
 
 ## Classrooms
- - HuiAko
+ - To-Do shortcut
+ - Preset named HuiAko class
  - 6 Customisable Classroom names/links
 
 ## Configuration
  - Edit Classes (The "Edit Classes" Button)
- - Save Classes (The "Save Classes" Button)
- - Delete classes (The "Delete Classes" Button)
  - Settings (The "Settings" Button)
 
 ## Troubleshooting
-
 Usually the following teporarily fixes small bugs!
  - Reloading the page (Ctrl + r, F5)
  - Force Reloading (Ctrl + Shift + r)
 
-## Contributing
-
-You can Contribute to Util! All you have to do is send an email to noah.haran@aotea.school.nz, and your request will be considered by me. If your request has been accepted, but no code has been provided, I will claim the copyright. However, if you do provide code, I will happily reference you if you request it.
-
 ## License
-
 Version 1.3.0 (Funky Fish)
+Under the GNU General Public License
 
 &copy; 2022 - 2024 Noah Haran. All rights reserved.
