@@ -1,9 +1,8 @@
 {
   "ButtonsObj": {
     "GGL": "Google",
-    "WNP": "Whanau Portal !unswitchable",
-    "QCT": "QuickType !unavaliable",
-    "EDC": "Edit Classes !unswitchable",
+    "WNP": "Whanau Portal !unavaliable",
+    "EDC": "Edit Classes !unavaliable",
     "ATC": "Aotea College",
     "ATL": "Aotea Library",
     "ATN": "New Library !unavaliable",

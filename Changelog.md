@@ -1,14 +1,2 @@
 # Changelog
- - Changed the name of quickwrite to quicktype
- - Changed cookies.php
- - Changed variables.php
- - Changed index.php
- - Changed links.php
- - Changed Styles.css.php
- - Changed footer.php
- - Changed header.php
- - Changed settings.php
- - Changed index.js
- - Changed links.js
- - Changed main.js
- - Changed utilities.js
+ - Removed QuickType

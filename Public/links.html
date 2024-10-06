@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Util</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Favicons/favicon.png">
+    
+    <script src="./CSS/media-queries.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+
+    <div class="container">
+      <h1 id='title' onclick='window.location.href = "index.php"'><em>Util</em></h1>
+      <div id="clock"></div>
+    </div>
+  </head>
+  
+  <style>
+
+    div {
+      width: 300px;
+      clear: both;
+      white-space: nowrap;
+    }
+
+    div > label, div > input, div > button, div > span {
+      display: inline-block;
+      width: 100px;
+    }
+
+    select {
+      width: 350px;
+      height: fit-content;
+      padding: 6px;
+      border-radius: 10px;
+      border: none;
+      margin-right: 18px;
+      margin-left: 5px;
+      transform: none;
+    }
+
+    select:focus {
+      border: none;
+    }
+
+    select:hover {
+      transform: none;
+    }
+
+    label {
+      display: inline-block;
+      width: fit-content;
+      padding-left: 10px;
+      padding-top: 7px;
+      padding-bottom: 6px;
+      padding-right: 290px;
+      border-radius: 10px;
+      margin-left: 5px;
+      margin-right: 18px;
+      color: var(--highlight-color);
+      font-size: .97rem;
+    }
+
+    label:hover {
+      cursor: pointer;
+    }
+
+    .storedLinkButton {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    input[type=text] { width: calc(70vw + 2px) }
+
+  </style>
+    <hr>
+
+    <h4 style="margin-left: 10px;">The link MUST start with 'https://classroom.google.com/', then your class ID (Found in the addres bar after https://classroom.google.com/)</h4>
+    
+    <form id="template" name="template" method="post" enctype="multipart/form-data">
+
+      <label id="fileInput" for="file" style="padding-right: 10px;">Insert Util.json Template File Here</label>
+      <input style="display: none" type="file" name="file" id="file" accept=".json">
+
+    </form>
+
+    <br>
+
+    <form id="classes" name="classes" method="post">
+      
+      <!--HuiAko-->
+      <label id="huiakolabel" for="class1" style="white-space: nowrap;">HuiAko</label>
+
+      <input type="hidden" name="HuiAko" value="HuiAko">
+      <input 
+        pattern='https?:\/\/classroom\.google\.com\/.{5,}' 
+        type='text' 
+        size='30px' 
+        id='class1' 
+        class='button invalid' 
+        autocomplete='off'
+      >
+      <br><br>
+
+      <!--Class2-->
+      <select name="selection2"></select>
+      <input 
+        pattern='https?:\/\/classroom\.google\.com\/.{5,}' 
+        type='text' 
+        size='30px' 
+        id='class2' 
+        class='button invalid' 
+        autocomplete='off'
+      >
+      <br><br>
+      
+      <!--Class3-->
+      <select name="selection3"></select>
+      <input 
+        pattern='https?:\/\/classroom\.google\.com\/.{5,}' 
+        type='text' 
+        size='30px' 
+        id='class3' 
+        class='button invalid' 
+        autocomplete='off'
+      >
+      <br><br>
+      
+      <!--Class4-->
+      <select name="selection4"></select>
+      <input 
+        pattern='https?:\/\/classroom\.google\.com\/.{5,}' 
+        type='text' 
+        size='30px' 
+        id='class4' 
+        class='button invalid' 
+        autocomplete='off'
+      >
+      <br><br>
+      
+      <!--Class5-->
+      <select name="selection5"></select>
+      <input 
+        pattern='https?:\/\/classroom\.google\.com\/.{5,}' 
+        type='text' 
+        size='30px' 
+        id='class5' 
+        class='button invalid' 
+        autocomplete='off'
+      >
+      <br><br>
+      
+      <!--Class6-->
+      <select name="selection6"></select>
+      <input 
+        pattern='https?:\/\/classroom\.google\.com\/.{5,}' 
+        type='text' 
+        size='30px' 
+        id='class6' 
+        class='button invalid' 
+        autocomplete='off'
+      >
+      <br><br>
+      
+      <!--Class7-->
+      <select name="selection7"></select>
+      <input 
+        pattern='https?:\/\/classroom\.google\.com\/.{5,}' 
+        type='text' 
+        size='30px' 
+        id='class7' 
+        class='button invalid' 
+        autocomplete='off'
+      >
+      <br>
+      
+      <!--Submit-->
+      <input style="margin-top: 14px; margin-left: 5px; border-radius: 8px;" id="submit" type="submit" class="button">
+      
+      <!--Save Template and Submit-->
+      <input style="margin-top: 14px; margin-left: 5px; border-radius: 8px;" id="submit&save" type="submit" class="button" value="Save as Template">
+      
+      <!--Reset-->
+      <button style="margin-top: 14px; margin-left: 5px; border-radius: 8px;" id="reset" class="button">Reset</button>
+
+    </form>
+    <footer>
+      <div id="notification-board"></div>
+      <h6>Version 4.2.1 | <em>Util</em></h6>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+      <script type="module" src="js/utilities.js"></script>
+      <script type="module" src="js/main.js"></script>
+      <script src="js/links.js" type="module"></script>
+    </footer>
+    
+  </body>
+</html>

@@ -1,114 +1,15 @@
 import * as utils from './utilities.js';
-const { Time, popup, media, cookie, redirect, $document, $window } = utils;
+const { Time, redirect, popup, file, Settings, Codes, cookie } = utils;
 document.bindShortcut("ctrl+s", (e) => e.preventDefault());
-cookie.set("page_visited", true);
-// Checks for school account
-// $(function() {
-//   if ($("body").attr("data-gr-ext-installed") !== undefined) {
-//     console.log("Not a School Account")
-//     $("li#child-1").hide();
-//     $("li#child-2").hide();
-//     $("div#tab-2") .hide();
-//     $("li#child-3").hide();
-//     $("div#tab-3") .hide();
-//   }
-// });
-$(function () {
-    if (!cookie.get("settings")) {
-        cookie.set("settings", {
-            // Value: Common colours
-            "Base-Color": "default",
-            // Value: 1=all, 2=important_popup_only, 3=notification_panel_only
-            "Notifications": 1,
-            // Value: Boolean
-            "Tooltips": true,
-            // Value: Boolean
-            "Dark-Mode": true,
-            // Assoc Array
-            "Buttons": {
-                "GGL": null,
-                "WNP": true,
-                "QCT": false,
-                "EDC": true,
-                "ATC": true,
-                "ATL": true,
-                "ATN": null,
-                "NQA": true,
-                "NCR": true,
-                "GML": true,
-                "DRV": true,
-                "CLR": true,
-                "DCS": true,
-                "SLD": true,
-                "SHT": true,
-                "FRM": true,
-                "STS": true,
-                "KHT": true,
-                "BLK": true,
-                "RMB": true,
-                "USC": true,
-                "CVT": true
-            }
-        });
-    }
-});
 // Redirects if the "page_visited" Cookie is set
-$(function () {
+$(() => {
     if (!cookie.get("page_visited")) {
         cookie.set("page_visited", true);
         redirect("index.php");
     }
 });
-// Setttings
-$(function () {
-    const $settings = $("#settings");
-    $("#settingsshow").on("click", function (event) {
-        event.stopPropagation(); // Prevent the click event from bubbling up to the document
-        $settings.fadeToggle(400);
-    });
-    $("#exit").on("click", function (event) {
-        event.stopPropagation(); // Prevent the click event from bubbling up to the document
-        $settings.fadeOut(400);
-    });
-    document.bindShortcut("ctrl+shift+s", () => {
-        $settings.fadeIn(400);
-    });
-});
-// dropdown
-$(function () {
-    $("dropdown").each(function () {
-        const $this = $(this);
-        // Initially hide all children except the label
-        $this.hide();
-        // Handle dropdown style based on 'no-scroll' attribute
-        if (!$this.attr("no-scroll")) {
-            $this.css({
-                overflowY: "auto", // Enable scrolling if needed
-                maxHeight: "none",
-                zIndex: 5
-            });
-        }
-        else {
-            $this.css({
-                overflowY: "hidden",
-                maxHeight: "100vh",
-                zIndex: 5
-            });
-        }
-        // Prepend label text if not present
-        let $label = $this.find("#dropdown-label");
-        if ($label.length === 0) {
-            $label = $(`<span id="dropdown-label">${$this.attr("label") || "Click to see contents"}</span>`);
-            $this.before($label);
-        }
-        // Toggle dropdown content visibility when label is clicked
-        $label.on("click", function () {
-            $this.slideToggle();
-        });
-    });
-});
 // input[type=search]
-$(function () {
+$(() => {
     $("input[type=search]").each(function () {
         const contentId = $(this).attr("search-content")?.toString();
         if (contentId) {
@@ -165,7 +66,7 @@ $(function () {
     });
 });
 // Clock
-$(function () {
+$(() => {
     function updateClock() {
         const $clock = $("#clock");
         const currentTime = new Time();

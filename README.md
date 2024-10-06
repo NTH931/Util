@@ -34,7 +34,6 @@ You can...
 
  - Set your google classroom links so that you can access them quicker,
  - Add new links for different websites,
- - Use the QuickType feature to quickly write down information,
  - Go to the Whanau Portal
 
 ## Features
@@ -42,7 +41,6 @@ You can...
 #### QuickNavi (Top of Page)
 
  - Whanau portal
- - QuickType
  - Google
 
 #### Website Links

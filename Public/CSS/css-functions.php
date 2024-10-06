@@ -1,40 +1,4 @@
-<?php 
-function modify_color_strength(string $color, string $baseColor, int $enhancment = 100): string {
-  // Remove the '#' from the base color if present
-  $baseColor = ltrim($baseColor, '#');
-
-  // Validate the color input
-  if (!in_array($color, ['RED', 'GREEN', 'BLUE'])) {
-      return "Invalid color. Please use 'RED', 'GREEN', or 'BLUE'.";
-  }
-
-  // Convert base color hex to RGB
-  $rBase = hexdec(substr($baseColor, 0, 2));
-  $gBase = hexdec(substr($baseColor, 2, 2));
-  $bBase = hexdec(substr($baseColor, 4, 2));
-
-  // Initialize enhanced color components
-  $rEnhanced = $rBase;
-  $gEnhanced = $gBase;
-  $bEnhanced = $bBase;
-
-  // Enhance the specified color
-  switch ($color) {
-      case "RED":
-          $rEnhanced = min(255, $rBase + $enhancment); // Enhance red
-          break;
-      case "GREEN":
-          $gEnhanced = min(255, $gBase + $enhancment); // Enhance green
-          break;
-      case "BLUE":
-          $bEnhanced = min(255, $bBase + $enhancment); // Enhance blue
-          break;
-  }
-
-  // Return the enhanced color in hex format
-  return sprintf("#%02x%02x%02x", $rEnhanced, $gEnhanced, $bEnhanced);
-}
-
+<?php
 function filter_color(array|string $color, string $hex): string {
   if (str_starts_with($hex, '#')) {
       $hex = substr($hex, 1);
@@ -157,5 +121,3 @@ function adjustBrightness(string $hex, int $percent): string {
 
 function darken(string $hex, int $percent) { return adjustBrightness($hex, -$percent); }
 function lighten(string $hex, int $percent) { return adjustBrightness($hex, $percent); }
-function enhance(string $color, string $baseColor, int $enhancment = 100) { return modify_color_strength($color, $baseColor, $enhancment); };
-function de_enhance(string $color, string $baseColor, int $enhancment = 100) { return modify_color_strength($color, $baseColor, -$enhancment); };

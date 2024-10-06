@@ -207,15 +207,22 @@ function media(rule, value) {
     const mediaQueryString = `(${rule}: ${value})`;
     return window.matchMedia(mediaQueryString).matches;
 }
+/**
+ * @param page The page to go to
+ * @param replaceCurrentPage Removes the current page from the session history and navigates to the given URL.
+ */
 function redirect(page, replaceCurrentPage = false) {
     if (!replaceCurrentPage)
         window.location.href = page;
     else
         window.location.replace(page);
 }
-async function notification(content, importance = false, options = {}, lingers = true) {
+function reload() {
+    window.location.reload();
+}
+function notification(content, importance = false, options = {}, lingers = true) {
     if ((importance ? 2 : 1) < JSON.parse(cookie.get("settings") ?? "")?.Notifications)
-        return;
+        return Promise.reject("Notiification was hidden based on user preferences.");
     const createdAt = new Time();
     const contentHeader = typeof content === 'string' ? '' : content.header;
     const contentMessage = typeof content === 'string' ? content : content.message;
@@ -263,9 +270,9 @@ async function notification(content, importance = false, options = {}, lingers =
         }, time ? time * 1000 : 7500);
     });
 }
-async function iNotification(content, buttons, importance = true, options = {}, lingers = true) {
+function iNotification(content, buttons, importance = true, options = {}, lingers = true) {
     if ((importance ? 2 : 1) < JSON.parse(cookie.get("settings") ?? "")?.Notifications)
-        return;
+        return Promise.reject("Notiification was hidden based on user preferences.");
     const createdAt = new Time();
     const contentHeader = typeof content === 'string' ? '' : content.header;
     const contentMessage = typeof content === 'string' ? content : content.message;
@@ -306,7 +313,7 @@ async function iNotification(content, buttons, importance = true, options = {}, 
             const index = $(this).data('index');
             if (index !== undefined && buttons[index]?.buttonFunction) {
                 buttons[index].buttonFunction?.();
-                $('.notifi').fadeOut(1000, function () {
+                $('.notifi').fadeOut(1000, () => {
                     return { action: 'buttonClicked', buttonIndex: index, createdAt, interactedWithin: Date.now() - createdAt.getTime() };
                 });
             }
@@ -345,9 +352,29 @@ async function fetchData(url, json = true) {
         return null;
     }
 }
-async function popup(message, options = {}
-// @ts-ignore
-) {
+function includeHTMLFile(fileLocation, targetElement) {
+    return fetch(fileLocation)
+        .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+        .then(html => {
+        if (targetElement instanceof HTMLElement) {
+            targetElement.innerHTML = html;
+        }
+        else {
+            targetElement.html(html);
+        }
+    })
+        .catch(error => {
+        console.error('Error loading settings:', error);
+        // Return a rejected promise to handle errors correctly
+        return Promise.reject(error);
+    });
+}
+function popup(message, options = {}) {
     const createdAt = new Time();
     const $popup = $(`
       <div id="popup">
@@ -417,6 +444,13 @@ function triggerDownload(filename, data) {
     }
 }
 ;
+// Implement the function
+function querySelect(selector, all) {
+    if (all) {
+        return document.querySelectorAll(selector); // Returns all matching elements
+    }
+    return document.querySelector(selector); // Returns the first matching element
+}
 // Extensions of Globals (Requires Modifying Interfaces)
 addMethod([document, window, HTMLElement], function bindShortcut(shortcut, callback) {
     document.addEventListener('keydown', (event) => {
@@ -457,7 +491,7 @@ addMethod(Date, function toDayString() {
     configurable: true
 });
 // Variables
-var cookie = {
+const cookie = {
     set(name, value, daysToExpire, path = "/") {
         let expirationDate = "";
         if (daysToExpire) {
@@ -470,7 +504,7 @@ var cookie = {
     get(name) {
         const cookies = document.cookie.split(';');
         for (let i = 0; i < cookies.length; i++) {
-            let cookie = cookies[i].trim();
+            const cookie = cookies[i].trim();
             if (cookie.startsWith(name + '='))
                 return decodeURIComponent(cookie.substring(name.length + 1));
         }
@@ -480,7 +514,7 @@ var cookie = {
         const allCookies = [];
         const cookies = document.cookie.split(';');
         for (let i = 0; i < cookies.length; i++) {
-            let cookie = cookies[i].trim();
+            const cookie = cookies[i].trim();
             allCookies.push(cookie);
         }
         return allCookies;
@@ -596,13 +630,68 @@ const classes = {
     "LST": "Learning Support Transition"
 };
 addVariable(Document, { cookies: cookie.getAll().length });
-let $window = $(window);
-let $document = $(document);
-let Settings = JSON.parse(cookie.get("settings") ?? "{}");
+const $window = $(window);
+const $document = $(document);
+const Settings = JSON.parse(cookie.get("settings") ?? "{}");
+const SettingsDefault = {
+    "BaseColor": "default",
+    "Notifications": 1,
+    "Tooltips": true,
+    "DarkMode": true,
+    "Buttons": {
+        "GGL": true,
+        "WNP": true,
+        "QCT": false,
+        "EDC": true,
+        "ATC": true,
+        "ATL": true,
+        "ATN": null,
+        "NQA": true,
+        "NCR": true,
+        "GML": true,
+        "DRV": true,
+        "CLR": true,
+        "DCS": true,
+        "SLD": true,
+        "SHT": true,
+        "FRM": true,
+        "STS": true,
+        "KHT": true,
+        "BLK": true,
+        "RMB": true,
+        "USC": true,
+        "CVT": true
+    }
+};
+const file = (() => {
+    // Get the full URL
+    const url = window.location.href;
+    // Create a URL object
+    const urlObj = new URL(url);
+    // Get the pathname (which includes the file name)
+    const pathName = urlObj.pathname;
+    // Extract the file name from the pathname
+    const fileNameWithExt = pathName.split('/').pop(); // e.g. "index.html"
+    const fileName = fileNameWithExt?.split('.').shift(); // e.g. "index"
+    if (fileName && fileNameWithExt) {
+        return {
+            name: fileName,
+            formattedName: fileName.charAt(0).toUpperCase() + fileName.slice(1),
+            fullName: fileNameWithExt,
+        };
+    }
+    else {
+        return {
+            name: null,
+            formattedName: null,
+            fullName: null
+        };
+    }
+})();
 export { 
-// Classes 
+//? Classes & Enums
 Time, 
-//Functions
-isset, addMethod, addVariable, media, redirect, notification, iNotification, popup, triggerDownload, fetchData, 
-// Variables
-classes, cookie, $document, $window, Settings };
+//? Functions
+isset, addMethod, addVariable, media, redirect, reload, notification, iNotification, popup, triggerDownload, fetchData, querySelect, includeHTMLFile, 
+//? Variables
+classes, cookie, $document, $window, Settings, file, SettingsDefault };

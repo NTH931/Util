@@ -1,10 +1,37 @@
 import * as utils from './utilities.js';
-const { iNotification, cookie, redirect, fetchData, $document, $window } = utils;
+const { iNotification, redirect, reload, fetchData, cookie, Settings, Codes, $document } = utils;
 $.fn.toHTMLElement = function () {
     return this.get(0) ?? null;
 };
-// JQuery UI Tabs
-$(function () {
+class Links {
+    target;
+    pend;
+    constructor(target, appendOrPrepend) {
+        this.target = $(target);
+        this.pend = appendOrPrepend;
+    }
+    head(text) {
+        this.target[this.pend](`\n<h4>${text}</h4>\n`);
+    }
+    links(code, link, displayName, blank = true) {
+        if (code === null) {
+            console.warn("Code is null. Defaulting to the class unmanagedCodes");
+            this.target[this.pend](`<button class="unmanagedCodes" onclick="window.open('${link}', ${blank ? '_blank' : '_self'}')">${displayName}</button>\n`);
+        }
+        else if (Settings.Buttons[code] && Settings.Buttons[code] === true) {
+            this.target[this.pend](`<button id="${code}" onclick="window.open('${link}', ${blank ? '_blank' : '_self'}')">${displayName}</button>\n`);
+        }
+        else if (Settings.Buttons[code] && Settings.Buttons[code] === false) {
+            this.target[this.pend](`<button id="${code}"  class='no'>${displayName} - <b>Unavailable</b></button>\n`);
+        }
+        else {
+            console.error(`Couldn't find Settings.Buttons.${code} Value found was ${Settings.Buttons[code]}`);
+            this.target[this.pend]("\n");
+        }
+    }
+}
+//= JQuery UI Tabs
+$(() => {
     $("#tabs").tabs({
         beforeActivate: (_, ui) => {
             ui.oldPanel.removeClass("ui-container-active");
@@ -15,11 +42,9 @@ $(function () {
     });
     $("#tabs .ui-tabs-panel").first().addClass("ui-container-active");
 });
-// Creates 
-$(function () {
+//= Creates 
+$(() => {
     const $addClasses = $("#addClasses");
-    const $saveTemplate = $("#saveTemplate");
-    const $deleteClasses = $("#deleteClasses");
     const settings = JSON.parse(cookie.get("settings") ?? "");
     // Function to create and add pop-out elements from structured data
     function addPopoutElements(parentDivId, jsonObject) {
@@ -36,7 +61,7 @@ $(function () {
         });
         try {
             // Iterate over jsonObject to create buttons
-            $.each([...jsonObject].reverse(), function (index, button) {
+            $.each([...jsonObject].reverse(), (index, button) => {
                 const buttonText = button["text"];
                 if (buttonText.toLowerCase() === "button 1" || buttonText.toLowerCase() === "button 2" || buttonText.toLowerCase() === "button 3")
                     return;
@@ -46,6 +71,7 @@ $(function () {
                     id: `button${String(index)}`,
                     text: buttonText
                 });
+                // eslint-disable-next-line prefer-arrow-callback
                 $buttonElement.css("background-color", function () {
                     switch (index) {
                         case 0:
@@ -59,9 +85,9 @@ $(function () {
                     }
                 });
                 $buttonElement.css("z-index", index);
-                $buttonElement.on('click', function () { window.open(button["location"], '_blank'); });
+                $buttonElement.on('click', () => { window.open(button["location"], '_blank'); });
                 $parentDiv.on({
-                    mouseenter: async () => {
+                    mouseenter: () => {
                         setTimeout(() => {
                             $buttonElement.css({
                                 left: "20px",
@@ -71,7 +97,7 @@ $(function () {
                             });
                         }, 100);
                     },
-                    mouseleave: async () => {
+                    mouseleave: () => {
                         setTimeout(() => {
                             $buttonElement.css({
                                 visibility: "hidden",
@@ -132,29 +158,11 @@ $(function () {
         else {
             $addClasses.html("<b>+ </b>Add Classes");
         }
-        // SaveTemplate
-        if (document.querySelector("aside > div#class1")) {
-            console.log("SaveTemplate button Generated");
-            $saveTemplate.show();
-        }
-        else {
-            console.error("#class1 not found");
-            $saveTemplate.hide();
-        }
-        // DeleteClasses
-        if (document.querySelector("aside > div#class1")) {
-            console.log("DeleteClasses button Generated");
-            $deleteClasses.show();
-        }
-        else {
-            console.error("#class1 not found");
-            $deleteClasses.hide();
-        }
     })
         .catch(error => alert(error.message));
 });
-// Button.on("click") popouts
-$(function () {
+//= Button.on("click") popouts
+$(() => {
     $(document).on("click", () => $(".side-element").fadeOut(400).remove());
     $("button").on("contextmenu", function (event) {
         event.stopPropagation();
@@ -202,54 +210,176 @@ $(function () {
         }
     });
 });
-// Cookies
-if (!cookie.get("page_visited")) {
-    cookie.set("page_visited", true, 365 * 5);
-    cookie.set("settings", {
-        // Value: Common colours
-        "Base-Color": "default",
-        // Value: 1=all, 2=important_popup_only, 3=notification_panel_only
-        "Notifications": 1,
-        // Value: Boolean
-        "Tooltips": true,
-        // Value: Boolean
-        "Dark-Mode": true,
-        // Assoc Array
-        "Buttons": {
-            "GGL": null,
-            "WNP": true,
-            "QCT": false,
-            "EDC": true,
-            "ATC": true,
-            "ATL": true,
-            "ATN": null,
-            "NQA": true,
-            "NCR": true,
-            "GML": true,
-            "DRV": true,
-            "CLR": true,
-            "DCS": true,
-            "SLD": true,
-            "SHT": true,
-            "FRM": true,
-            "STS": true,
-            "KHT": true,
-            "BLK": true,
-            "RMB": true,
-            "USC": true,
-            "CVT": true
+//= Links in Website Links tab
+$(() => {
+    const websiteLinks = new Links("#tab-1", "append");
+    websiteLinks.head("Aotea");
+    websiteLinks.links("ATC" /* Codes.ATC */, "https://www.aotea.school.nz/", "Aotea College");
+    websiteLinks.links("ATL" /* Codes.ATL */, "https://nz.accessit.online/ATC00/#!dashboard", "Aotea Library");
+    websiteLinks.links("ATN" /* Codes.ATN */, "https://soraapp.com/home", "New Library");
+    //* websiteLinks.plus("addNewAotea");
+    websiteLinks.head("Exam Sites");
+    websiteLinks.links("NQA" /* Codes.NQA */, "https://taku.nzqa.govt.nz/learner-home/", "NZQA");
+    websiteLinks.links("NCR" /* Codes.NCR */, "https://www.nzceronline.org.nz/", "NZCER Online");
+    //* websiteLinks.plus("addNewExamSite");
+    websiteLinks.head("Google Services");
+    websiteLinks.links("GML" /* Codes.GML */, "https://mail.google.com", "Gmail");
+    websiteLinks.links("DRV" /* Codes.DRV */, "https://drive.google.com/", "Drive");
+    websiteLinks.links("CLR" /* Codes.CLR */, "https://classroom.google.com/", "Classroom");
+    websiteLinks.links("DCS" /* Codes.DCS */, "https://docs.google.com/document/", "Docs");
+    websiteLinks.links("SLD" /* Codes.SLD */, "https://docs.google.com/presentation/", "Slides");
+    websiteLinks.links("SHT" /* Codes.SHT */, "https://docs.google.com/spreadsheets/", "Sheets");
+    websiteLinks.links("FRM" /* Codes.FRM */, "https://docs.google.com/forms/", "Forms");
+    websiteLinks.links("STS" /* Codes.STS */, "https://sites.google.com/", "Sites");
+    //* websiteLinks.plus("addNewDrive");
+    websiteLinks.head("Other");
+    websiteLinks.links("KHT" /* Codes.KHT */, "https://kahoot.it", "Kahoot!");
+    websiteLinks.links("BLK" /* Codes.BLK */, "https://dashboard.blooket.com/stats", "Blooket");
+    websiteLinks.links("RMB" /* Codes.RMB */, "https://remove.bg", "Remove.bg");
+    websiteLinks.links("USC" /* Codes.USC */, "https://www.unscreen.com/", "Unscreen");
+    websiteLinks.links("CVT" /* Codes.CVT */, "https://convertio.co/", "Convertio");
+    //* websiteLinks.plus("addNewOther");
+    const navBar = new Links("#navBar", "prepend");
+    navBar.links(null, "https://www.google.com/", "Google");
+    navBar.links(null, "https://whanau.aotea.school.nz", "Whanau Portal");
+});
+//= Settings
+$(() => {
+    const $settings = $("#settings");
+    $("#settingsshow").on("click", (event) => {
+        event.stopPropagation(); // Prevent the click event from bubbling up to the document
+        $settings.fadeToggle(400);
+    });
+    $("#exit").on("click", (event) => {
+        event.stopPropagation(); // Prevent the click event from bubbling up to the document
+        $settings.fadeOut(400);
+    });
+    document.bindShortcut("ctrl+shift+s", () => {
+        $settings.fadeIn(400);
+    });
+    //= Dragging Capabilities
+    $settings.on("mousedown", (e) => {
+        // Calculate the shift in mouse position
+        const shiftX = e.clientX - $settings[0].getBoundingClientRect().left;
+        const shiftY = e.clientY - $settings[0].getBoundingClientRect().top;
+        const moveAt = (pageX, pageY) => {
+            $settings.css({
+                left: `${pageX - shiftX}px`,
+                top: `${pageY - shiftY}px`
+            });
+        };
+        const onMouseMove = (e) => { moveAt(e.pageX, e.pageY); };
+        // Move the div on mousemove
+        $document.on("mousemove", (e) => onMouseMove(e.originalEvent));
+        const onMouseUp = () => { $document.off("mousemove"); };
+        $document.on("mouseup", onMouseUp);
+        // Prevent default drag behavior
+        e.preventDefault(); // Prevent text selection
+    });
+});
+//= Maniging the form in settings.html and settings.html
+utils.includeHTMLFile("./Includes/settings.html", $("div#settings"))
+    .then(async () => {
+    for (const key of ["red", "yellow", "green", "blue", "purple", "default"]) {
+        let option = document.getElementById("BaseColor");
+        if (option) {
+            option = option.querySelector(`option[value=${key === "default" ? "blue" : key}]`);
+        }
+        else
+            throw new Error(`Couldn't find option[value=${key === "default" ? "blue" : key}]`);
+        if (option.value === (Settings.BaseColor === "default" ? "blue" : Settings.BaseColor)) {
+            console.log("Setting matched,", Settings.BaseColor);
+            option.selected = true;
+            break;
+        }
+    }
+    for (const key of [1, 2, 3]) {
+        let option = document.getElementById("Notifications");
+        if (option) {
+            option = option.querySelector(`option[value="${key}"]`);
+        }
+        else
+            throw new Error(`Couldn't find option[value="${key}"]`);
+        console.log(Settings.Notifications, option.value);
+        if (option.value === Settings.Notifications?.toString()) {
+            console.log("Setting matched,", Settings.Notifications);
+            option.selected = true;
+            break;
+        }
+        if (key === 3) {
+            throw new Error("No Matches");
+        }
+    }
+    Object.entries(Settings).forEach(([key, value]) => {
+        if (typeof value === 'boolean' && value) {
+            console.log($(`#${key}`).attr("checked", "checked"));
+            $(`#${key}`).attr("checked", value.toString());
         }
     });
-    location.reload();
-}
-if (!cookie.get("clicked")) {
-    iNotification({
-        header: "Welcome to Util!",
-        message: "Click the Go To Settings button to change the sites settings.<br>" +
-            "Click the Change Classes button to change your classes.",
-    }, [
-        { buttonText: "Go To Settings", buttonFunction: () => $("//settings").show() },
-        { buttonText: "Cutomize Classes", buttonFunction: () => redirect("links.php") },
-        { buttonText: "Stop Showing", buttonFunction: () => { cookie.set("clicked", true); } }
-    ], true, { width: "700px", position: { right: "20vw", top: "40vh" } });
-}
+    // Dropdown
+    const file = await fetchData("../Private/JSON/objects.json");
+    if (file.ButtonsObj) {
+        for (const [key, value] of Object.entries(file.ButtonsObj)) {
+            const modifiers = value.split("!");
+            if (modifiers[1] === "unavaliable")
+                continue;
+            let checked = false;
+            if (Settings.Buttons[key]) {
+                checked = true;
+            }
+            const encodedValue = modifiers[0];
+            $("#ButtonsDrop").append(`
+        <label class="switch">
+          ${encodedValue}:
+          <input type="checkbox" id="${key}" name="Buttons[${key}]" value="1" ${checked ? "checked" : ""}>
+          <span class="slider"></span>
+        </label><br>
+      `);
+        }
+    }
+    const thisForm = document.forms.namedItem("settings-form");
+    thisForm?.addEventListener("submit", e => {
+        e.preventDefault();
+        const formData = new FormData(thisForm);
+        if (!Settings) {
+            cookie.set("settings", utils.SettingsDefault, 365 * 5);
+            reload();
+        }
+        const buttons = {};
+        formData.forEach((value, key) => {
+            if (key.startsWith("Buttons[")) {
+                const buttonName = key.match(/Buttons\[(.*)\]/)?.[1]; // Extract the button name
+                if (buttonName) {
+                    buttons[buttonName] = value === "1"; // Convert to boolean
+                }
+            }
+        });
+        cookie.set("settings", {
+            BaseColor: formData.get("BaseColor"),
+            Notifications: parseInt(formData.get("Notifications")),
+            DarkMode: formData.get("DarkMode") === "1",
+            Tooltips: formData.get("Tooltips") === "1",
+            Buttons: buttons
+        }, 365 * 5);
+        reload();
+    });
+});
+//= Cookies
+$(() => {
+    if (!cookie.get("page_visited")) {
+        cookie.set("page_visited", true, 365 * 5);
+        cookie.set("settings", utils.SettingsDefault, 365 * 5);
+        location.reload();
+    }
+    if (!cookie.get("clicked")) {
+        iNotification({
+            header: "Welcome to Util!",
+            message: "Click the Go To Settings button to change the sites settings.<br>" +
+                "Click the Change Classes button to change your classes.",
+        }, [
+            { buttonText: "Go To Settings", buttonFunction: () => $("//settings").show() },
+            { buttonText: "Cutomize Classes", buttonFunction: () => redirect("links.html") },
+            { buttonText: "Stop Showing", buttonFunction: () => cookie.set("clicked", true) }
+        ], true, { width: "700px", position: { right: "20vw", top: "40vh" } });
+    }
+});

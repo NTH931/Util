@@ -1,0 +1,41 @@
+<form id="settings-form" name="settings-form" method="post">
+  <label class="set">
+    <b>Base Color:</b>
+    <select class="selectlist" name="BaseColor" id="BaseColor">
+      <option value="red">Red & Orange</option>
+      <option value="yellow">Yellow</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue - Default</option>
+      <option value="purple">Purple</option>
+    </select>
+  </label>
+
+  <label class="set">
+    <b>Notifications:</b>
+    <select class="selectlist" name="Notifications" id="Notifications">
+      <option value="1">All - Default (Popup)</option>
+      <option value="2">Important Only (Popup)</option>
+      <option value="3">Notification Panel Only</option>
+    </select>
+  </label>
+
+  <label class="switch">
+    <b>Tooltips:</b>
+    <input type="checkbox" id="Tooltips" name="Tooltips" value="1">
+    <span class="slider"></span>
+  </label><br>
+
+  <label class="switch">
+    <b>Dark Mode:</b>
+    <input type="checkbox" id="DarkMode" name="DarkMode" value="1">
+    <span class="slider"></span>
+  </label><br>
+
+  <fieldset id="ButtonsDrop" label="Buttons">
+    <legend>Buttons</legend>
+
+  </fieldset>
+
+  <input type="submit" value="Submit">
+  <input type="button" onclick="$('#settings').hide()" value="Exit">
+</form>

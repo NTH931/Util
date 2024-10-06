@@ -1,33 +1,33 @@
 function get(name) {
   const cookies = document.cookie.split(';');
   for (let i = 0; i < cookies.length; i++) {
-    let cookie = cookies[i].trim();
+    const cookie = cookies[i].trim();
     if (cookie.startsWith(name + '=')) 
       return decodeURIComponent(cookie.substring(name.length + 1));
     }
   return null;
 }
 
-let parseCookie = get("settings");
+const parseCookie = get("settings");
 
 const RGB = {
   Red: "RED",
   Green: "GREEN",
   Blue: "BLUE"
-}
+};
 
 let settings;
 if (parseCookie) settings = JSON.parse(parseCookie);
 else throw new Error("Cookie was null");
 
-const baseTheme = settings["Base-Color"] || "blue";
-const darkMode = settings["Dark-Mode"] || true;
+const baseTheme = settings["BaseColor"] ?? "blue";
+const darkMode = settings["DarkMode"] ?? true;
 const hexRegExp = /#[a-f0-9]{6}/i;
 
 // Define theme-related variables
-let theme = "";
-let conflict = "";
-let baseColor = "";
+let theme;
+let conflict;
+let baseColor;
 
 switch (baseTheme) {
   case "red":
@@ -53,7 +53,7 @@ switch (baseTheme) {
     break;
   case "purple":
     theme = RGB.Blue;
-    conflict = RGB.Red
+    conflict = RGB.Red;
     baseColor = "#ab00ff";
     break;
   default:
@@ -73,9 +73,9 @@ function modifyColorStrength(color, baseColor, enhancement = 100) {
     return '#000000'; // Return black as a fallback
   }
 
-  let rBase = parseInt(baseColor.slice(0, 2), 16);
-  let gBase = parseInt(baseColor.slice(2, 4), 16);
-  let bBase = parseInt(baseColor.slice(4, 6), 16);
+  const rBase = parseInt(baseColor.slice(0, 2), 16);
+  const gBase = parseInt(baseColor.slice(2, 4), 16);
+  const bBase = parseInt(baseColor.slice(4, 6), 16);
 
   let rEnhanced = rBase, gEnhanced = gBase, bEnhanced = bBase;
 
@@ -155,7 +155,7 @@ function filterColor(color, hex) {
     b = (color === "BLUE" || color === "GREY") ? parseInt(hex.slice(4, 6), 16) : 0;
 
     if (color === "GREY") {
-      let grey = Math.round((r + g + b) / 3);
+      const grey = Math.round((r + g + b) / 3);
       return `#${grey.toString(16).padStart(2, '0').repeat(3)}`;
     }
   }
@@ -173,12 +173,12 @@ function filterColor(color, hex) {
 function greyscale(hex) {
   // Check if the hex starts with '#' and has a length of 7
   if (hex.startsWith('#') && hex.length === 7) {
-      let r = parseInt(hex.slice(1, 3), 16);
-      let g = parseInt(hex.slice(3, 5), 16);
-      let b = parseInt(hex.slice(5, 7), 16);
+      const r = parseInt(hex.slice(1, 3), 16);
+      const g = parseInt(hex.slice(3, 5), 16);
+      const b = parseInt(hex.slice(5, 7), 16);
 
       // Calculate the average to get grey
-      let grey = Math.round((r + g + b) / 3);
+      const grey = Math.round((r + g + b) / 3);
       return `#${grey.toString(16).padStart(2, '0').repeat(3)}`;
   }
 
@@ -199,17 +199,7 @@ function enhance(color, baseColor, enhancement = 100) {
 // Apply light or dark mode styles
 let buttonBg, buttonBgL, buttonBgLL, buttonBgLLL, backgroundColor, backgroundColorL, backgroundColorLL, backgroundColorLLL, highlightColor;
 if (!darkMode) {
-  // Dark mode
-  buttonBg = filterColor([theme, conflict], darken(baseColor, 85));
-  buttonBgL = filterColor([theme, conflict], darken(baseColor, 80));
-  buttonBgLL = filterColor([theme, conflict], darken(baseColor, 75));
-  buttonBgLLL = filterColor([theme, conflict], darken(baseColor, 70));
-  backgroundColor = darken(baseColor, 99);
-  backgroundColorL = darken(baseColor, 95);
-  backgroundColorLL = filterColor([theme, conflict], darken(baseColor, 80));
-  backgroundColorLLL = filterColor([theme, conflict], darken(baseColor, 55));
-  highlightColor = baseColor;
-} else {
+  console.log("Dark Mode");
   // Light mode
   buttonBg = darken(filterColor([theme, conflict], baseColor), 75);
   buttonBgL = filterColor([theme, conflict], darken(baseColor, 70));
@@ -220,11 +210,23 @@ if (!darkMode) {
   backgroundColorLL = filterColor([theme, conflict], darken(baseColor, 35));
   backgroundColorLLL = filterColor([theme, conflict], darken(baseColor, 30));
   highlightColor = lighten(baseColor, 100);
+} else {
+  console.log("Light Mode");
+  // Dark mode
+  buttonBg = filterColor([theme, conflict], darken(baseColor, 85));
+  buttonBgL = filterColor([theme, conflict], darken(baseColor, 80));
+  buttonBgLL = filterColor([theme, conflict], darken(baseColor, 75));
+  buttonBgLLL = filterColor([theme, conflict], darken(baseColor, 70));
+  backgroundColor = darken(baseColor, 99);
+  backgroundColorL = darken(baseColor, 95);
+  backgroundColorLL = filterColor([theme, conflict], darken(baseColor, 80));
+  backgroundColorLLL = filterColor([theme, conflict], darken(baseColor, 55));
+  highlightColor = baseColor;
 }
 
 // Dynamically inject CSS styles into the document
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
   Object.entries({
     "--button-bg": buttonBg,
     "--button-bg-l": buttonBgL,

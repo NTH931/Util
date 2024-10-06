@@ -1,4 +1,4 @@
-/*----------------------------------------Tag Attribute Variables------------------------------------------*/
+/*!------------------------------------Tag Attribute Variables---------------------------------------*/
 * {
   color: var(--text-color);
   font-family: Arial, Helvetica, sans-serif;
@@ -78,7 +78,7 @@ section {
   padding-bottom: 100px;
 }
 
-label { background-color: var(--button-bg) }
+fieldset > * { padding-left: 5px }
 
 ul {
   margin-top: 15px;
@@ -86,14 +86,6 @@ ul {
 }
 
 ul { text-decoration: underline }
-
-dropdown {
-  display: inline-block; /* Prevents it from stretching to the full width */
-  position: relative; /* For positioning dropdown elements */
-  overflow-y: auto;
-  max-height: 40vh !important;
-  width: 100%
-}
 
 footer > h6 {
   position: absolute;
@@ -110,25 +102,6 @@ footer > h6 {
 
 h4#todo {
   padding-top: 18px;
-}
-
-span#dropdown-label {
-  user-select: none;
-  position: sticky; /* Use sticky positioning to keep it in view */
-  top: 0; /* Stick to the top of the container */
-  border-radius: 0px;
-  margin: 0;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px 40% 10px 40%;
-  overflow-y: auto;
-  font-size: 1.05rem
-}
-
-span#dropdown-label:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  background-color: darken(var(--button-bg), 5)
 }
 
 button,
@@ -172,7 +145,7 @@ input[type=submit]:focus,
   outline: none;
 }
 
-/*------------------------------------------Class Selectors--------------------------------------------------*/
+/*!------------------------------------Class Selectors-----------------------------------------------*/
 
 .valid { background-color: var(--dark-green) !important }
 
@@ -411,7 +384,63 @@ ul.periods li {
 
 ul.periods li { color: var(--background-colorLLL); text-decoration: underline }
 
-/*----------------------------------------Id Selectors-------------------------------------------------------*/
+.switch {
+  z-index: 0;
+  text-decoration: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  padding-left: 10px;
+  margin: 4px 0;
+  width: fit-content;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch .slider {
+  position: relative;
+  width: 31px;
+  height: 17px;
+  background-color: var(--background-color-lll);
+  border-radius: 25px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s;
+}
+
+.switch .slider::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #aaa;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+.switch input:checked+.slider {
+  background-color: var(--green);
+}
+
+.switch input:checked+.slider::before {
+  transform: translateX(24px);
+  /* Adjust according to slider width */
+}
+
+.set, .switch {
+  padding: 5px 10px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/*!-----------------------------------Id Selectors---------------------------------------------------*/
 
 #clock {
   font-size: 26px;
@@ -447,7 +476,7 @@ ul.periods li { color: var(--background-colorLLL); text-decoration: underline }
   display: none;
   padding: 10px;
   border-radius: 10px;
-  background-color: var(--background-colorL);
+  background-color: var(--background-color-l);
   position: fixed; /* Change to fixed to keep it in a fixed position */
   width: 340px;
   height: max-content;
@@ -455,6 +484,7 @@ ul.periods li { color: var(--background-colorLLL); text-decoration: underline }
   top: 20vh; /* Adjust top position */
   right: 10px; /* Move to the right edge of the viewport */
   z-index: 1000; /* Ensure it is above other content */
+  cursor: move
 }
 
 #submit:hover { cursor: pointer }
