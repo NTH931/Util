@@ -313,7 +313,7 @@ $(() => {
 });
 
 //= Maniging the form in settings.html and settings.html
-utils.includeHTMLFile("./Includes/settings.html", $("div#settings"))
+utils.includeHTMLFile("./Plugins/settings.html", $("div#settings"))
 .then(async () => {
   
   for (const key of ["red", "yellow", "green", "blue", "purple", "default"]) {
