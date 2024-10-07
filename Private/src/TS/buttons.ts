@@ -2,7 +2,7 @@ import * as utils from './utilities.js';
 const { Codes, Settings } = utils;
 
 // $(async function () {
-//   const response = await fetchData("../Private/JSON/objects.json");
+//   const response = await fetchData("./JSON/objects.json");
 
 //   $(".install").each(function (_, element: HTMLElement) {
 //     const $this = $(element);

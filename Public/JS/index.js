@@ -116,7 +116,7 @@ $(() => {
             console.error(error);
         }
     }
-    fetchData("../Private/JSON/lists.json")
+    fetchData("./JSON/lists.json")
         .then((data) => {
         if (!data)
             return;
@@ -278,7 +278,7 @@ $(() => {
     });
 });
 //= Maniging the form in settings.html and settings.html
-utils.includeHTMLFile("./Includes/settings.html", $("div#settings"))
+utils.includeHTMLFile("./Plugins/settings.html", $("div#settings"))
     .then(async () => {
     for (const key of ["red", "yellow", "green", "blue", "purple", "default"]) {
         let option = document.getElementById("BaseColor");
@@ -317,7 +317,7 @@ utils.includeHTMLFile("./Includes/settings.html", $("div#settings"))
         }
     });
     // Dropdown
-    const file = await fetchData("../Private/JSON/objects.json");
+    const file = await fetchData("./JSON/objects.json");
     if (file.ButtonsObj) {
         for (const [key, value] of Object.entries(file.ButtonsObj)) {
             const modifiers = value.split("!");

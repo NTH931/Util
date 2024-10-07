@@ -11,7 +11,6 @@ node_modules/
 test.*
 extras.*
 
-*.log
 *.map
 *.bak
 *.min.js
@@ -19,14 +18,10 @@ extras.*
 *.bat
 __*.*
 
-backups/
-log/
-SCSS/
-Setup/
-modules/ 
+backups/ 
 __*/
 
-extras.md
 tsconfig.json
 package.json
 package-lock.json
+eslint.config.mjs

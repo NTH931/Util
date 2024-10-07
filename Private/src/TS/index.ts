@@ -127,7 +127,7 @@ $(() => {
     }
   }
   
-  fetchData("../Private/JSON/lists.json")
+  fetchData("./JSON/lists.json")
   .then((data) => {
     if (!data) return;
 
@@ -356,7 +356,7 @@ utils.includeHTMLFile("./Plugins/settings.html", $("div#settings"))
   });
 
   // Dropdown
-  const file: { ButtonsObj: Record<string, string> } = await fetchData("../Private/JSON/objects.json");
+  const file: { ButtonsObj: Record<string, string> } = await fetchData("./JSON/objects.json");
   if (file.ButtonsObj) {
     for (const [key, value] of Object.entries(file.ButtonsObj)) {
 
