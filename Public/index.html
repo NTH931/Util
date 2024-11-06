@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="Favicons/favicon.png">
     
-    <script src="./CSS/media-queries.js"></script>
+    <script src="./CSS/media-queries.js" type="module"></script>
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
 
     <div class="container">
-      <h1 id='title' onclick='window.location.href = "index.php"'><em>Util</em></h1>
+      <h1 id='title' style="width: fit-content;"><em>Util</em></h1>
       <div id="clock"></div>
     </div>
   </head>
@@ -27,10 +27,10 @@
       <aside>
         <h4 id="todo"><a id="todo" class="whitebg" style="max-width: 45px;" href="https://classroom.google.com/a/not-turned-in/all" target="_blank">To-do</a></h4>
 
-        <h4 id="addClasses" class="addSave" onclick="window.open('links.html', '_self')"></h4>
+        <h4 id="addClasses" class="addSave"></h4>
       </aside>
 
-      <h6 style="position: absolute; bottom: 40px; left: 6px;">left-click on the class to go straight to the classroom, or hover to find the 3 most used links in the class.</h6>
+      <text style="position: absolute; bottom: 40px; left: 6px;">left-click on the class to go straight to the classroom, or hover to find the 3 most used links in the class.</text>
 
       <section class="main" tabindex="-1">
         <div id="tabs">
@@ -269,7 +269,7 @@
     </div>
     <footer>
       <div id="notification-board"></div>
-      <h6>Version 4.2.1 | <em>Util</em></h6>
+      <text>Version 4.2.1 | <em>Util</em></text>
       <link rel="stylesheet" href="CSS/jQuery-ui-tabs.css">
       
       <script src="https://code.jquery.com/jquery-3.6.0.js"></script>

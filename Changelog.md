@@ -9,7 +9,7 @@
 
  - Changed Objects.json
  - Changed...
-   - index.php to index.html
+   - index.html to index.html
    - links.php to links.html
    - buttons.php to buttons.html
    - Styles.css.php to Styles.css

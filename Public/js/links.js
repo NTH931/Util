@@ -22,7 +22,7 @@ $(() => {
             localStorage.clear();
             console.warn(`User Data deleted! ${localData} classes removed from storage.`);
             alert("User Data deleted!");
-            redirect("index.php");
+            redirect("index.html");
         }
         else {
             console.log("User Data not deleted.");
@@ -84,7 +84,7 @@ $(() => {
             }
         }
         else {
-            redirect("index.php");
+            redirect("index.html");
         }
     });
     fileInput?.addEventListener("change", async (e) => {

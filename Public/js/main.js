@@ -1,11 +1,13 @@
 import * as utils from './utilities.js';
 const { Time, redirect, popup, file, Settings, Codes, cookie } = utils;
 document.bindShortcut("ctrl+s", (e) => e.preventDefault());
+//= Redirects If the Title is clicked
+$("#title").on("click", () => redirect("index.html"));
 // Redirects if the "page_visited" Cookie is set
 $(() => {
     if (!cookie.get("page_visited")) {
         cookie.set("page_visited", true);
-        redirect("index.php");
+        redirect("index.html");
     }
 });
 // input[type=search]

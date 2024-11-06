@@ -50,7 +50,7 @@
 
 /* Styles for the active tab */
 .ui-tabs .ui-tabs-nav .ui-state-active a {
-  background-color: var(--background-colorll);
+  background-color: var(--background-color-ll);
   color: var(--text-color); 
   border: 1px solid var(--text-color) !important;
   padding: 1px 10px !important;
@@ -59,14 +59,14 @@
 
 /* Styles for inactive tabs */
 .ui-tabs .ui-tabs-nav :not(.ui-state-active) a {
-  background-color: var(--background-colorl); /* Replaced var(--background-color-l) */
+  background-color: var(--background-color-l); /* Replaced var(--background-color-l) */
   color: var(--text-color);
   border: 1px solid var(--text-color) !important;
 }
 
 /* Hover effect for inactive tabs */
 .ui-tabs .ui-tabs-nav :not(.ui-state-active) a:hover {
-  background-color: var(--background-colorll); /* Replaced var(--background-color-ll) */
+  background-color: var(--background-color-ll); /* Replaced var(--background-color-ll) */
   padding: 1px 10px !important;
 }
 
@@ -109,7 +109,7 @@
 }
 
 #rooms > * > b + b {
-  border-color: var(--background-colorlll)
+  border-color: var(--background-color-lll)
 }
 
 #classes > *, #rooms > * {

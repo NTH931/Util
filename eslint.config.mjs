@@ -29,7 +29,6 @@ export default [
       },
     },
     rules: {
-      "class-methods-use-this": [error, { exceptMethods: [] }],
       "func-style": [warn, "declaration", { allowArrowFunctions: true }],
       "prefer-arrow-callback": [warn, { allowNamedFunctions: true }],
       "semi": [warn, always],
@@ -64,7 +63,6 @@ export default [
       },
     },
     rules: {
-      "class-methods-use-this": [error, { exceptMethods: [] }],
       "func-style": [warn, "declaration", { allowArrowFunctions: true }],
       "prefer-arrow-callback": [warn, { allowNamedFunctions: true }],
       "semi": [warn, always],

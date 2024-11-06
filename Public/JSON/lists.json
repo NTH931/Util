@@ -383,7 +383,7 @@
 
   "MUS": [
     {
-      "location": "https://musicecademyapp.com/login/index.php",
+      "location": "https://musicecademyapp.com/login/index.html",
       "text": "Music Ecademy"
     },
     {
@@ -397,7 +397,7 @@
   ],
   "MUJ": [
     {
-      "location": "https://musicecademyapp.com/login/index.php",
+      "location": "https://musicecademyapp.com/login/index.html",
       "text": "Music Ecademy"
     },
     {

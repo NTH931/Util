@@ -53,6 +53,8 @@ h2, h3, h4, h5, h6, text {
   display: block;
 }
 
+text { font-size: .9rem }
+
 nav {
   border-bottom: 2px solid var(--highlight-color);
   margin-left: -8px;
@@ -85,9 +87,7 @@ ul {
   margin-bottom: 15px;
 }
 
-ul { text-decoration: underline }
-
-footer > h6 {
+footer > text {
   position: absolute;
   border-top: 2px solid var(--highlight-color);
   left: -150px;
@@ -98,6 +98,7 @@ footer > h6 {
   padding-top: 0.5rem;
   padding-left: 0.5rem;
   text-align: center;
+  font-size: .9rem;
 }
 
 h4#todo {
@@ -120,7 +121,7 @@ input[type=search],
   padding: 3px 4px 2px 4px;
   border-radius: 20px;
   cursor: pointer;
-  border: 1px solid var(--button-bgLL);
+  border: 1px solid var(--button-bg-ll);
   background-color: var(--button-bg);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
@@ -132,7 +133,7 @@ select:hover,
 option:hover,
 input[type=button]:hover, 
 input[type=submit]:hover {
-  background-color: var(--button-bgLL);
+  background-color: var(--button-bg-ll);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -305,7 +306,7 @@ button.plus:focus {
 .hidden { display: none }
 
 .notifi > .notifi-content {
-  background-color: var(--background-colorL);
+  background-color: var(--background-color-l);
   padding: 100px;
   padding: 8px 7px 7px 7px;
   border: 1px solid #888;
@@ -382,7 +383,7 @@ ul.periods li {
   margin-bottom: 0.5rem;
 }
 
-ul.periods li { color: var(--background-colorLLL); text-decoration: underline }
+ul.periods li { color: var(--background-color-lll) }
 
 .switch {
   z-index: 0;
@@ -491,4 +492,4 @@ ul.periods li { color: var(--background-colorLLL); text-decoration: underline }
 
 #fileInput { transition: background-color 0.2s ease }
 
-#fileInput:hover { background-color: var(--button-bgL) }
+#fileInput:hover { background-color: var(--button-bg-ll) }

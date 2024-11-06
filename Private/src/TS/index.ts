@@ -9,27 +9,30 @@ class Links {
   private target: JQuery;
   private pend: "append" | "prepend";
 
-  constructor(target: string, appendOrPrepend: "append" | "prepend") {
+  constructor(target: string, appendOrPrepend: "append" | "prepend" = "append") {
     this.target = $(target);
     this.pend = appendOrPrepend;
   }
 
-  head(text: string): void {
+  public head(text: string): void {
     this.target[this.pend](`\n<h4>${text}</h4>\n`);
   }
 
-  links(code: keyof typeof Codes | null, link: string, displayName: string, blank: boolean = true): void {
-    if (code === null) {
-      console.warn("Code is null. Defaulting to the class unmanagedCodes");
-      this.target[this.pend](`<button class="unmanagedCodes" onclick="window.open('${link}', ${blank ? '_blank' : '_self'}')">${displayName}</button>\n`);
-    } else if (Settings.Buttons[code] && Settings.Buttons[code] === true) {
-      this.target[this.pend](`<button id="${code}" onclick="window.open('${link}', ${blank ? '_blank' : '_self'}')">${displayName}</button>\n`);
+  public links(code: keyof typeof Codes, link: string, displayName: string, blank: boolean = true): void {
+    if (Settings.Buttons[code] && Settings.Buttons[code] === true) {
+      this.target[this.pend](`<button id="${code}">${displayName}</button>\n`);
     } else if (Settings.Buttons[code] && Settings.Buttons[code] === false) {
-      this.target[this.pend](`<button id="${code}"  class='no'>${displayName} - <b>Unavailable</b></button>\n`);
+      this.target[this.pend](`<button id="${code}" class='no'>${displayName} - <b>Unavailable</b></button>\n`);
     } else {
       console.error(`Couldn't find Settings.Buttons.${code} Value found was ${Settings.Buttons[code]}`);
       this.target[this.pend]("\n");
     }
+
+    if (code !== null) this.addEventListener(code, link, blank);
+  }
+
+  private addEventListener(element: string, location: string, blank: boolean): void {
+    this.target.on('click', `#${element}`, () => window.open(location, blank ? '_blank' : '_self'));
   }
 }
 
@@ -49,6 +52,7 @@ $(() => {
 //= Creates 
 $(() => {
   const $addClasses: JQuery<HTMLHeadingElement> = $("#addClasses");
+  $addClasses.on("click", () => redirect("links.html"));
 
   const settings = JSON.parse(cookie.get("settings") ?? "");
   // Function to create and add pop-out elements from structured data
@@ -232,7 +236,7 @@ $(() => {
 
 //= Links in Website Links tab
 $(() => {
-  const websiteLinks = new Links("#tab-1", "append");
+  const websiteLinks = new Links("#tab-1");
 
   websiteLinks.head("Aotea");
   websiteLinks.links(Codes.ATC, "https://www.aotea.school.nz/", "Aotea College");
@@ -266,8 +270,8 @@ $(() => {
 
   const navBar = new Links("#navBar", "prepend");
 
-  navBar.links(null, "https://www.google.com/", "Google");
-  navBar.links(null, "https://whanau.aotea.school.nz", "Whanau Portal");
+  navBar.links(Codes.GGL, "https://www.google.com/", "Google");
+  navBar.links(Codes.WNP, "https://whanau.aotea.school.nz", "Whanau Portal");
 });
 
 //= Settings
@@ -289,6 +293,10 @@ $(() => {
 
   //= Dragging Capabilities
   $settings.on("mousedown", (e: JQuery.MouseDownEvent) => {
+    if (e.target !== $settings[0]) {
+      e.stopPropagation();
+      return;
+    }
     // Calculate the shift in mouse position
     const shiftX = e.clientX - $settings[0].getBoundingClientRect().left;
     const shiftY = e.clientY - $settings[0].getBoundingClientRect().top;
