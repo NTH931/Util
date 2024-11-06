@@ -59,7 +59,7 @@ Usually the following teporarily fixes small bugs!
  - Force Reloading (Ctrl + Shift + r)
 
 ## License
-Version 1.3.0 (Funky Fish)
+Version 1.4.2 (Funky Fish)
 Under the GNU General Public License
 
 &copy; 2022 - 2024 Noah Haran. All rights reserved.
